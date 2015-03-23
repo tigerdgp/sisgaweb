@@ -15,14 +15,15 @@
 	global $config;
 	
 	//Define as variáveis de configuração do banco de dados
-	$config['db']['ip'] 		= "";//IP
-	$config['db']['porta'] 		= "";//Porta
-	$config['db']['user'] 		= "";//Usuário
-	$config['db']['pass'] 		= "";//Senha
-	$config['db']['db'] 		= "";//Banco
+	$config['db']['ip'] 			= "localhost";//IP
+	$config['db']['porta'] 			= "";//Porta
+	$config['db']['user'] 			= "root";//Usuário
+	$config['db']['pass'] 			= "";//Senha
+	$config['db']['db'] 			= "sisgaweb";//Banco
 	
-	//Define a versão do framework smarty utilizado
-	$config['smarty']			= "-3.1.21";
+	//Define variáveis do smarty
+	$config['smarty']['versao']		= "-3.1.21";//versão do framework
+	$config['smarty']['debug']		= true;//Ativação do debug
 	
 	//Define variáveis gerais
 	$config['app_name']			= "SisGA Web";//Nome do sistema
