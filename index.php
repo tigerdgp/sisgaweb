@@ -16,7 +16,7 @@
 	
 	//Inclusões de arquivos
     require_once('includes/setup.php');
-    require_once('includes/funcoes.php');
+    //require_once('sisgaweb/includes/funcoes.php');
 	
 	//Inicia a instância do framework smarty
     $smarty = new Smarty_Setup();
@@ -24,10 +24,10 @@
 	//Variável global com informações da página
     global $page;
     $page = array(
-	    'arquivo' => 'index',
-	    'title'  => 'Index',
-	    'tab'    => 0,
-	    'path'   => '[]'
+	    'arquivo' 	=> 'index',
+	    'title' 	=> 'Index',
+	    'tab'    	=> 0,
+	    'path'   	=> '[]'
     );
 
     //Recebe os parametros passados na string
@@ -44,7 +44,7 @@
 	//Faz o include da página solicitada
     switch($page)
     {
-	    /*
+	    /*(Desativado)
 		case 'idioma':
 		    //Alterando o idioma do site
 		    //Verifica a veracidade dos dados em checkidioma()
@@ -57,7 +57,7 @@
 	    case 'painel':
 		    include 'painel.php';
 		    break;
-        //Carrega a pagina inicial
+        //Carrega a pagina padrão
 	    default:
 		    include 'main.php';
 		    break;
