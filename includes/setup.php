@@ -31,7 +31,7 @@
 			//Este é chamado a cada nova instância.
 			parent::__construct();
 	
-			//global $config;
+			global $config;
 	
 			$this->template_dir = 'templates/';
 			$this->compile_dir  = 'templates_c/';

@@ -27,7 +27,7 @@
 	
 	//Define variáveis gerais
 	$config['app_name']			= "SisGA Web";//Nome do sistema
-	$config['logo']				= "";//Endereço do logo do sistema
+	$config['logo']				= "templates/img/logo.png";//Endereço do logo do sistema
 
 	
 
