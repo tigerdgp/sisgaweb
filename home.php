@@ -14,7 +14,7 @@
 	//Variável global com informações da página
     global $page;
     $page = array(
-	    'arquivo' 	=> 'main',
+	    'arquivo' 	=> 'home',
 	    'title'  	=> 'Início',
 	    'tab'    	=> 0,
 	    'path'   	=> '[]'
@@ -23,5 +23,5 @@
 	//Assina a variável global ao smarty
     $smarty->assign('page', $page);
 	//Define o arquivo de exibição
-    $smarty->display('main.tpl');
+    $smarty->display('home.tpl');
 ?>

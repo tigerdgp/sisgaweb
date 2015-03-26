@@ -59,7 +59,7 @@
 		    break;
         //Carrega a pagina padrão
 	    default:
-		    include 'main.php';
+		    include 'home.php';
 		    break;
     }
 ?>

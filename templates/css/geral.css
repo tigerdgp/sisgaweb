@@ -1,0 +1,26 @@
+/* CSS Document */
+
+body {
+	background: transparent url(../img/bg.jpg) repeat 0 !important;
+}
+
+#page {
+	width: 1000px;
+	position: relative;
+	margin: 0 auto;
+	padding: 5px;
+	
+	background: #CCC;/*provisorio*/
+}
+
+footer {
+	text-align: center;
+}
+
+.clear {
+	clear: both;
+}
+
+section {
+	float: left;
+}

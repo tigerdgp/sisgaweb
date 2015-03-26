@@ -1,0 +1,74 @@
+/* CSS Document */
+
+header {
+	border-top: 5px #97640A solid;
+	border-bottom: 8px #97640A solid;
+	height: 300px;
+	background: transparent url(../img/quadro.jpg) repeat-x 0 !important;
+	color: #fff;
+}
+	.header {
+		width: 1000px;
+		position: relative;
+		margin: 0 auto;
+	}
+		.header_t {
+			float: left;
+			clear: both;
+			height: 50px;
+			width: 1000px;
+			text-align: right;
+			padding: 5px 10px 0 0;
+		}
+		.header_e {
+			text-align: left;
+			float: left;
+			width: 500px;
+		}
+		.header_d {
+			text-align: left;	
+			float: right;
+			width: 500px;
+			padding-top: 40px;
+		}
+	.entrarButton {
+		width: 99px;
+		height: 40px;
+		display: block;
+		background-image: url(../img/entrar.png);
+		float: right;
+	}
+		.entrarButton:hover {
+			background-image: url(../img/entrar1.png)
+		}
+		
+.news {
+	width: 600px;
+}
+.listagem {
+	width: 400px;
+}
+.listagem table {
+	vertical-align: middle;
+}
+.listagem table th {
+	font-weight: bold;
+	font-size: 18px;
+	padding-bottom: 5px;
+}
+.listagem table .esq {
+	width: 250px;
+}
+.listagem table .dir {
+	width: 150px;
+}
+.listagem table td {
+	padding: 5px;
+	height: 25px;
+}
+
+.banner {
+	width: 100%;
+	height: 150px;
+	background: #F00;
+}
