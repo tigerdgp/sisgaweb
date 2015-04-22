@@ -45,6 +45,34 @@ header {
 .news {
 	width: 600px;
 }
+	.news h1 {
+		font-weight: bold;
+		font-size: 18px;
+		padding-bottom: 5px;
+	}
+.titulo {
+	padding-top: 5px;
+    font-size: 22px;
+    font-weight: bold;
+    clear: both;
+}
+	.titulo a {
+		color: #434343;
+		text-decoration: none;
+	}
+		.titulo a:hover {
+			color: #80aa12;
+		}
+.autor {
+	font-size: 12px;
+	padding-top: -5px;
+}
+.texto {
+	padding: 5px;
+	font-size: 16px;
+}
+
+
 .listagem {
 	width: 400px;
 }
@@ -71,4 +99,9 @@ header {
 	width: 100%;
 	height: 150px;
 	background: #F00;
+	margin: 10px 0 10px 0;
+}
+.banner_250x250 {
+	width: 250px;
+	height: 250px;
 }

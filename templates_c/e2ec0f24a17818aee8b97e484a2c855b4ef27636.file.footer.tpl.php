@@ -1,27 +1,28 @@
-<?php /* Smarty version Smarty-3.1.21-dev, created on 2015-03-26 05:21:50
+<?php /* Smarty version Smarty-3.1.21-dev, created on 2015-04-15 15:32:29
          compiled from "templates\footer.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:178965510a557b0b950-74930946%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:31578552ee6fd971471-82258095%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     'e2ec0f24a17818aee8b97e484a2c855b4ef27636' => 
     array (
       0 => 'templates\\footer.tpl',
-      1 => 1427372347,
+      1 => 1428589279,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '178965510a557b0b950-74930946',
+  'nocache_hash' => '31578552ee6fd971471-82258095',
   'function' => 
   array (
   ),
-  'version' => 'Smarty-3.1.21-dev',
-  'unifunc' => 'content_5510a557b36412_69663612',
   'has_nocache_code' => false,
+  'version' => 'Smarty-3.1.21-dev',
+  'unifunc' => 'content_552ee6fd987a64_41786563',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_5510a557b36412_69663612')) {function content_5510a557b36412_69663612($_smarty_tpl) {?>            <footer>
+<?php if ($_valid && !is_callable('content_552ee6fd987a64_41786563')) {function content_552ee6fd987a64_41786563($_smarty_tpl) {?>            <footer>
                 <p>Copyright © <?php echo htmlspecialchars(date('Y'), ENT_QUOTES, 'UTF-8');?>
  SisGAWeb - Todos os direitos reservados.</p>
+                <p>Desenvolvido por <a href='mailto:tiger.dgp@hotmail.com'>Dérik Gomide Padua</a> e <a href='mailto:rafaelsantiago1092@gmail.com'>Rafael Silva Santiago</a></p>
             </footer>
         </div>
     </body>

@@ -16,6 +16,7 @@
 	
 	//Inclusões de arquivos
     require_once('includes/setup.php');
+	//require_once('includes/classes/dao_news.class.php');
     //require_once('sisgaweb/includes/funcoes.php');
 	
 	//Inicia a instância do framework smarty
@@ -57,6 +58,12 @@
 	    case 'painel':
 		    include 'painel.php';
 		    break;
+			
+		//Carrega a tela de login
+	    case 'login':
+		    include 'login.php';
+		    break;
+			
         //Carrega a pagina padrão
 	    default:
 		    include 'home.php';

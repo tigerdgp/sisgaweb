@@ -15,13 +15,35 @@
                 	<img src="{$logo}" alt="Titulo do site" width="350px" />
                 </div>
                 <div class="header_d">
-                	<img src="templates/img/cursos.png" alt="Cursos Profissionalizantes" width="500px" />
+                	<img src="templates/img/cursos.png" alt="Cursos Profissionalizantes" width="450px" />
                 </div>
             </div>
         </header>
         <div id="page">
         	<section class="news">
-            Noticias
+            	<h1>Notícias</h1>
+                <!--{section name=s loop=$news}
+                    <div class="titulo">
+                        <h1><a href="?noticia">{$news[s].titulo}</a></h1>
+                    </div>
+                    <div class="autor">
+                        <span>Por {$news[s].autor} em {$news[s].data|date_format:"%d/%m/%Y"}</span>
+                    </div>
+                    <div class="texto">
+                        {$news[s].texto|truncate:150:"..."|strip_tags:"UTF-8":TRUE}
+                    </div>
+                {/section}-->
+                
+                    <div class="titulo">
+                        <h1><a href="?noticia">{$newsti}</a></h1>
+                    </div>
+                    <div class="autor">
+                        <span>Por {$newsa} em {$newsd|date_format:"%d/%m/%Y"}</span>
+                    </div>
+                    <div class="texto">
+                        {$newste|truncate:150:"..."|strip_tags:"UTF-8":TRUE}
+                    </div>
+                
             </section>
             <section class="listagem">
             	<table>
@@ -56,8 +78,8 @@
             Banner 720x100
             </section>
             <div class="clear"></div>
-            <section class="banner_">
-            Banner 250x250
+            <section class="banner_250x250">
+            	<img src="templates/img/banner_250x250.jpg" alt="Banner 250x250" />
             </section>
             <section class="listagem">
             	<table>
@@ -85,6 +107,9 @@
                         <td>302</td>
                     </tr>
                 </table>
+            </section>
+            <div class="clear"></div>
+            <section class="parceiros">
             </section>
     		<div class="clear"></div>
             {include file='footer.tpl'}
