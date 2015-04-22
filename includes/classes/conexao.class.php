@@ -22,7 +22,7 @@
 			$this->port = "3306";
 			$this->db	= "sisgaweb";
 			$this->user	= "root";
-			$this->pass	= "200123";
+			$this->pass	= "senha";
 			$this->dsn	= "mysql:host=".$this->host.";port=".$this->port.";dbname=".$db;
 		}
 		
