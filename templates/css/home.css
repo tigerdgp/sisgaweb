@@ -1,5 +1,16 @@
 /* CSS Document */
 
+#page {
+	width: 1000px;
+	position: relative;
+	margin: 0 auto;
+	padding: 5px;
+	-moz-box-shadow: inset 0 0 5px #888;
+	-webkit-box-shadow: inset 0 0 5px #888;
+	box-shadow: inset 0 0 5px #888;
+	background: #CCC;/*provisorio*/
+}
+
 header {
 	border-top: 5px #97640A solid;
 	border-bottom: 8px #97640A solid;
@@ -41,7 +52,9 @@ header {
 		.entrarButton:hover {
 			background-image: url(../img/entrar1.png)
 		}
-		
+
+
+	
 .news {
 	width: 600px;
 }

@@ -22,7 +22,7 @@
     }
     $smarty->assign('news', $news);*/
 	require_once('includes/classes/dao_news.class.php');
-	$news = DaoNews::getInstance()->BuscarPorCOD(1);
+	//$news = DaoNews::getInstance()->BuscarPorCOD(1);
 	/*$smarty->assign('newsti', $news->getTitulo());
 	$smarty->assign('newste', $news->getTexto());
 	$smarty->assign('newsa', $news->getAutor());

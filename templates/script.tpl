@@ -8,4 +8,6 @@
 <link rel="stylesheet" type="text/css" href="templates/css/reset.css" />
 <link rel="stylesheet" type="text/css" href="templates/css/geral.css" />
 
-<link type="text/javascript" href="templates/js/global.js" />
+<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script src="templates/js/funcoes.js"></script>

@@ -20,7 +20,17 @@
     //require_once('sisgaweb/includes/funcoes.php');
 	
 	//Inicia a instância do framework smarty
-    $smarty = new Smarty_Setup();
+    $smarty = new Smarty_Setup();	
+	
+	//Criando o menu
+    require_once('includes/menu.php');
+            
+    $query = mysql_query("SELECT * FROM menus ORDER BY ordem ASC");
+    while($row = mysql_fetch_object($query))
+    {
+            $menuItens[$row->pai][$row->id]= array('link'=> $row->link,'name'=> $row->nome,'seta'=> $row->seta);
+    }    
+    $smarty->assign('m_menu', $menuItens);
 	
 	//Variável global com informações da página
     global $page;
