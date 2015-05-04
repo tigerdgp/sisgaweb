@@ -1,4 +1,4 @@
-<?php
+﻿<?php
     
     /*
     *
@@ -10,7 +10,7 @@
     *
     */
 
-    class Conexao {
+    /*class Conexao {
     
         private $host, $port, $db, $user, $pass, $dsn;
 		
@@ -34,6 +34,17 @@
 			} 
 			return self::$instance; 
 		}
-    }
+    }*/
+	
+	/* Connect to an ODBC database using driver invocation */
+	$dsn = 'mysql:dbname=sisgaweb;host=localhost';
+	$user = 'root';
+	$password = 'senha';
+	
+	try {
+		$dbh = new PDO($dsn, $user, $password, array(PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES \'UTF8\''));
+	} catch (PDOException $e) {
+		echo 'Connection failed: ' . $e->getMessage();
+	}
 
 ?>

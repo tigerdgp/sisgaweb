@@ -10,7 +10,7 @@
             	<h1>Titulo do Site</h1>
             </div>
             <div class="menu">
-            	<nav>imprimeMenuInfinito($m_menu)</nav>
+            	<nav>{imprimeMenuInfinito($m_menu)}</nav>
             </div>
             <div class="topo_">
             	
@@ -25,16 +25,17 @@
                         </div>
                         <div class="photo">
                         	<div class="photo_bg"></div>
-                    		<img src="templates/img/banner_250x250.jpg" alt="" width="150px" height="132px" />
+                    		<img src="templates/img/haseo.jpg" alt="" width="150px" height="132px" />
                     	</div>
                         <div class="name">
                         	<p>Derik Gomide Padua</p>
                             <pan>Perfil: Aluno</span>
                         </div>
                         <div class="dados">
-                        	<p>Curso: <span>Auxiliar Administrativo</span></p>
+                        	<p>Curso: <span title="teste">Auxiliar Administrativo</span></p>
                             <p>Início: <span>09/09/2015</span></p>
                             <p>Término: <span>09/12/2015</span></p>
+                            <p>Horário: <span>19:00 às 22:00</span></p>
                         </div>
                     </div>
                     <footer class="rodape">
@@ -53,10 +54,10 @@
                 <div id="col2" class="col2">
                 	<div class="bloco_dir">
                         <ul>
-                            <li><p><a href="">Mensagens<span>10</span></a></p></li>
-                            <li><p><a href="">lista</a></p></li>
-                            <li><p><a href="">lista</a></p></li>
-                            <li><p><a href="">lista</a></p></li>
+                        	<li><p><a href="?admin">Administração</a></p></li>
+                            <li><p><a href="?config">Configuração</a></p></li>
+                            <li><p><a href="?perfil">Meu Perfil</a></p></li>
+                            <li><p><a href="?msg">Mensagens<span>10</span></a></p></li> 
                         </ul>
                     </div>
                 </div>

@@ -73,21 +73,18 @@ header {
 /* Menu principal */
 nav {    
     width: 100%; 
-    height: 30px; 
-    background-color: #595050; 
-    text-align: left;
+    height: 30px;
     z-index: 9999;
     margin: 0 auto;
     position: relative;  
     color: #fff;
-	opacity: 0.5
 }
 
 
 /* Menu com submenus */
 ul#menu {
     cursor: pointer;
-    text-align: left;    
+    text-align: left;	    
 }
 
 ul#menu img {
@@ -102,7 +99,7 @@ ul#menu span, ul#sub_navTop span {
     padding-right: 20px;
     padding-left: 20px;
     position: relative;
-    text-shadow:0 1px 0 #434343;
+    text-shadow: 0.1em 0.1em 0.3em #333;
 }
 
     ul#menu li {
@@ -127,11 +124,12 @@ ul#menu span, ul#sub_navTop span {
         ul#menu li a {            
             text-decoration: none;
             display: inline-block;
+			color: #030;
         }
 
             ul#menu li a:hover {
                 text-decoration: none;
-                color: #ccc;
+                color: #fff;
                 text-shadow: 0 5px 10px #fff;
             }
 
@@ -150,7 +148,7 @@ ul#menu span, ul#sub_navTop span {
         position: absolute;
         z-index: 99999;
         width: 180px;
-        background: #595050;        
+        background: #7c7c7c;
         box-shadow: 1px 1px 3px #1b1b1b;
         opacity: 0;
         -webkit-transition: opacity 0.2s linear, visibility 0.2s linear;
@@ -380,3 +378,132 @@ ul#menu span, ul#sub_navTop span {
 		float: right;
 		padding-right: 30px;
 	}
+	
+	
+	
+/****** Paginas do Painel ***/
+
+/* Painel */
+.p_painel {
+	box-shadow: 0 2px 2px rgba(0, 0, 0, 0.15), 1px 1px 1px rgba(0, 0, 0, 0.15);
+	margin-top: 10px;
+	padding: 5px;
+}
+
+/* Cursos */
+.p_cursos {
+	box-shadow: 0 2px 2px rgba(0, 0, 0, 0.15), 1px 1px 1px rgba(0, 0, 0, 0.15);
+	margin-top: 10px;
+	padding: 5px;
+}
+	.p_cursos table {
+		width: 979px;
+		vertical-align: middle;
+		box-shadow: 0 2px 2px rgba(0, 0, 0, 0.15), 1px 1px 1px rgba(0, 0, 0, 0.15);
+		text-shadow: #333 0.1em 0.1em 0.3em;
+	}
+		.p_cursos table th, .p_perfil_b table th {
+			font-size: 20px;
+			font-weight: bold;
+			text-align: center;
+			height: 40px;
+			background: #333;
+			padding-top: 20px;
+			border: 1px solid #ccc;
+			color: #ccc;
+		}
+		.p_cursos table td, .p_perfil_b table td {
+			font-size: 16px;
+			text-align: left;
+			height: 20px;
+			padding: 10px;
+			border: 1px solid #ccc;
+			color: #030;
+		}
+		.p_cursos table tr:hover, .p_perfil_b table tr:hover {
+			background: #ccc;
+			border: 1px solid #fff;
+		}
+	.p_cursos .table10, .p_perfil_b .table10 {
+		width: 10%;
+		text-align: center;
+	}
+	.p_cursos .table15, .p_perfil_b .table15 {
+		width: 15%;
+		text-align: center;
+	}
+	.p_cursos a, .p_perfil_b a {
+		text-decoration: none;
+		color: #030;
+	}
+
+/* Relatorios */
+.p_relatorios {
+	box-shadow: 0 2px 2px rgba(0, 0, 0, 0.15), 1px 1px 1px rgba(0, 0, 0, 0.15);
+	margin-top: 10px;
+	padding: 5px;
+}
+
+/* Pesquisa */
+.p_busca {
+	box-shadow: 0 2px 2px rgba(0, 0, 0, 0.15), 1px 1px 1px rgba(0, 0, 0, 0.15);
+	margin-top: 10px;
+	padding: 5px;
+}
+
+/* Perfil */
+.p_perfil, .p_perfil_b {
+	box-shadow: 0 2px 2px rgba(0, 0, 0, 0.15), 1px 1px 1px rgba(0, 0, 0, 0.15);
+	margin-top: 10px;
+	padding: 5px;
+}
+.p_perfil_b p {
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+.p_perfil_b h1 {
+	padding-bottom: 15px;
+}
+.p_perfil_b span {
+	font-weight: bold;
+	font-size: 18px;
+}
+.p_perfil_b .p_perfil_photo_bg {
+	width: 150px;
+	height: 132px;
+	position: absolute;
+	background: transparent url(../img/bg_photo_p.png) no-repeat 0 !important;
+	z-index: 1000;
+}
+.p_perfil_b .p_perfil_photo {
+	width: 150px;
+	height: 132px;
+	z-index: 999;
+	float: left;
+}
+.p_perfil_b .p_perfil_dados1 {
+	width: 500px;
+	padding-left: 10px;
+	float: left;
+}
+.p_perfil_b .p_perfil_dados2 {
+	width: 300px;
+	padding-left: 10px;
+	float: left;
+}
+.p_perfil_b .p_perfil_dados3 {
+	width: 400px;
+	padding-left: 10px;
+	float: left;
+}
+.p_perfil_b .p_perfil_dados4 {
+	width: 240px;
+	padding-left: 10px;
+	float: left;
+}
+.p_perfil_b .p_perfil_dados5 {
+	width: 500px;
+	padding-left: 10px;
+	margin: 0 auto;
+	position: relative;
+}

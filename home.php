@@ -9,19 +9,21 @@
 	*	Versão: 	1.0
 	*	Edição: 	-
 	**************************************************************************
-	*/
+	*/	
+	
 	
 	/* ********** ********** ********** **********
     ********** Início - Notícias **********
-    ********** ********** ********** ********** *
+    ********** ********** ********** ********** */
     $news = array();
-    $query_news = sprintf("SELECT n.id_noticia AS id, n.titulo_loc0 AS titulo, n.conteudo_loc0 AS conteudo, n.data, u.nick, (SELECT count(*) FROM " . $config['db']['prefixo'] . "comentarios c WHERE c.id_noticia = n.id_noticia AND c.ativo = 1) AS coment FROM " . $config['db']['prefixo'] . "noticias n INNER JOIN " . $config['db']['prefixo'] . "usuarios u ON n.id_autor = u.id_user WHERE destaque = 0 ORDER BY data DESC LIMIT 0,3");
-    $con_news = mysql_query($query_news);
-    while($row_news = mysql_fetch_array($con_news, MYSQL_ASSOC)){
+    $query_news = sprintf("SELECT id_noticia AS id, titulo, texto, data, autor FROM noticias ORDER BY data DESC LIMIT 0,3");
+	//$query_news = sprintf("SELECT n.id_noticia AS id, n.titulo_loc0 AS titulo, n.conteudo_loc0 AS conteudo, n.data, u.nick, (SELECT count(*) FROM " . $config['db']['prefixo'] . "comentarios c WHERE c.id_noticia = n.id_noticia AND c.ativo = 1) AS coment FROM " . $config['db']['prefixo'] . "noticias n INNER JOIN " . $config['db']['prefixo'] . "usuarios u ON n.id_autor = u.id_user WHERE destaque = 0 ORDER BY data DESC LIMIT 0,3");
+    $con_news = $dbh->query($query_news);
+    while($row_news = $con_news->fetch(PDO::FETCH_ASSOC)){
         $news[] = $row_news;
     }
-    $smarty->assign('news', $news);*/
-	require_once('includes/classes/dao_news.class.php');
+    $smarty->assign('news', $news);
+	
 	//$news = DaoNews::getInstance()->BuscarPorCOD(1);
 	/*$smarty->assign('newsti', $news->getTitulo());
 	$smarty->assign('newste', $news->getTexto());

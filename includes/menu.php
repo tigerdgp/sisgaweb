@@ -31,7 +31,7 @@
             }
             else {
                 // imprime o item do menu
-                echo str_repeat("\t", $nivel +1),'<li><a href="',$menuItem['link'],'"><span>',$menuItem['name'],'</span></a>',PHP_EOL;
+                echo str_repeat("\t", $nivel +1),'<li class="',$menuItem['classe'],'"><a href="',$menuItem['link'],'"><span>',$menuItem['name'],'</span></a>',PHP_EOL;
             }
         // se o menu desta iteração tiver submenus, chama novamente a função
         if( isset( $menuTotal[$idMenu])) imprimeMenuInfinito( $menuTotal , $idMenu , $nivel +2);

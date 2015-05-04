@@ -22,7 +22,7 @@
         <div id="page">
         	<section class="news">
             	<h1>Notícias</h1>
-                <!--{section name=s loop=$news}
+                {section name=s loop=$news}
                     <div class="titulo">
                         <h1><a href="?noticia">{$news[s].titulo}</a></h1>
                     </div>
@@ -32,84 +32,48 @@
                     <div class="texto">
                         {$news[s].texto|truncate:150:"..."|strip_tags:"UTF-8":TRUE}
                     </div>
-                {/section}-->
-                
-                    <div class="titulo">
-                        <h1><a href="?noticia">{$newsti}</a></h1>
-                    </div>
-                    <div class="autor">
-                        <span>Por {$newsa} em {$newsd|date_format:"%d/%m/%Y"}</span>
-                    </div>
-                    <div class="texto">
-                        {$newste|truncate:150:"..."|strip_tags:"UTF-8":TRUE}
-                    </div>
+                {/section}
                 
             </section>
             <section class="listagem">
-            	<table>
-                	<tr>
-                		<th class="esq">Últimos Cursos</th>
-                        <th class="dir">Situação</th>
-                    </tr>
-                    <tr>
-                    	<td>Costura de Vestuário</td>
-                        <td>Inscrições Abertas</td>
-                    </tr>
-                    <tr>
-                    	<td>Artesão em Bordado à Mão</td>
-                        <td>Cancelado</td>
-                    </tr>
-                    <tr>
-                    	<td>Manicure e Pedicure</td>
-                        <td>Inscrições Encerradas</td>
-                    </tr>
-                    <tr>
-                    	<td>Maquiador</td>
-                        <td>Inscrições Encerradas</td>
-                    </tr>
-                    <tr>
-                    	<td>Recepcionista</td>
-                        <td>Inscrições Encerradas</td>
-                    </tr>
-                </table>
+            	<p class="first">Últimos Cursos<span>Situação</span></p>
+                <p>Costura de Vestuário<span>Inscrições Abertas</span></p>
+                <p>Artesão em Bordado à Mão<span>Inscrições Encerradas</span></p>
+                <p>Manicure e Pedicure<span>Inscrições Encerradas</span></p>
+                <p>Maquiador<span>Inscrições Encerradas</span></p>
+                <p>Recepcionista<span>Inscrições Encerradas</span></p>
             </section>
             <div class="clear"></div>
             <section class="banner">
-            Banner 720x100
+            	<img src="templates/img/banner_senai.jpg" alt="To no SENAI, to podendo" width="1000px" height="200px" />
             </section>
             <div class="clear"></div>
-            <section class="banner_250x250">
-            	<img src="templates/img/banner_250x250.jpg" alt="Banner 250x250" />
+            <section class="banner_500x250">
+            	<img src="templates/img/banner_senac_psg.png" alt="Programa SENAC de Gratuidade" width="500px" height="250px" />
             </section>
             <section class="listagem">
-            	<table>
-                	<tr>
-                		<th class="esq" colspan="2">Estatísticas</th>
-                    </tr>
-                    <tr>
-                    	<td>Visitas</td>
-                        <td>203162</td>
-                    </tr>
-                    <tr>
-                    	<td>Alunos Incritos</td>
-                        <td>3265924</td>
-                    </tr>
-                    <tr>
-                    	<td>Instituições</td>
-                        <td>2</td>
-                    </tr>
-                    <tr>
-                    	<td>Cursos Ofertados</td>
-                        <td>368</td>
-                    </tr>
-                    <tr>
-                    	<td>Certificados Entregues</td>
-                        <td>302</td>
-                    </tr>
-                </table>
+            	<p class="first">Estatísticas</p>
+                <p>Visitas<span>203162</span></p>
+                <p>Alunos Incritos<span>3265924</span></p>
+                <p>Instituições<span>2</span></p>
+                <p>Cursos Ofertados<span>368</span></p>
+                <p>Certificados Entregues<span>302</span></p>
             </section>
             <div class="clear"></div>
             <section class="parceiros">
+            	<h1>Parceiros</h1>
+                <div class="logos">
+                	<img src="templates/img/logo_sine.png" alt="SINE Sacramento" title="SINE Sacramento" width="80px" />
+                </div>
+                <div class="logos">
+                	<img src="templates/img/logo_sacra.png" alt="Prefeitura Municipal de Sacramento" title="Prefeitura Municipal de Sacramento" width="100px" />
+                </div>
+                <div class="logos">
+                	<img src="templates/img/logo_senac.png" alt="SENAC" title="SENAC Uberaba" width="100px" />
+                </div>
+                <div class="logos">
+                	<img src="templates/img/logo_senai.png" alt="SENAI" title="SENAI Uberaba" width="200px" />
+                </div>
             </section>
     		<div class="clear"></div>
             {include file='footer.tpl'}

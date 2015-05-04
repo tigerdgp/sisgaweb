@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.1.21-dev, created on 2015-04-15 15:32:28
+<?php /* Smarty version Smarty-3.1.21-dev, created on 2015-04-28 12:55:29
          compiled from "templates\home.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:23631552ee6fcc15c06-23508023%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:9406553fe5b1c77ee7-07465978%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     'bfd3629923e3cdae20b91c1eff4309c3709d2b00' => 
     array (
       0 => 'templates\\home.tpl',
-      1 => 1429108775,
+      1 => 1430247012,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '23631552ee6fcc15c06-23508023',
+  'nocache_hash' => '9406553fe5b1c77ee7-07465978',
   'function' => 
   array (
   ),
@@ -19,16 +19,12 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   array (
     'logo' => 0,
     'news' => 0,
-    'newsti' => 0,
-    'newsa' => 0,
-    'newsd' => 0,
-    'newste' => 0,
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.21-dev',
-  'unifunc' => 'content_552ee6fd40ae24_12606256',
+  'unifunc' => 'content_553fe5b1d57693_44508906',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_552ee6fd40ae24_12606256')) {function content_552ee6fd40ae24_12606256($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_date_format')) include 'includes/smarty-3.1.21/libs/plugins\\modifier.date_format.php';
+<?php if ($_valid && !is_callable('content_553fe5b1d57693_44508906')) {function content_553fe5b1d57693_44508906($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_date_format')) include 'includes/smarty-3.1.21/libs/plugins\\modifier.date_format.php';
 if (!is_callable('smarty_modifier_truncate')) include 'includes/smarty-3.1.21/libs/plugins\\modifier.truncate.php';
 ?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -56,7 +52,7 @@ if (!is_callable('smarty_modifier_truncate')) include 'includes/smarty-3.1.21/li
         <div id="page">
         	<section class="news">
             	<h1>Notícias</h1>
-                <!--<?php if (isset($_smarty_tpl->tpl_vars['smarty']->value['section']['s'])) unset($_smarty_tpl->tpl_vars['smarty']->value['section']['s']);
+                <?php if (isset($_smarty_tpl->tpl_vars['smarty']->value['section']['s'])) unset($_smarty_tpl->tpl_vars['smarty']->value['section']['s']);
 $_smarty_tpl->tpl_vars['smarty']->value['section']['s']['name'] = 's';
 $_smarty_tpl->tpl_vars['smarty']->value['section']['s']['loop'] = is_array($_loop=$_smarty_tpl->tpl_vars['news']->value) ? count($_loop) : max(0, (int) $_loop); unset($_loop);
 $_smarty_tpl->tpl_vars['smarty']->value['section']['s']['show'] = true;
@@ -93,88 +89,48 @@ $_smarty_tpl->tpl_vars['smarty']->value['section']['s']['last']       = ($_smart
                         <?php echo htmlspecialchars(strip_tags(smarty_modifier_truncate($_smarty_tpl->tpl_vars['news']->value[$_smarty_tpl->getVariable('smarty')->value['section']['s']['index']]['texto'],150,"...")), ENT_QUOTES, 'UTF-8');?>
 
                     </div>
-                <?php endfor; endif; ?>-->
-                
-                    <div class="titulo">
-                        <h1><a href="?noticia"><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['newsti']->value, ENT_QUOTES, 'UTF-8');?>
-</a></h1>
-                    </div>
-                    <div class="autor">
-                        <span>Por <?php echo htmlspecialchars($_smarty_tpl->tpl_vars['newsa']->value, ENT_QUOTES, 'UTF-8');?>
- em <?php echo htmlspecialchars(smarty_modifier_date_format($_smarty_tpl->tpl_vars['newsd']->value,"%d/%m/%Y"), ENT_QUOTES, 'UTF-8');?>
-</span>
-                    </div>
-                    <div class="texto">
-                        <?php echo htmlspecialchars(strip_tags(smarty_modifier_truncate($_smarty_tpl->tpl_vars['newste']->value,150,"...")), ENT_QUOTES, 'UTF-8');?>
-
-                    </div>
+                <?php endfor; endif; ?>
                 
             </section>
             <section class="listagem">
-            	<table>
-                	<tr>
-                		<th class="esq">Últimos Cursos</th>
-                        <th class="dir">Situação</th>
-                    </tr>
-                    <tr>
-                    	<td>Costura de Vestuário</td>
-                        <td>Inscrições Abertas</td>
-                    </tr>
-                    <tr>
-                    	<td>Artesão em Bordado à Mão</td>
-                        <td>Cancelado</td>
-                    </tr>
-                    <tr>
-                    	<td>Manicure e Pedicure</td>
-                        <td>Inscrições Encerradas</td>
-                    </tr>
-                    <tr>
-                    	<td>Maquiador</td>
-                        <td>Inscrições Encerradas</td>
-                    </tr>
-                    <tr>
-                    	<td>Recepcionista</td>
-                        <td>Inscrições Encerradas</td>
-                    </tr>
-                </table>
+            	<p class="first">Últimos Cursos<span>Situação</span></p>
+                <p>Costura de Vestuário<span>Inscrições Abertas</span></p>
+                <p>Artesão em Bordado à Mão<span>Inscrições Encerradas</span></p>
+                <p>Manicure e Pedicure<span>Inscrições Encerradas</span></p>
+                <p>Maquiador<span>Inscrições Encerradas</span></p>
+                <p>Recepcionista<span>Inscrições Encerradas</span></p>
             </section>
             <div class="clear"></div>
             <section class="banner">
-            Banner 720x100
+            	<img src="templates/img/banner_senai.jpg" alt="To no SENAI, to podendo" width="1000px" height="200px" />
             </section>
             <div class="clear"></div>
-            <section class="banner_250x250">
-            	<img src="templates/img/banner_250x250.jpg" alt="Banner 250x250" />
+            <section class="banner_500x250">
+            	<img src="templates/img/banner_senac_psg.png" alt="Programa SENAC de Gratuidade" width="500px" height="250px" />
             </section>
             <section class="listagem">
-            	<table>
-                	<tr>
-                		<th class="esq" colspan="2">Estatísticas</th>
-                    </tr>
-                    <tr>
-                    	<td>Visitas</td>
-                        <td>203162</td>
-                    </tr>
-                    <tr>
-                    	<td>Alunos Incritos</td>
-                        <td>3265924</td>
-                    </tr>
-                    <tr>
-                    	<td>Instituições</td>
-                        <td>2</td>
-                    </tr>
-                    <tr>
-                    	<td>Cursos Ofertados</td>
-                        <td>368</td>
-                    </tr>
-                    <tr>
-                    	<td>Certificados Entregues</td>
-                        <td>302</td>
-                    </tr>
-                </table>
+            	<p class="first">Estatísticas</p>
+                <p>Visitas<span>203162</span></p>
+                <p>Alunos Incritos<span>3265924</span></p>
+                <p>Instituições<span>2</span></p>
+                <p>Cursos Ofertados<span>368</span></p>
+                <p>Certificados Entregues<span>302</span></p>
             </section>
             <div class="clear"></div>
             <section class="parceiros">
+            	<h1>Parceiros</h1>
+                <div class="logos">
+                	<img src="templates/img/logo_sine.png" alt="SINE Sacramento" title="SINE Sacramento" width="80px" />
+                </div>
+                <div class="logos">
+                	<img src="templates/img/logo_sacra.png" alt="Prefeitura Municipal de Sacramento" title="Prefeitura Municipal de Sacramento" width="100px" />
+                </div>
+                <div class="logos">
+                	<img src="templates/img/logo_senac.png" alt="SENAC" title="SENAC Uberaba" width="100px" />
+                </div>
+                <div class="logos">
+                	<img src="templates/img/logo_senai.png" alt="SENAI" title="SENAI Uberaba" width="200px" />
+                </div>
             </section>
     		<div class="clear"></div>
             <?php echo $_smarty_tpl->getSubTemplate ('footer.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0);?>

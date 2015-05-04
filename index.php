@@ -16,6 +16,7 @@
 	
 	//Inclusões de arquivos
     require_once('includes/setup.php');
+	require_once('includes/classes/conexao.class.php');
 	//require_once('includes/classes/dao_news.class.php');
     //require_once('sisgaweb/includes/funcoes.php');
 	
@@ -25,10 +26,10 @@
 	//Criando o menu
     require_once('includes/menu.php');
             
-    $query = mysql_query("SELECT * FROM menus ORDER BY ordem ASC");
-    while($row = mysql_fetch_object($query))
+    $query = $dbh->query("SELECT * FROM menu ORDER BY ordem ASC");
+    while($row = $query->fetch(PDO::FETCH_OBJ))
     {
-            $menuItens[$row->pai][$row->id]= array('link'=> $row->link,'name'=> $row->nome,'seta'=> $row->seta);
+            $menuItens[$row->pai][$row->id]= array('classe'=> $row->classe,'link'=> $row->link,'name'=> $row->nome,'seta'=> $row->seta);
     }    
     $smarty->assign('m_menu', $menuItens);
 	
@@ -69,9 +70,29 @@
 		    include 'painel.php';
 		    break;
 			
+		//Carrega a página de cursos
+	    case 'cursos':
+		    include 'cursos.php';
+		    break;
+			
+		//Carrega a página de informação do curso escolhido
+	    case 'curso':
+		    include 'curso.php';
+		    break;
+			
+		//Carrega a página de perfil do usuario
+	    case 'perfil':
+		    include 'perfil.php';
+		    break;
+			
 		//Carrega a tela de login
 	    case 'login':
 		    include 'login.php';
+		    break;
+			
+		//Carrega a area de administração
+	    case 'admin':
+		    include 'admin.php';
 		    break;
 			
         //Carrega a pagina padrão

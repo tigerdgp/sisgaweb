@@ -23,7 +23,7 @@
 	
 	//Define variáveis do smarty
 	$config['smarty']['versao']		= "-3.1.21";//versão do framework
-	$config['smarty']['debug']		= true;//Ativação do debug
+	$config['smarty']['debug']		= false;//Ativação do debug
 	
 	//Define variáveis gerais
 	$config['app_name']			= "SisGA Web";//Nome do sistema

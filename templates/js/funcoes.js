@@ -1,21 +1,6 @@
 // JavaScript Document
-/*$(document).ready(function() {  
-              
-                $(".link").on("click", function() {  
-                    var divId = this.id + "_div";                     
-                    changeDivContent(divId, this.name);  
-                });  
-                  
-                function changeDivContent(id, linkname) {  
-                    $("#"+id).html("value changed by " + linkname);  
-                }  
-                  
-                  
-            }); 
-function show(id) {
-	$("."+id).css('display','none');
-}*/
 
+// Função de toggle (exibir / esconder elementos)
 $(function(){
     $(".btn-toggle").click(function(e){
         e.preventDefault();
@@ -23,3 +8,8 @@ $(function(){
         $(el).toggle();
     });
 });
+
+// Função para voltar à página anterior
+function voltar() {
+	javascript:window.history.go(-1)
+}
