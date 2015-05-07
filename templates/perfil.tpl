@@ -92,6 +92,42 @@
                     <td class="table10">Reprovado</td>
                     <td class="table15">Não Gerado</td>
                 </tr>
+                <tr>
+                	<td>Artesão em Bordado à Mão</td>
+                    <td class="table10">160 Horas</td>
+                    <td class="table10">19/05/2015</td>
+                    <td class="table10">18/06/2015</td>
+                    <td class="table15">13:00 às 16:00</td>
+                    <td class="table10">Reprovado</td>
+                    <td class="table15">Não Gerado</td>
+                </tr>
+                <tr>
+                	<td>Artesão em Bordado à Mão</td>
+                    <td class="table10">160 Horas</td>
+                    <td class="table10">19/05/2015</td>
+                    <td class="table10">18/06/2015</td>
+                    <td class="table15">13:00 às 16:00</td>
+                    <td class="table10">Reprovado</td>
+                    <td class="table15">Não Gerado</td>
+                </tr>
+                <tr>
+                	<td>Artesão em Bordado à Mão</td>
+                    <td class="table10">160 Horas</td>
+                    <td class="table10">19/05/2015</td>
+                    <td class="table10">18/06/2015</td>
+                    <td class="table15">13:00 às 16:00</td>
+                    <td class="table10">Reprovado</td>
+                    <td class="table15">Não Gerado</td>
+                </tr>
+                <tr>
+                	<td>Artesão em Bordado à Mão</td>
+                    <td class="table10">160 Horas</td>
+                    <td class="table10">19/05/2015</td>
+                    <td class="table10">18/06/2015</td>
+                    <td class="table15">13:00 às 16:00</td>
+                    <td class="table10">Reprovado</td>
+                    <td class="table15">Não Gerado</td>
+                </tr>
             </table>
             </div>
         </div>

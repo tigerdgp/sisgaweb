@@ -5,7 +5,7 @@ body {
 }
 
 .bg {
-	background: url(../img/planejamento.jpg) no-repeat scroll 50% 0 / cover  rgba(255, 255, 255, 0.75) !important;
+	background: url(../img/planejamento.jpg) no-repeat fixed 50% 0 / cover  rgba(255, 255, 255, 0.75) !important;
 }
 
 
@@ -43,6 +43,8 @@ header {
 	width: 100%;
 	height: 50px;
 	box-shadow: 1px 1px 3px #1b1b1b;
+	position: fixed;
+	z-index: 99999;
 }
 
 .topo {
@@ -228,7 +230,7 @@ ul#menu span, ul#sub_navTop span {
 	background: transparent url(../img/transp.png) repeat 0 !important;
 	margin: 0 auto;
 	position: relative;
-	top: 50px;
+	top: 100px;
 	padding: 10px;
 }	
 .col1 {
