@@ -65,6 +65,11 @@
 		    header('Location: '.($_SERVER['HTTP_REFERER'] ? $_SERVER['HTTP_REFERER'] : '.'));
 		    break;
 		*/
+		//Carrega o Painel de Controle
+	    case 'validar':
+		    include 'validar.php';
+		    break;
+			
         //Carrega o Painel de Controle
 	    case 'painel':
 		    include 'painel.php';
