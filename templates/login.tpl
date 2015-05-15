@@ -8,14 +8,13 @@
     <body>    
     	
     	<div class="login">
-        	<h1>{$app_name} - Área Restrita</h1>
+        	<h1>{$app_name} - Área Restrita{$query}</h1>
             <h1>Login</h1>
-        	<form action="?validar" method="post">
-            	<input name="validar" type="text" value="1" disabled="disabled" hidden="true" />
+        	<form action="" method="post">
             	<table>                	
                     <tr>
                     	<td class="login_col1">Usuário:</td>
-                    	<td class="login_col2"><input name="loginUser" type="text" maxlength="25" /></td>
+                    	<td class="login_col2"><input name="loginUser" type="text" /></td>
                     </tr>
                     <tr>
                         <td class="login_col1">Senha:</td>
