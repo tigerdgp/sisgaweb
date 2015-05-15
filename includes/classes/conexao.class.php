@@ -39,7 +39,7 @@
 	/* Connect to an ODBC database using driver invocation */
 	$dsn = 'mysql:dbname=sisgaweb;host=localhost';
 	$user = 'root';
-	$password = 'senha';
+	$password = '200123';
 	
 	try {
 		$dbh = new PDO($dsn, $user, $password, array(PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES \'UTF8\''));
