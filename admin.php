@@ -19,8 +19,13 @@
 	    'arquivo' 	=> 'admin',
 	    'title'  	=> 'Administração',
 	    'tab'    	=> 0,
-	    'path'   	=> '[]'
+	    'path'   	=> '[]',
+		'nivel'		=> 3
     );
+	
+	if($_SESSION['nivel'] < $page['nivel']) {
+		header('location: ?login');
+	}
 	
 	//Assina a variável global ao smarty
     $smarty->assign('page', $page);

@@ -5,9 +5,9 @@
     </head>
     
     <body class="bg">
-    	<header>
+    	<header class="headerr">
         	<div class="topo">
-            	<h1>Titulo do Site</h1>
+            	<h1>SisGA Web</h1>
             </div>
             <div class="menu">
             	<nav>{imprimeMenuInfinito($m_menu)}</nav>
@@ -21,15 +21,15 @@
                 <div id="col1" class="col1">                	
                 	<div class="bloco_esq">
                     	<div class="logout">
-                        	<a href="" title="Sair">Sair</a>
+                        	<a href="?logout" title="Sair">Sair</a>
                         </div>
                         <div class="photo">
                         	<div class="photo_bg"></div>
                     		<img src="templates/img/haseo.jpg" alt="" width="150px" height="132px" />
                     	</div>
                         <div class="name">
-                        	<p>Derik Gomide Padua</p>
-                            <pan>Perfil: Aluno</span>
+                        	<p>{$smarty.session.usuario}</p>                            
+                            <span>Perfil: {$smarty.session.perfil}</span>
                         </div>
                         <div class="dados">
                         	<p>Curso: <span title="teste">Auxiliar Administrativo</span></p>
@@ -54,7 +54,9 @@
                 <div id="col2" class="col2">
                 	<div class="bloco_dir">
                         <ul>
-                        	<li><p><a href="?admin">Administração</a></p></li>
+                        	{if $smarty.session.nivel >= 3}
+                        		<li><p><a href="?admin">Administração</a></p></li>
+                            {/if}
                             <li><p><a href="?config">Configuração</a></p></li>
                             <li><p><a href="?perfil">Meu Perfil</a></p></li>
                             <li><p><a href="?msg">Mensagens<span>10</span></a></p></li> 

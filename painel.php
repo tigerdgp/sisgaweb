@@ -11,7 +11,6 @@
 	**************************************************************************
 	*/
 	
-	
     
 	//Variável global com informações da página
     global $page;
@@ -19,8 +18,13 @@
 	    'arquivo' 	=> 'painel',
 	    'title'  	=> 'Painel',
 	    'tab'    	=> 0,
-	    'path'   	=> '[]'
+	    'path'   	=> '[]',
+		'nivel'		=> 1
     );
+	
+	if($_SESSION['nivel'] < $page['nivel']) {
+		header('location: ?login');
+	}
 	
 	//Assina a variável global ao smarty
     $smarty->assign('page', $page);

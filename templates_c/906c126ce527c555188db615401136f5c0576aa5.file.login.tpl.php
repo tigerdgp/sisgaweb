@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.21-dev, created on 2015-05-15 15:26:44
+<?php /* Smarty version Smarty-3.1.21-dev, created on 2015-05-22 16:44:58
          compiled from "templates\login.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:1449155400b25c752d7-83845036%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '906c126ce527c555188db615401136f5c0576aa5' => 
     array (
       0 => 'templates\\login.tpl',
-      1 => 1431714400,
+      1 => 1432298365,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'variables' => 
   array (
     'app_name' => 0,
-    'query' => 0,
+    'errMsg' => 0,
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
@@ -36,22 +36,32 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     	
     	<div class="login">
         	<h1><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['app_name']->value, ENT_QUOTES, 'UTF-8');?>
- - Área Restrita<?php echo htmlspecialchars($_smarty_tpl->tpl_vars['query']->value, ENT_QUOTES, 'UTF-8');?>
-</h1>
+ - Área Restrita</h1>
             <h1>Login</h1>
-        	<form action="?validar" method="post">
-            	<input name="validar" type="text" value="oi" disabled="disabled" hidden="true" />
+            <p style="color: #F00;" align="center"><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['errMsg']->value, ENT_QUOTES, 'UTF-8');?>
+</p>
+        	<form action="" method="post">
             	<table>                	
                     <tr>
-                    	<td class="login_col1">Usuário:</td>
-                    	<td class="login_col2"><input name="loginUser" type="text" maxlength="25" /></td>
+                    	<td class="login_col1">
+                        	Usuário (CPF):                        
+                        </td>
+                    	<td class="login_col2">
+                        	<input name="user" type="text" maxlength="25" />
+                        </td>
                     </tr>
                     <tr>
-                        <td class="login_col1">Senha:</td>
-                        <td class="login_col2"><input name="loginPass" type="password" /></td>
+                        <td class="login_col1">
+                        	Senha:
+                        </td>
+                        <td class="login_col2">
+                        	<input name="pass" type="password" />
+                        </td>
                     </tr>
             		<tr>
-                        <td colspan="2" class="login_col0"><input name="loginEntrar" type="submit" value="Entrar" class="botao" /></td>
+                        <td colspan="2" class="login_col0">
+                        	<input name="submit" type="submit" value="Entrar" class="botao" />
+                        </td>
                     </tr>
                 </table>
             </form>

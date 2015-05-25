@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.21-dev, created on 2015-04-28 12:55:29
+<?php /* Smarty version Smarty-3.1.21-dev, created on 2015-05-22 23:33:49
          compiled from "templates\home.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:9406553fe5b1c77ee7-07465978%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'bfd3629923e3cdae20b91c1eff4309c3709d2b00' => 
     array (
       0 => 'templates\\home.tpl',
-      1 => 1430247012,
+      1 => 1432348424,
       2 => 'file',
     ),
   ),
@@ -15,14 +15,15 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.21-dev',
+  'unifunc' => 'content_553fe5b1d57693_44508906',
   'variables' => 
   array (
     'logo' => 0,
     'news' => 0,
+    'alunos' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.21-dev',
-  'unifunc' => 'content_553fe5b1d57693_44508906',
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_553fe5b1d57693_44508906')) {function content_553fe5b1d57693_44508906($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_date_format')) include 'includes/smarty-3.1.21/libs/plugins\\modifier.date_format.php';
 if (!is_callable('smarty_modifier_truncate')) include 'includes/smarty-3.1.21/libs/plugins\\modifier.truncate.php';
@@ -35,14 +36,14 @@ if (!is_callable('smarty_modifier_truncate')) include 'includes/smarty-3.1.21/li
     </head>
     
     <body>
-    	<header>
+    	<header class="cabecalho">
         	<div class="header">
             	<div class="header_t">
                 	<img src="templates/img/bemvindo.png" alt="Seja bem-vindo!" width="110px" style="padding: 7px 15px; 0 0" /> <a href="?login" class="entrarButton"></a>
                 </div>
                 <div class="header_e">
                 	<img src="<?php echo htmlspecialchars($_smarty_tpl->tpl_vars['logo']->value, ENT_QUOTES, 'UTF-8');?>
-" alt="Titulo do site" width="350px" />
+" alt="SisGA Web" width="300px" />
                 </div>
                 <div class="header_d">
                 	<img src="templates/img/cursos.png" alt="Cursos Profissionalizantes" width="450px" />
@@ -81,7 +82,7 @@ $_smarty_tpl->tpl_vars['smarty']->value['section']['s']['last']       = ($_smart
 </a></h1>
                     </div>
                     <div class="autor">
-                        <span>Por <?php echo htmlspecialchars($_smarty_tpl->tpl_vars['news']->value[$_smarty_tpl->getVariable('smarty')->value['section']['s']['index']]['autor'], ENT_QUOTES, 'UTF-8');?>
+                        <span>Por <?php echo htmlspecialchars($_smarty_tpl->tpl_vars['news']->value[$_smarty_tpl->getVariable('smarty')->value['section']['s']['index']]['nome'], ENT_QUOTES, 'UTF-8');?>
  em <?php echo htmlspecialchars(smarty_modifier_date_format($_smarty_tpl->tpl_vars['news']->value[$_smarty_tpl->getVariable('smarty')->value['section']['s']['index']]['data'],"%d/%m/%Y"), ENT_QUOTES, 'UTF-8');?>
 </span>
                     </div>
@@ -111,7 +112,8 @@ $_smarty_tpl->tpl_vars['smarty']->value['section']['s']['last']       = ($_smart
             <section class="listagem">
             	<p class="first">Estatísticas</p>
                 <p>Visitas<span>203162</span></p>
-                <p>Alunos Incritos<span>3265924</span></p>
+                <p>Alunos Incritos<span><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['alunos']->value, ENT_QUOTES, 'UTF-8');?>
+</span></p>
                 <p>Instituições<span>2</span></p>
                 <p>Cursos Ofertados<span>368</span></p>
                 <p>Certificados Entregues<span>302</span></p>

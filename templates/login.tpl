@@ -10,19 +10,29 @@
     	<div class="login">
         	<h1>{$app_name} - Área Restrita</h1>
             <h1>Login</h1>
-        	<form action="?validar" method="post">
-            	<input name="validar" type="text" value="1" disabled="disabled" hidden="true" />
+            <p style="color: #F00;" align="center">{$errMsg}</p>
+        	<form action="" method="post">
             	<table>                	
                     <tr>
-                    	<td class="login_col1">Usuário:</td>
-                    	<td class="login_col2"><input name="loginUser" type="text" maxlength="25" /></td>
+                    	<td class="login_col1">
+                        	Usuário (CPF):                        
+                        </td>
+                    	<td class="login_col2">
+                        	<input name="user" type="text" maxlength="25" />
+                        </td>
                     </tr>
                     <tr>
-                        <td class="login_col1">Senha:</td>
-                        <td class="login_col2"><input name="loginPass" type="password" /></td>
+                        <td class="login_col1">
+                        	Senha:
+                        </td>
+                        <td class="login_col2">
+                        	<input name="pass" type="password" />
+                        </td>
                     </tr>
             		<tr>
-                        <td colspan="2" class="login_col0"><input name="loginEntrar" type="submit" value="Entrar" class="botao" /></td>
+                        <td colspan="2" class="login_col0">
+                        	<input name="submit" type="submit" value="Entrar" class="botao" />
+                        </td>
                     </tr>
                 </table>
             </form>

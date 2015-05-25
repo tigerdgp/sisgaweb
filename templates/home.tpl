@@ -6,13 +6,13 @@
     </head>
     
     <body>
-    	<header>
+    	<header class="cabecalho">
         	<div class="header">
             	<div class="header_t">
                 	<img src="templates/img/bemvindo.png" alt="Seja bem-vindo!" width="110px" style="padding: 7px 15px; 0 0" /> <a href="?login" class="entrarButton"></a>
                 </div>
                 <div class="header_e">
-                	<img src="{$logo}" alt="Titulo do site" width="350px" />
+                	<img src="{$logo}" alt="SisGA Web" width="300px" />
                 </div>
                 <div class="header_d">
                 	<img src="templates/img/cursos.png" alt="Cursos Profissionalizantes" width="450px" />
@@ -27,7 +27,7 @@
                         <h1><a href="?noticia">{$news[s].titulo}</a></h1>
                     </div>
                     <div class="autor">
-                        <span>Por {$news[s].autor} em {$news[s].data|date_format:"%d/%m/%Y"}</span>
+                        <span>Por {$news[s].nome} em {$news[s].data|date_format:"%d/%m/%Y"}</span>
                     </div>
                     <div class="texto">
                         {$news[s].texto|truncate:150:"..."|strip_tags:"UTF-8":TRUE}
@@ -54,7 +54,7 @@
             <section class="listagem">
             	<p class="first">Estatísticas</p>
                 <p>Visitas<span>203162</span></p>
-                <p>Alunos Incritos<span>3265924</span></p>
+                <p>Alunos Incritos<span>{$alunos}</span></p>
                 <p>Instituições<span>2</span></p>
                 <p>Cursos Ofertados<span>368</span></p>
                 <p>Certificados Entregues<span>302</span></p>

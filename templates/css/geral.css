@@ -34,11 +34,32 @@ footer {
 	clear: both;
 }
 
+.botao {
+	width: 150px;
+	height: 30px;
+	background-color: #CCC;
+	border: none;
+	-moz-box-shadow: inset 0 0 5px #888;
+	-webkit-box-shadow: inset 0 0 5px #888;
+	box-shadow: inset 0 0 5px #888;
+	cursor: pointer;
+	border-radius: 5px;
+	font-weight: bold;
+	font-size: 18px;
+	color: #eee;
+	text-shadow: 0.1em 0.1em 0.3em #333;
+}
+	.botao:hover {
+		background-color: #999;
+		color: #fff;
+	}
+		
+
 section {
 	float: left;
 }
 
-header {
+.headerr {
 	background: transparent url(../img/bg.jpg) repeat 0 !important;
 	width: 100%;
 	height: 50px;
@@ -512,3 +533,57 @@ ul#menu span, ul#sub_navTop span {
 	clear: both;
 	box-shadow: 0 2px 2px rgba(0, 0, 0, 0.15), 1px 1px 1px rgba(0, 0, 0, 0.15);
 }
+
+
+/* Cadastro */
+.p_cad {
+	box-shadow: 0 2px 2px rgba(0, 0, 0, 0.15), 1px 1px 1px rgba(0, 0, 0, 0.15);
+	margin-top: 10px;
+	padding: 5px;
+}
+.p_cad p {
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+.p_cad h1 {
+	padding-bottom: 15px;
+}
+.p_cad span {
+	font-weight: bold;
+	font-size: 18px;
+}
+.p_cad .blocoText {
+	float: left;
+	padding-left: 15px;
+	font-weight: bold;
+}
+.p_cad .t_120 {
+	width: 120px;
+}
+.p_cad .t_150 {
+	width: 150px;
+}
+.p_cad .t_200 {
+	width: 200px;
+}
+.p_cad .t_250 {
+	width: 250px;
+}
+.p_cad .t_300 {
+	width: 300px;
+}
+.p_cad .t_500 {
+	width: 500px;
+}
+
+.p_cad .blocoCampo {
+	float: left;
+	padding-left: 10px;
+}
+	.p_cad .blocoCampo input, .blocoCampo select {
+		padding: 4px 0 3px 0;
+		margin: 5px 0 5px 0;
+	}
+	.p_cad .blocoCampo .input {
+		padding: 1px 0 1px 0;
+	}

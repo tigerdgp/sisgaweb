@@ -11,7 +11,7 @@
 	background: #CCC;/*provisorio*/
 }
 
-header {
+.cabecalho {
 	border-top: 5px #97640A solid;
 	border-bottom: 8px #97640A solid;
 	height: 300px;

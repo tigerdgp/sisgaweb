@@ -18,15 +18,21 @@
     require_once('includes/setup.php');
 	require_once('includes/classes/conexao.class.php');
 	//require_once('includes/classes/dao_news.class.php');
-    //require_once('sisgaweb/includes/funcoes.php');
+    require_once('includes/funcoes.php');
 	
 	//Inicia a instância do framework smarty
     $smarty = new Smarty_Setup();	
 	
 	//Criando o menu
     require_once('includes/menu.php');
-            
-    $query = $dbh->query("SELECT * FROM menu ORDER BY ordem ASC");
+     
+	$sql = "";      
+	if($_SESSION['nivel'] >= 3) {
+    	$sql = "SELECT * FROM menu ORDER BY ordem ASC";
+	}else {
+    	$sql = "SELECT * FROM menu WHERE perfil = '1' ORDER BY ordem ASC";
+	}
+	$query = $dbh->query($sql);
     while($row = $query->fetch(PDO::FETCH_OBJ))
     {
             $menuItens[$row->pai][$row->id]= array('classe'=> $row->classe,'link'=> $row->link,'name'=> $row->nome,'seta'=> $row->seta);
@@ -39,7 +45,8 @@
 	    'arquivo' 	=> 'index',
 	    'title' 	=> 'Index',
 	    'tab'    	=> 0,
-	    'path'   	=> '[]'
+	    'path'   	=> '[]',
+		'nivel'		=> 0
     );
 
     //Recebe os parametros passados na string
@@ -98,6 +105,21 @@
 		//Carrega a area de administração
 	    case 'admin':
 		    include 'admin.php';
+		    break;
+		
+		//Carrega a tela de cadastro de usuarios
+	    case 'cadastro':
+		    include 'cadastro.php';
+		    break;
+			
+		//Carrega o logout do usuario
+	    case 'logout':
+		    include 'logout.php';
+		    break;
+			
+		//Carrega a pagina padrão
+	    case 'home':
+		    include 'home.php';
 		    break;
 			
         //Carrega a pagina padrão

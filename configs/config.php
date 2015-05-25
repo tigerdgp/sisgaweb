@@ -27,7 +27,7 @@
 	
 	//Define variáveis gerais
 	$config['app_name']			= "SisGA Web";//Nome do sistema
-	$config['logo']				= "templates/img/logo.png";//Endereço do logo do sistema
+	$config['logo']				= "templates/img/logo_sisga.png";//Endereço do logo do sistema
 	
 	//Definindo o time zone
     date_default_timezone_set("America/Sao_Paulo");

@@ -14,6 +14,20 @@
 	//Define a variável global de configuração
 	global $config;
 	
+	//Função para pegar ip do usuario
+	function getIp() {
+		if (!empty($_SERVER['HTTP_CLIENT_IP'])) {
+			$ip = $_SERVER['HTTP_CLIENT_IP'];
+		}
+		elseif (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) {	 
+			$ip = $_SERVER['HTTP_X_FORWARDED_FOR'];	 
+		}
+		else{	 
+			$ip = $_SERVER['REMOTE_ADDR'];	 
+		}	 
+		return $ip;	 
+	}
+	
 	//Função para alternar idioma de exibição do sistema 
 	/*(Desativado)
     $idiomas = array(

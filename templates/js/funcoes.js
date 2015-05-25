@@ -13,3 +13,13 @@ $(function(){
 function voltar() {
 	javascript:window.history.go(-1)
 }
+
+function getComboA(sel) {
+    var value = sel.value;  
+}
+
+$(document).ready(function(){ 
+  $('#est').change(function(){ 
+    var s = $('#est').val();
+  });
+});

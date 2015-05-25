@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.21-dev, created on 2015-05-04 11:54:06
+<?php /* Smarty version Smarty-3.1.21-dev, created on 2015-05-22 23:34:42
          compiled from "templates\header.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:28151553fe6270a23e9-45615627%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '55086ac7c738c2a21d1965480a24f7f299d80642' => 
     array (
       0 => 'templates\\header.tpl',
-      1 => 1430765641,
+      1 => 1432348478,
       2 => 'file',
     ),
   ),
@@ -31,9 +31,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     </head>
     
     <body class="bg">
-    	<header>
+    	<header class="headerr">
         	<div class="topo">
-            	<h1>Titulo do Site</h1>
+            	<h1>SisGA Web</h1>
             </div>
             <div class="menu">
             	<nav><?php echo htmlspecialchars(imprimeMenuInfinito($_smarty_tpl->tpl_vars['m_menu']->value), ENT_QUOTES, 'UTF-8');?>
@@ -48,15 +48,17 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                 <div id="col1" class="col1">                	
                 	<div class="bloco_esq">
                     	<div class="logout">
-                        	<a href="" title="Sair">Sair</a>
+                        	<a href="?logout" title="Sair">Sair</a>
                         </div>
                         <div class="photo">
                         	<div class="photo_bg"></div>
                     		<img src="templates/img/haseo.jpg" alt="" width="150px" height="132px" />
                     	</div>
                         <div class="name">
-                        	<p>Derik Gomide Padua</p>
-                            <pan>Perfil: Aluno</span>
+                        	<p><?php echo htmlspecialchars($_SESSION['usuario'], ENT_QUOTES, 'UTF-8');?>
+</p>                            
+                            <span>Perfil: <?php echo htmlspecialchars($_SESSION['perfil'], ENT_QUOTES, 'UTF-8');?>
+</span>
                         </div>
                         <div class="dados">
                         	<p>Curso: <span title="teste">Auxiliar Administrativo</span></p>
@@ -82,7 +84,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                 <div id="col2" class="col2">
                 	<div class="bloco_dir">
                         <ul>
-                        	<li><p><a href="?admin">Administração</a></p></li>
+                        	<?php if ($_SESSION['nivel']>=3) {?>
+                        		<li><p><a href="?admin">Administração</a></p></li>
+                            <?php }?>
                             <li><p><a href="?config">Configuração</a></p></li>
                             <li><p><a href="?perfil">Meu Perfil</a></p></li>
                             <li><p><a href="?msg">Mensagens<span>10</span></a></p></li> 
