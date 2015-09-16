@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.21-dev, created on 2015-05-25 16:08:03
+<?php /* Smarty version Smarty-3.1.21-dev, created on 2015-09-15 09:50:50
          compiled from "templates\cad_instituicoes.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:1886655631f65b94459-14944640%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '0d44dc9266e3a13d807b4fbccb5ff74d8b62c016' => 
     array (
       0 => 'templates\\cad_instituicoes.tpl',
-      1 => 1432580031,
+      1 => 1432686204,
       2 => 'file',
     ),
   ),
@@ -22,6 +22,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'uf' => 0,
     'errMsg' => 0,
     'cor' => 0,
+    'teste' => 0,
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
@@ -56,7 +57,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                 </div> 
                 <div class="clear"></div>
                 <div class="blocoText t_150">
-                	<p><input type="checkbox" name="i_pronatec" /> PRONATEC</p>
+                	<p><input type="checkbox" name="i_pronatec" value="PRONATEC" /> PRONATEC</p>
                     <p><input type="checkbox" name="i_psg" /> PSG</p>
                 </div>
                 <div class="blocoText t_150">
@@ -184,7 +185,8 @@ $_smarty_tpl->tpl_vars['smarty']->value['section']['s']['last']       = ($_smart
                 </div>
             <?php }?>
             <div class="p_cad" align="center">
-            	<input type="submit" name="submit" value="Cadastrar" class="botao" />
+            	<input type="submit" name="submit" value="Cadastrar" class="botao" /> <?php echo htmlspecialchars($_smarty_tpl->tpl_vars['teste']->value, ENT_QUOTES, 'UTF-8');?>
+
             </div>            
         </form>
     </div>

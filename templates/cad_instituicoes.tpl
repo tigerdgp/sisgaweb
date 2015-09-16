@@ -28,7 +28,7 @@
                 </div> 
                 <div class="clear"></div>
                 <div class="blocoText t_150">
-                	<p><input type="checkbox" name="i_pronatec" /> PRONATEC</p>
+                	<p><input type="checkbox" name="i_pronatec" value="PRONATEC" /> PRONATEC</p>
                     <p><input type="checkbox" name="i_psg" /> PSG</p>
                 </div>
                 <div class="blocoText t_150">
@@ -129,7 +129,7 @@
                 </div>
             {/if}
             <div class="p_cad" align="center">
-            	<input type="submit" name="submit" value="Cadastrar" class="botao" />
+            	<input type="submit" name="submit" value="Cadastrar" class="botao" /> {$teste}
             </div>            
         </form>
     </div>

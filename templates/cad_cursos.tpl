@@ -18,7 +18,7 @@
                         {/section}
                     </select>
                     <br />
-                    <input type="text" name="c_cargah" />
+                    <input type="text" name="c_cargah" maxlength="3" size="5" /> horas
                     <br />
                     <select name="c_instituicao">
                         {section name=s loop=$curso}

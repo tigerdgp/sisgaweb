@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.21-dev, created on 2015-05-23 08:54:44
+<?php /* Smarty version Smarty-3.1.21-dev, created on 2015-09-15 09:51:00
          compiled from "templates\cad_pessoas.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:9998555c847e16ee59-48586255%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '1c9e6c08141148c89c8970f60be2ee2a8395e15e' => 
     array (
       0 => 'templates\\cad_pessoas.tpl',
-      1 => 1432354334,
+      1 => 1432559398,
       2 => 'file',
     ),
   ),
@@ -29,7 +29,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 
         <h1>Cadastro - Pessoas</h1>
         <form action="" method="post">
-        	<input type="hidden" value="1" name="cod" />
+        	<input type="hidden" value="3" name="cod" />
         	<div class="p_cad">            	 	
             	<h1>Dados Gerais</h1>
                 <div class="blocoText t_100">

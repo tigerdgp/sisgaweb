@@ -26,7 +26,7 @@
 	$config['smarty']['debug']		= false;//Ativação do debug
 	
 	//Define variáveis gerais
-	$config['app_name']			= "SisGA Web";//Nome do sistema
+	$config['app_name']			= "Virtua Cursos - SisGA Web";//Nome do sistema
 	$config['logo']				= "templates/img/logo_sisga.png";//Endereço do logo do sistema
 	
 	//Definindo o time zone

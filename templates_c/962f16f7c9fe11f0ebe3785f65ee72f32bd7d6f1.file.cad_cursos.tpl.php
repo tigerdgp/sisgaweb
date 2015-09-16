@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.21-dev, created on 2015-05-25 16:55:20
+<?php /* Smarty version Smarty-3.1.21-dev, created on 2015-09-15 09:50:57
          compiled from "templates\cad_cursos.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:224565563730de9f798-40916229%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '962f16f7c9fe11f0ebe3785f65ee72f32bd7d6f1' => 
     array (
       0 => 'templates\\cad_cursos.tpl',
-      1 => 1432583715,
+      1 => 1432650186,
       2 => 'file',
     ),
   ),
@@ -71,7 +71,7 @@ $_smarty_tpl->tpl_vars['smarty']->value['section']['s']['last']       = ($_smart
                         <?php endfor; endif; ?>
                     </select>
                     <br />
-                    <input type="text" name="c_cargah" />
+                    <input type="text" name="c_cargah" maxlength="3" size="5" /> horas
                     <br />
                     <select name="c_instituicao">
                         <?php if (isset($_smarty_tpl->tpl_vars['smarty']->value['section']['s'])) unset($_smarty_tpl->tpl_vars['smarty']->value['section']['s']);

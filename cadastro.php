@@ -14,8 +14,133 @@
 	if(isset($_POST['submit'])){
 		$errMsg = "";
 		$cor	= "RED";
+		$teste	= "oi";
 		
 		if($_POST['cod'] == '1') { //Cadastro de instituições
+			//Verificação dos campos obrigatorios que devem ser preenchidos
+			/*if(empty($_POST['i_nome'])) {
+				$errMsg .= 'Campo "Nome" obrigatório.';
+			}elseif(empty($_POST['i_representante'])) {
+				$errMsg .= 'Campo "Representante" obrigatório.';
+			}elseif(empty($_POST['i_endereco'])) {
+				$errMsg .= 'Campo "Endereço" obrigatório.';
+			}elseif(empty($_POST['i_numero'])) {
+				$errMsg .= 'Campo "Nº" obrigatório.';
+			}elseif(empty($_POST['i_bairro'])) {
+				$errMsg .= 'Campo "Bairro" obrigatório.';
+			}elseif(empty($_POST['i_cep'])) {
+				$errMsg .= 'Campo "CEP" obrigatório.';
+			}elseif(empty($_POST['i_cidade'])) {
+				$errMsg .= 'Campo "Cidade" obrigatório.';
+			}elseif(empty($_POST['i_fone1'])) {
+				$errMsg .= 'Campos "Telefone" obrigatórios. (Pelo menos 1 deve ser informado)';
+			}else {
+				try {
+					//Pega as variáveis pelo metodo POST
+					//Dados Gerais
+					$i_nome 			= $_POST['i_nome'];
+					$i_representante 	= $_POST['i_representante'];
+					
+					//Contato
+					$i_endereco 		= $_POST['i_endereco'];
+					$i_numero 			= $_POST['i_numero'];
+					$i_complemento 		= $_POST['i_complemento'];
+					$i_bairro 			= $_POST['i_bairro'];
+					$i_cep 				= $_POST['i_cep'];
+					$i_cidade 			= $_POST['i_cidade'];
+					$i_uf 				= $_POST['i_uf'];
+					$i_ref 				= $_POST['i_ref'];
+					$i_fone1 			= $_POST['i_fone1'];
+					$i_fone2 			= $_POST['i_fone2'];
+					$i_fone3 			= $_POST['i_fone3'];
+					$i_email 			= $_POST['i_email'];
+					
+					
+					$query = $dbh->prepare("
+						INSERT INTO instituicao (nome, representante, data_cad)
+						VALUES (:i_nome, :i_representante, now())
+					");
+					$query->bindParam(':i_nome', $i_nome);
+					$query->bindParam(':i_representante', $i_representante);
+					$query->execute();
+					$id = $dbh->lastInsertId();
+					$r1 = $query->fetch(PDO::FETCH_ASSOC);
+										
+					
+					$query = $dbh->prepare("
+						INSERT INTO contatos (id_instituicao, endereco, numero, complemento, bairro, cep, cidade, estado, referencia, telefone1, telefone2, telefone3, email)
+						VALUES (:id, :i_endereco, :i_numero, :i_complemento, :i_bairro, :i_cep, :i_cidade, :i_uf, :i_ref, :i_fone1, :i_fone2, :i_fone3, :i_email)
+					");
+					$query->bindParam(':id', $id);
+					$query->bindParam(':i_endereco', $i_endereco);
+					$query->bindParam(':i_numero', $i_numero);
+					$query->bindParam(':i_complemento', $i_complemento);
+					$query->bindParam(':i_bairro', $i_bairro);
+					$query->bindParam(':i_cep', $i_cep);
+					$query->bindParam(':i_cidade', $i_cidade);
+					$query->bindParam(':i_uf', $i_uf);
+					$query->bindParam(':i_ref', $i_ref);
+					$query->bindParam(':i_fone1', $i_fone1);
+					$query->bindParam(':i_fone2', $i_fone2);
+					$query->bindParam(':i_fone3', $i_fone3);
+					$query->bindParam(':i_email', $i_email);
+					$query->execute();	
+					$r2 = $query->fetch(PDO::FETCH_ASSOC);
+					*/
+					$id = '1';
+					if(isset($_POST['i_pronatec'])) {
+						$query = $dbh->prepare("
+							INSERT INTO formularios (nome, programa, instituicao)
+							VALUES (:form, 'PRONATEC', :id)
+						");
+						$query->bindParam(':form', 'form_pronatec_');
+						$query->bindParam(':id', $id);
+						$query->execute();
+					}elseif(isset($_POST['i_psg'])) {
+						$query = $dbh->prepare("
+							INSERT INTO formularios (nome, programa, instituicao)
+							VALUES (:form, 'PSG', :id)
+						");
+						$query->bindParam(':form', 'form_psg_');
+						$query->bindParam(':id', $id);
+						$query->execute();
+					}elseif(isset($_POST['i_movel'])) {
+						$query = $dbh->prepare("
+							INSERT INTO formularios (nome, programa, instituicao)
+							VALUES (:form, 'Escola Móvel', :id)
+						");
+						$query->bindParam(':form', 'form_movel_');
+						$query->bindParam(':id', $id);
+						$query->execute();
+					}elseif(isset($_POST['i_planteq'])) {
+						$query = $dbh->prepare("
+							INSERT INTO formularios (nome, programa, instituicao)
+							VALUES (:form, 'PLANTEQ', :id)
+						");
+						$query->bindParam(':form', 'form_planteq_');
+						$query->bindParam(':id', $id);
+						$query->execute();
+					}elseif(isset($_POST['i_pnq'])) {
+						$query = $dbh->prepare("
+							INSERT INTO formularios (nome, programa, instituicao)
+							VALUES (:form, 'PNQ', :id)
+						");
+						$query->bindParam(':form', 'form_pnq_');
+						$query->bindParam(':id', $id);
+						$query->execute();
+					}
+					/*
+					if(count($r1) == 1 && count($r2) == 1){
+						$errMsg .= 'Cadastro efetuado com sucesso!';
+						$cor = "GREEN";
+					}else{
+						$errMsg .= 'O cadastro não foi efetuado.';
+					}
+				}catch(Exception $e) {
+					$errMsg .= 'Ocorreu um erro.'.$e;
+				}
+			}*/
+			
 		} elseif($_POST['cod'] == '2') { //Cadastro de cursos
 		} elseif($_POST['cod'] == '3') { //Cadastro de pessoas
 		
@@ -171,6 +296,7 @@
 	$smarty->assign('errMsg', $errMsg);
 	$smarty->assign('cor', $cor);
 	$smarty->assign('id', $id);
+	$smarty->assign('teste', $teste);
 	
 	$uf = array();
     $query = sprintf("

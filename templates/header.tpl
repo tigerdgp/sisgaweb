@@ -7,7 +7,7 @@
     <body class="bg">
     	<header class="headerr">
         	<div class="topo">
-            	<h1>SisGA Web</h1>
+            	<h1>Virtua Cursos</h1>
             </div>
             <div class="menu">
             	<nav>{imprimeMenuInfinito($m_menu)}</nav>
@@ -39,7 +39,7 @@
                         </div>
                     </div>
                     <footer class="rodape">
-                        <p>Copyright © {'Y'|date} SisGAWeb</p>
+                        <p>Copyright © {'Y'|date} Virtua Cursos - SisGAWeb</p>
                         <p>Todos os direitos reservados.</p>
                         <p>Desenvolvido por:</p>
                         <p><a href='mailto:tiger.dgp@hotmail.com'>Dérik Gomide Padua</a> e <a href='mailto:rafaelsantiago1092@gmail.com'>Rafael Silva Santiago</a></p>

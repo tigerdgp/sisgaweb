@@ -12,7 +12,7 @@
                 	<img src="templates/img/bemvindo.png" alt="Seja bem-vindo!" width="110px" style="padding: 7px 15px; 0 0" /> <a href="?login" class="entrarButton"></a>
                 </div>
                 <div class="header_e">
-                	<img src="{$logo}" alt="SisGA Web" width="300px" />
+                	<img src="{$logo}" alt="Virtua Cursos" />
                 </div>
                 <div class="header_d">
                 	<img src="templates/img/cursos.png" alt="Cursos Profissionalizantes" width="450px" />

@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.21-dev, created on 2015-05-22 23:34:42
+<?php /* Smarty version Smarty-3.1.21-dev, created on 2015-09-15 09:50:11
          compiled from "templates\header.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:28151553fe6270a23e9-45615627%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '55086ac7c738c2a21d1965480a24f7f299d80642' => 
     array (
       0 => 'templates\\header.tpl',
-      1 => 1432348478,
+      1 => 1432915864,
       2 => 'file',
     ),
   ),
@@ -33,7 +33,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     <body class="bg">
     	<header class="headerr">
         	<div class="topo">
-            	<h1>SisGA Web</h1>
+            	<h1>Virtua Cursos</h1>
             </div>
             <div class="menu">
             	<nav><?php echo htmlspecialchars(imprimeMenuInfinito($_smarty_tpl->tpl_vars['m_menu']->value), ENT_QUOTES, 'UTF-8');?>
@@ -69,7 +69,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                     </div>
                     <footer class="rodape">
                         <p>Copyright © <?php echo htmlspecialchars(date('Y'), ENT_QUOTES, 'UTF-8');?>
- SisGAWeb</p>
+ Virtua Cursos - SisGAWeb</p>
                         <p>Todos os direitos reservados.</p>
                         <p>Desenvolvido por:</p>
                         <p><a href='mailto:tiger.dgp@hotmail.com'>Dérik Gomide Padua</a> e <a href='mailto:rafaelsantiago1092@gmail.com'>Rafael Silva Santiago</a></p>
