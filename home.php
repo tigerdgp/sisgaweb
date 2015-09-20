@@ -28,18 +28,54 @@
         $news[] = $row;
     }
     $smarty->assign('news', $news);
+
+
+    /* ********** ********** ********** **********
+    ************** Listagem de Cursos ************
+    ********** ********** ********** ********** */
+    $cursos = array();
+    $query = sprintf("
+		SELECT c.nome, c.inscricao
+		FROM cursos c
+		ORDER BY c.nome AND c.inscricao ASC
+        LIMIT 0,5
+	");
+    $con = $dbh->query($query);
+    while($row = $con->fetch(PDO::FETCH_ASSOC)){
+        $cursos[] = $row;
+    }
+    $smarty->assign('cursos', $cursos);
 	
 	
-	/* Estatistica */
-	//$estatistica = array();
+	/* ********** ********** ********** **********
+    ***************** Estatística ****************
+    ********** ********** ********** ********** */
 	$query = sprintf("
 		SELECT count(u.id_usuario) AS alunos
 		FROM usuarios u
 	");
 	$con = $dbh->query($query);
 	$row = $con->fetch(PDO::FETCH_ASSOC);
-	$alunos = $row['alunos'];
-    $smarty->assign('alunos', $alunos);
+	$e_alunos = $row['alunos'];
+    $smarty->assign('e_alunos', $e_alunos);
+
+    $query = sprintf("
+		SELECT count(c.id_curso) AS cursos
+		FROM cursos c
+	");
+	$con = $dbh->query($query);
+	$row = $con->fetch(PDO::FETCH_ASSOC);
+	$e_cursos = $row['cursos'];
+    $smarty->assign('e_cursos', $e_cursos);
+
+    $query = sprintf("
+		SELECT count(i.id_instituicao) AS instituicao
+		FROM instituicao i
+	");
+	$con = $dbh->query($query);
+	$row = $con->fetch(PDO::FETCH_ASSOC);
+	$e_instituicoes = $row['instituicao'];
+    $smarty->assign('e_instituicoes', $e_instituicoes);
 	
     
 	//Variável global com informações da página

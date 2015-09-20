@@ -6,14 +6,15 @@
 	*	Descrição: 	Página inicial, responsável por gerenciar as solicitações de páginas (URL Rewrite)
 	*	Autor: 		Dérik Gomide Padua
 	*	Data: 		23/03/2015
-	*	Versão: 	1.0
-	*	Edição: 	-
+	*	Versão: 	1.1
+	*	Edição: 	20/09/2015
 	**************************************************************************
 	*/
 	
 	//Verifica se a sessão foi iniciada, caso não tenha sido, a inicia
 	if (!isset($_SESSION)) session_start();
 	
+
 	//Inclusões de arquivos
     require_once('includes/setup.php');
 	require_once('includes/classes/conexao.class.php');
@@ -23,6 +24,7 @@
 	//Inicia a instância do framework smarty
     $smarty = new Smarty_Setup();	
 	
+
 	//Criando o menu
     require_once('includes/menu.php');
      
@@ -39,6 +41,8 @@
     }    
     $smarty->assign('m_menu', $menuItens);
 	
+
+
 	//Variável global com informações da página
     global $page;
     $page = array(
@@ -48,6 +52,30 @@
 	    'path'   	=> '[]',
 		'nivel'		=> 0
     );
+
+
+    $smarty->assign('amanha', strtotime('+1 day'));
+
+
+    /* ********** ********** ********** **********
+    ********* Cursos em Curso pelo Aluno *********
+    ********** ********** ********** ********** */
+    $id_user = $_SESSION['id_usuario'];
+    $cca = array();
+    $query = sprintf("
+		SELECT c.nome, c.data_inicio, c.data_termino, c.hora_inicio, c.hora_termino
+		FROM cursos c
+        INNER JOIN turmas t ON c.id_curso = t.id_curso
+        WHERE t.id_aluno = '".$id_user."' AND t.ativo = 1
+		ORDER BY c.data_inicio DESC
+        LIMIT 2
+	");
+    $con = $dbh->query($query);
+    while($row = $con->fetch(PDO::FETCH_ASSOC)){
+        $cca[] = $row;
+    }
+    $smarty->assign('cca', $cca);
+
 
     //Recebe os parametros passados na string
     $queryx = $_SERVER['QUERY_STRING'];
@@ -116,6 +144,11 @@
 	    case 'logout':
 		    include 'logout.php';
 		    break;
+
+        //Carrega a pagina padrão
+	    case 'noticia':
+		    include 'noticia.php';
+		    break;			
 			
 		//Carrega a pagina padrão
 	    case 'home':

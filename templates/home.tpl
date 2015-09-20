@@ -9,7 +9,7 @@
     	<header class="cabecalho">
         	<div class="header">
             	<div class="header_t">
-                	<img src="templates/img/bemvindo.png" alt="Seja bem-vindo!" width="110px" style="padding: 7px 15px; 0 0" /> <a href="?login" class="entrarButton"></a>
+                	<img src="templates/img/bemvindo.png" alt="Seja bem-vindo!" width="110px" style="padding: 7px 15px 0 0;" /> <a href="?login" class="entrarButton"></a>
                 </div>
                 <div class="header_e">
                 	<img src="{$logo}" alt="Virtua Cursos" />
@@ -24,7 +24,7 @@
             	<h1>Notícias</h1>
                 {section name=s loop=$news}
                     <div class="titulo">
-                        <h1><a href="?noticia">{$news[s].titulo}</a></h1>
+                        <h1><a href='?noticia&i={$news[s].id}&n={$news[s].titulo|replace:" ":"_"}'>{$news[s].titulo}</a></h1>
                     </div>
                     <div class="autor">
                         <span>Por {$news[s].nome} em {$news[s].data|date_format:"%d/%m/%Y"}</span>
@@ -37,11 +37,17 @@
             </section>
             <section class="listagem">
             	<p class="first">Últimos Cursos<span>Situação</span></p>
-                <p>Costura de Vestuário<span>Inscrições Abertas</span></p>
-                <p>Artesão em Bordado à Mão<span>Inscrições Encerradas</span></p>
-                <p>Manicure e Pedicure<span>Inscrições Encerradas</span></p>
-                <p>Maquiador<span>Inscrições Encerradas</span></p>
-                <p>Recepcionista<span>Inscrições Encerradas</span></p>
+                {section name=s loop=$cursos}                
+                    <p>{$cursos[s].nome}
+                        <span>
+                            {if $cursos[s].inscricao == "1"}
+                        	    Inscrições Abertas
+                            {elseif $cursos[s].inscricao == "2"}
+                        	    Inscrições Encerradas
+                            {/if}                            
+                        </span>
+                    </p>
+                {/section}
             </section>
             <div class="clear"></div>
             <section class="banner">
@@ -54,10 +60,10 @@
             <section class="listagem">
             	<p class="first">Estatísticas</p>
                 <p>Visitas<span>203162</span></p>
-                <p>Alunos Incritos<span>{$alunos}</span></p>
-                <p>Instituições<span>2</span></p>
-                <p>Cursos Ofertados<span>368</span></p>
-                <p>Certificados Entregues<span>302</span></p>
+                <p>Alunos Incritos<span>{$e_alunos}</span></p>
+                <p>Instituições<span>{$e_instituicoes}</span></p>
+                <p>Cursos Ofertados<span>{$e_cursos}</span></p>
+                <p>Certificados Entregues<span>0</span></p>
             </section>
             <div class="clear"></div>
             <section class="parceiros">

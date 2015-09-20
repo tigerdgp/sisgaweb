@@ -31,18 +31,20 @@
                         	<p>{$smarty.session.usuario}</p>                            
                             <span>Perfil: {$smarty.session.perfil}</span>
                         </div>
-                        <div class="dados">
-                        	<p>Curso: <span title="teste">Auxiliar Administrativo</span></p>
-                            <p>Início: <span>09/09/2015</span></p>
-                            <p>Término: <span>09/12/2015</span></p>
-                            <p>Horário: <span>19:00 às 22:00</span></p>
-                        </div>
+                        {section name=s loop=$cca}
+                            <div class="dados">
+                        	    <p>Curso: <span title="teste">{$cca[s].nome}</span></p>
+                                <p>Início: <span>{$cca[s].data_inicio|date_format:"%d/%m/%Y"}</span></p>
+                                <p>Término: <span>{$cca[s].data_termino|date_format:"%d/%m/%Y"}</span></p>
+                                <p>Horário: <span>{$cca[s].hora_inicio|date_format:"%H:%M"} às {$cca[s].hora_termino|date_format:"%H:%M"}</span></p>
+                            </div>
+                        {/section}
                     </div>
                     <footer class="rodape">
                         <p>Copyright © {'Y'|date} Virtua Cursos - SisGAWeb</p>
                         <p>Todos os direitos reservados.</p>
                         <p>Desenvolvido por:</p>
-                        <p><a href='mailto:tiger.dgp@hotmail.com'>Dérik Gomide Padua</a> e <a href='mailto:rafaelsantiago1092@gmail.com'>Rafael Silva Santiago</a></p>
+                        <p>{mailto address="tiger.dgp@hotmail.com" encode="hex" text="Derik Gomide Padua"} e {mailto address="rafaelsantiago1092@gmail.com" encode="hex" text="Rafael Silva Santiago"}</p>
                     </footer>
                 </div>
                 <button type="button" class="btn-toggle" data-element="#col1">=<br />=</button>
