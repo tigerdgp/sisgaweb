@@ -2,11 +2,11 @@
         <h1>Meu Perfil</h1>
         <div class="p_perfil">
         	<div class="p_perfil_b">
-            	<h1>Geral</h1>
+            	<h1>Informações Gerais</h1>
                 {section name=u loop=$user}
                     <div class="p_perfil_photo">                	
                         <div class="p_perfil_photo_bg"></div>
-                        <img src="templates/img/{$user[u].foto}" alt="" width="150px" height="132px" />
+                        <img src="templates/img/{$user[u].foto}" alt="Avatar" width="150px" height="132px" />
                     </div>
                     <div class="p_perfil_dados1">
                     	<!-- 
@@ -108,88 +108,29 @@
             <div class="p_perfil_b">
             	<h1>Histórico de Cursos</h1>
                 <table>
-            	<tr>
-                	<th>Curso</th>
-                    <th>Carga Horária</th>
-                    <th>Início</th>
-                    <th>Término</th>
-                    <th>Horário</th>
-                    <th>Situação</th>
-                    <th>Certificado Digital</th>
-                </tr>
-                <tr>
-                	<td>Costura de Vestuário</td>
-                    <td class="table10">80 Horas</td>
-                    <td class="table10">19/05/2015</td>
-                    <td class="table10">18/06/2015</td>
-                    <td class="table15">08:00 às 12:15</td>
-                    <td class="table10">Cursando</td>
-                    <td class="table15">Aguardando</td>
-                </tr>
-                <tr>
-                	<td>Costura de Vestuário</td>
-                    <td class="table10">80 Horas</td>
-                    <td class="table10">19/05/2015</td>
-                    <td class="table10">18/06/2015</td>
-                    <td class="table15">13:45 às 18:00</td>
-                    <td class="table10">Aprovado</td>
-                    <td class="table15"><a href="?certificado">Abrir</a></td>
-                </tr>
-                <tr>
-                	<td>Auxiliar Administrativo</td>
-                    <td class="table10">160 Horas</td>
-                    <td class="table10">19/05/2015</td>
-                    <td class="table10">18/06/2015</td>
-                    <td class="table15">19:00 às 22:00</td>
-                    <td class="table10">Aprovado</td>
-                    <td class="table15"><a href="?certificado">Abrir</a></td>
-                </tr>
-                <tr>
-                	<td>Artesão em Bordado à Mão</td>
-                    <td class="table10">160 Horas</td>
-                    <td class="table10">19/05/2015</td>
-                    <td class="table10">18/06/2015</td>
-                    <td class="table15">13:00 às 16:00</td>
-                    <td class="table10">Reprovado</td>
-                    <td class="table15">Não Gerado</td>
-                </tr>
-                <tr>
-                	<td>Artesão em Bordado à Mão</td>
-                    <td class="table10">160 Horas</td>
-                    <td class="table10">19/05/2015</td>
-                    <td class="table10">18/06/2015</td>
-                    <td class="table15">13:00 às 16:00</td>
-                    <td class="table10">Reprovado</td>
-                    <td class="table15">Não Gerado</td>
-                </tr>
-                <tr>
-                	<td>Artesão em Bordado à Mão</td>
-                    <td class="table10">160 Horas</td>
-                    <td class="table10">19/05/2015</td>
-                    <td class="table10">18/06/2015</td>
-                    <td class="table15">13:00 às 16:00</td>
-                    <td class="table10">Reprovado</td>
-                    <td class="table15">Não Gerado</td>
-                </tr>
-                <tr>
-                	<td>Artesão em Bordado à Mão</td>
-                    <td class="table10">160 Horas</td>
-                    <td class="table10">19/05/2015</td>
-                    <td class="table10">18/06/2015</td>
-                    <td class="table15">13:00 às 16:00</td>
-                    <td class="table10">Reprovado</td>
-                    <td class="table15">Não Gerado</td>
-                </tr>
-                <tr>
-                	<td>Artesão em Bordado à Mão</td>
-                    <td class="table10">160 Horas</td>
-                    <td class="table10">19/05/2015</td>
-                    <td class="table10">18/06/2015</td>
-                    <td class="table15">13:00 às 16:00</td>
-                    <td class="table10">Reprovado</td>
-                    <td class="table15">Não Gerado</td>
-                </tr>
-            </table>
+            	    <tr>
+                	    <th>Curso</th>
+                        <th>Carga Horária</th>
+                        <th>Início</th>
+                        <th>Término</th>
+                        <th>Horário</th>
+                        <th>Situação</th>
+                        <th>Certificado Digital</th>
+                    </tr>
+                    {section name=s loop=$cursos}
+                        <tr>
+                	        <td>{$cursos[s].curso}</td>
+                            <td class="table10">{$cursos[s].carga_horaria} horas</td>
+                            <td class="table10">{$cursos[s].data_inicio|date_format:"%d/%m/%Y"}</td>
+                            <td class="table10">{$cursos[s].data_termino|date_format:"%d/%m/%Y"}</td>
+                            <td class="table15">{$cursos[s].hora_inicio|date_format:"%H:%M"} às {$cursos[s].hora_termino|date_format:"%H:%M"}</td>
+                            <td class="table10">Pré-Matriculado</td>
+                            <td class="table15">
+                                <a href="?certificado&c={$cursos[s].id}&{$cursos[s].aluno}">Aguardando</a>
+                            </td>
+                        </tr>
+                    {/section}
+                </table>
             </div>
         </div>
     </div>

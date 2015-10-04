@@ -1,6 +1,6 @@
 {include file='header.tpl'}
-        {section name=s loop=$curso}
-            <h1>Curso {$curso[s].nome}</h1>
+        {section name=s loop=$curso}            
+            <h1>Parabéns! Você está prestes a se candidatar ao Curso abaixo.</h1>
             <div class="p_cursos">
                 <div class="p_cursos_b">
         	        <h1>Informações</h1>
@@ -37,10 +37,14 @@
                     <h1>ATENÇÃO</h1>
                     <p style="font-size: 20px">Caro aluno, após a confirmação de sua candidatura à bolsa deste curso você terá prazo até dia {$amanha|date_format:"%d/%m/%Y"} às 16:00 horas para apresentar a documentação listada acima para fins de confirmação da pré-matrícula. A não apresentação acarretará no cancelamento de sua candidatura e a vaga será disponibilizada novamente no sistema.</p>
                 </div>
-                <div align="center">
-                    <input type="button" name="" title="" value="Estou ciente" class="botao"/> <input type="button" name="" title="" value="Cancelar" onClick="voltar()" class="botao"/>
-                </div>
-            </div>
+                <form action="" method="post">
+                    <input hidden name="curso" value="{$curso[s].id}">
+                    <input hidden name="aluno" value="{$smarty.session.id_usuario}">
+                    <div align="center">
+                        <input type="submit" name="submit" title="Estou ciente" value="Estou ciente" class="botao"/> <input type="button" name="cancel" title="Cancelar" value="Cancelar" onClick="voltar()" class="botao"/>
+                    </div>
+                </form>
+            </div>            
         {/section}
     </div>
 </div>

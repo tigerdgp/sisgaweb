@@ -5,7 +5,7 @@ body {
 }
 
 .bg {
-	background: url(../img/planejamento.jpg) no-repeat fixed 50% 0 / cover  rgba(255, 255, 255, 0.75) !important;
+	background: url(../img/bg_sisgaweb.jpg) no-repeat fixed 50% 0 / cover  rgba(255, 255, 255, 0.75) !important;
 }
 
 
@@ -77,8 +77,8 @@ section {
 	.topo h1 {
 		font-size: 24px;
 		padding-top: 15px;
-		color: #fff;
-		text-shadow: #555 0 3px 3px;
+		color: #000;
+		/*text-shadow: #555 0 3px 3px;*/
 	}
 .topo_ {
 	float: right;
@@ -122,7 +122,7 @@ ul#menu span, ul#sub_navTop span {
     padding-right: 20px;
     padding-left: 20px;
     position: relative;
-    text-shadow: 0.1em 0.1em 0.3em #333;
+    /*text-shadow: 0.1em 0.1em 0.3em #333;*/
 }
 
     ul#menu li {
@@ -135,13 +135,13 @@ ul#menu span, ul#sub_navTop span {
         position: relative;
         border-right: 1px solid #393B48;
         color: #fff;
-        text-shadow: 0 1px 2px #000;
+        /*text-shadow: 0 1px 2px #000;*/
     }
 
     ul#menu li:hover {
         background: transparent url('../img/bg_menu_h.png') repeat center 0 !important;
         color: #ccc;
-        text-shadow: 0 5px 10px #fff;
+        /*text-shadow: 0 5px 10px #fff;*/
     }
 
         ul#menu li a {            
@@ -152,15 +152,15 @@ ul#menu span, ul#sub_navTop span {
 
             ul#menu li a:hover {
                 text-decoration: none;
-                color: #fff;
-                text-shadow: 0 5px 10px #fff;
+                color: #000;
+                /*text-shadow: 0 5px 10px #fff;*/
             }
 
         /* Navegacao Sub-menu */
         ul#menu li:hover > ul {
             visibility: visible;
             opacity: 1;
-            text-shadow: 0 1px 2px #000;
+            /*text-shadow: 0 1px 2px #000;*/
         }
 
     ul#menu ul, ul#menu ul li ul {
@@ -195,7 +195,7 @@ ul#menu span, ul#sub_navTop span {
             width: 100%;
             border: 0 none;
             color: #fff;
-            text-shadow: 1px 1px 0px #fff;
+            /*text-shadow: 1px 1px 0px #fff;*/
             font-size: 14px;
             border-bottom: 1px solid #393B48;
         }
@@ -212,7 +212,7 @@ ul#menu span, ul#sub_navTop span {
             }
 
                 ul#menu ul li:hover, ul#menu ul li a:hover {
-                    text-shadow: 1px 1px 0px #000;
+                    /*text-shadow: 1px 1px 0px #000;*/
                 }
 
     ul#menu li.first {
@@ -298,27 +298,10 @@ ul#menu span, ul#sub_navTop span {
 	.bloco_esq p, .bloco_dir p {
 		font-size: 24px;
 		font-weight: bold;
-		text-shadow: #333 0.1em 0.1em 0.3em;
+		/*text-shadow: #333 0.1em 0.1em 0.3em;*/
 		color: #fff;
 		height: 45px;
 		vertical-align: middle;
-	}
-	.bloco_dir ul li {
-		box-shadow: 0 2px 2px rgba(0, 0, 0, 0.15), 1px 1px 1px rgba(0, 0, 0, 0.15);
-		height: 65px;
-		margin: 5px 0 5px -5px;
-	}
-	.bloco_dir li a {
-		display: inline-block;
-		width: 100%;
-		height: 45px;
-		color: #fff;
-		text-decoration: none;
-		padding-top: 20px;
-		padding-left: 10px;
-	}
-	.bloco_dir li a:hover {
-		background: #ccc;
 	}
 	.bloco_dir li span {
 		color: #fff;
@@ -328,6 +311,99 @@ ul#menu span, ul#sub_navTop span {
 		border-radius: 5px;
 		font-size: 16px;
 	}
+    /* Menu com submenus */
+    ul#bloco_dir {
+        cursor: pointer;
+        text-align: left;
+    }
+
+    ul#bloco_dir img {
+        float: left;
+        padding-top: 10px;
+        padding-right: 5px;
+    }
+
+    ul#bloco_dir li {
+        box-shadow: 0 2px 2px rgba(0, 0, 0, 0.15), 1px 1px 1px rgba(0, 0, 0, 0.15);
+		height: 65px;
+		margin: 5px 0 5px 0;
+    }
+
+    ul#bloco_dir li:hover {
+        color: #ccc;
+    }
+
+        ul#bloco_dir li a {            
+            display: inline-block;
+		    width: 100%;
+		    height: 45px;
+		    color: #393B48;
+		    text-decoration: none;
+		    padding-top: 20px;
+		    padding-left: 10px;
+        }
+
+            ul#bloco_dir li a:hover {
+                color: #fff;
+		        background: #ccc;
+            }
+
+        /* Navegacao Sub-menu */
+        ul#bloco_dir li:hover > ul {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        ul#bloco_dir ul, ul#bloco_dir ul li ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            visibility: hidden;
+            position: absolute;
+            z-index: 99999;
+            width: 180px;
+            background: transparent url(../img/bg.jpg) repeat 0 !important;
+            box-shadow: 1px 1px 3px #1b1b1b;
+            opacity: 0;
+            -webkit-transition: opacity 0.2s linear, visibility 0.2s linear;
+            -moz-transition: opacity 0.2s linear, visibility 0.2s linear;
+            -o-transition: opacity 0.2s linear, visibility 0.2s linear;
+            transition: opacity 0.2s linear, visibility 0.2s linear;
+        }
+
+        ul#bloco_dir ul {
+            top: 0;
+            left: -140px;
+        }
+
+        ul#bloco_dir ul li ul {
+            top: 5px;
+            left: 181px;
+        }
+
+        ul#bloco_dir ul li {
+            clear: both;
+            width: 100%;
+            border: 0 none;
+            color: #fff;
+            font-size: 22px;
+            border-bottom: 1px solid #393B48;
+        }
+
+            ul#bloco_dir ul li a {
+                background: none;                
+                text-decoration: none;
+                display: inline-block;
+                border: 0 none;
+                float: left;
+                clear: both;                
+                width: 100%;
+            }
+
+                ul#bloco_dir ul li:hover, ul#bloco_dir ul li a:hover {
+                    color: #fff;
+		            background: #ccc;
+                }
 	
 .bloco_esq .logout {
 	float: right;
@@ -378,7 +454,7 @@ ul#menu span, ul#sub_navTop span {
 		color: #030;
 		font-size: 18px;
 		font-weight: bold;
-		text-shadow: 1px 1px white, -1px -1px #333;
+		/*text-shadow: 1px 1px white, -1px -1px #333;*/
 	}
 	.bloco_esq .name span {
 		color: #030;
@@ -387,7 +463,7 @@ ul#menu span, ul#sub_navTop span {
 	}
 .bloco_esq .dados {
 	font-weight: bold;
-	text-shadow: 1px 1px white, -1px -1px #333;
+	/*text-shadow: 1px 1px white, -1px -1px #333;*/
 	box-shadow: 0 2px 2px rgba(0, 0, 0, 0.15), 1px 1px 1px rgba(0, 0, 0, 0.15);
 	padding-top: 20px;
 }
@@ -423,7 +499,7 @@ ul#menu span, ul#sub_navTop span {
 		width: 979px;
 		vertical-align: middle;
 		box-shadow: 0 2px 2px rgba(0, 0, 0, 0.15), 1px 1px 1px rgba(0, 0, 0, 0.15);
-		text-shadow: #333 0.1em 0.1em 0.3em;
+		/*text-shadow: #333 0.1em 0.1em 0.3em;*/
 	}
 		.p_cursos table th, .p_perfil_b table th {
 			font-size: 20px;
@@ -458,6 +534,9 @@ ul#menu span, ul#sub_navTop span {
 	.p_cursos a, .p_perfil_b a {
 		text-decoration: none;
 		color: #030;
+	}
+.p_cursos a:hover, .p_perfil_b a:hover {
+		color: #000;
 	}
     .p_cursos_b p {
 	    padding-top: 10px;

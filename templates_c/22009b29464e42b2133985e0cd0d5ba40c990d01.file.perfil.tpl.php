@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.21-dev, created on 2015-09-15 09:53:20
+<?php /* Smarty version Smarty-3.1.21-dev, created on 2015-09-28 22:05:22
          compiled from "templates\perfil.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:2876455410cfa28ac37-93602390%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '22009b29464e42b2133985e0cd0d5ba40c990d01' => 
     array (
       0 => 'templates\\perfil.tpl',
-      1 => 1431721154,
+      1 => 1443488719,
       2 => 'file',
     ),
   ),
@@ -21,6 +21,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   array (
     'user' => 0,
     'contato' => 0,
+    'cursos' => 0,
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
@@ -30,7 +31,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
         <h1>Meu Perfil</h1>
         <div class="p_perfil">
         	<div class="p_perfil_b">
-            	<h1>Geral</h1>
+            	<h1>Informações Gerais</h1>
                 <?php if (isset($_smarty_tpl->tpl_vars['smarty']->value['section']['u'])) unset($_smarty_tpl->tpl_vars['smarty']->value['section']['u']);
 $_smarty_tpl->tpl_vars['smarty']->value['section']['u']['name'] = 'u';
 $_smarty_tpl->tpl_vars['smarty']->value['section']['u']['loop'] = is_array($_loop=$_smarty_tpl->tpl_vars['user']->value) ? count($_loop) : max(0, (int) $_loop); unset($_loop);
@@ -58,7 +59,7 @@ $_smarty_tpl->tpl_vars['smarty']->value['section']['u']['last']       = ($_smart
                     <div class="p_perfil_photo">                	
                         <div class="p_perfil_photo_bg"></div>
                         <img src="templates/img/<?php echo htmlspecialchars($_smarty_tpl->tpl_vars['user']->value[$_smarty_tpl->getVariable('smarty')->value['section']['u']['index']]['foto'], ENT_QUOTES, 'UTF-8');?>
-" alt="" width="150px" height="132px" />
+" alt="Avatar" width="150px" height="132px" />
                     </div>
                     <div class="p_perfil_dados1">
                     	<!-- 
@@ -204,88 +205,60 @@ $_smarty_tpl->tpl_vars['smarty']->value['section']['c']['last']       = ($_smart
             <div class="p_perfil_b">
             	<h1>Histórico de Cursos</h1>
                 <table>
-            	<tr>
-                	<th>Curso</th>
-                    <th>Carga Horária</th>
-                    <th>Início</th>
-                    <th>Término</th>
-                    <th>Horário</th>
-                    <th>Situação</th>
-                    <th>Certificado Digital</th>
-                </tr>
-                <tr>
-                	<td>Costura de Vestuário</td>
-                    <td class="table10">80 Horas</td>
-                    <td class="table10">19/05/2015</td>
-                    <td class="table10">18/06/2015</td>
-                    <td class="table15">08:00 às 12:15</td>
-                    <td class="table10">Cursando</td>
-                    <td class="table15">Aguardando</td>
-                </tr>
-                <tr>
-                	<td>Costura de Vestuário</td>
-                    <td class="table10">80 Horas</td>
-                    <td class="table10">19/05/2015</td>
-                    <td class="table10">18/06/2015</td>
-                    <td class="table15">13:45 às 18:00</td>
-                    <td class="table10">Aprovado</td>
-                    <td class="table15"><a href="?certificado">Abrir</a></td>
-                </tr>
-                <tr>
-                	<td>Auxiliar Administrativo</td>
-                    <td class="table10">160 Horas</td>
-                    <td class="table10">19/05/2015</td>
-                    <td class="table10">18/06/2015</td>
-                    <td class="table15">19:00 às 22:00</td>
-                    <td class="table10">Aprovado</td>
-                    <td class="table15"><a href="?certificado">Abrir</a></td>
-                </tr>
-                <tr>
-                	<td>Artesão em Bordado à Mão</td>
-                    <td class="table10">160 Horas</td>
-                    <td class="table10">19/05/2015</td>
-                    <td class="table10">18/06/2015</td>
-                    <td class="table15">13:00 às 16:00</td>
-                    <td class="table10">Reprovado</td>
-                    <td class="table15">Não Gerado</td>
-                </tr>
-                <tr>
-                	<td>Artesão em Bordado à Mão</td>
-                    <td class="table10">160 Horas</td>
-                    <td class="table10">19/05/2015</td>
-                    <td class="table10">18/06/2015</td>
-                    <td class="table15">13:00 às 16:00</td>
-                    <td class="table10">Reprovado</td>
-                    <td class="table15">Não Gerado</td>
-                </tr>
-                <tr>
-                	<td>Artesão em Bordado à Mão</td>
-                    <td class="table10">160 Horas</td>
-                    <td class="table10">19/05/2015</td>
-                    <td class="table10">18/06/2015</td>
-                    <td class="table15">13:00 às 16:00</td>
-                    <td class="table10">Reprovado</td>
-                    <td class="table15">Não Gerado</td>
-                </tr>
-                <tr>
-                	<td>Artesão em Bordado à Mão</td>
-                    <td class="table10">160 Horas</td>
-                    <td class="table10">19/05/2015</td>
-                    <td class="table10">18/06/2015</td>
-                    <td class="table15">13:00 às 16:00</td>
-                    <td class="table10">Reprovado</td>
-                    <td class="table15">Não Gerado</td>
-                </tr>
-                <tr>
-                	<td>Artesão em Bordado à Mão</td>
-                    <td class="table10">160 Horas</td>
-                    <td class="table10">19/05/2015</td>
-                    <td class="table10">18/06/2015</td>
-                    <td class="table15">13:00 às 16:00</td>
-                    <td class="table10">Reprovado</td>
-                    <td class="table15">Não Gerado</td>
-                </tr>
-            </table>
+            	    <tr>
+                	    <th>Curso</th>
+                        <th>Carga Horária</th>
+                        <th>Início</th>
+                        <th>Término</th>
+                        <th>Horário</th>
+                        <th>Situação</th>
+                        <th>Certificado Digital</th>
+                    </tr>
+                    <?php if (isset($_smarty_tpl->tpl_vars['smarty']->value['section']['s'])) unset($_smarty_tpl->tpl_vars['smarty']->value['section']['s']);
+$_smarty_tpl->tpl_vars['smarty']->value['section']['s']['name'] = 's';
+$_smarty_tpl->tpl_vars['smarty']->value['section']['s']['loop'] = is_array($_loop=$_smarty_tpl->tpl_vars['cursos']->value) ? count($_loop) : max(0, (int) $_loop); unset($_loop);
+$_smarty_tpl->tpl_vars['smarty']->value['section']['s']['show'] = true;
+$_smarty_tpl->tpl_vars['smarty']->value['section']['s']['max'] = $_smarty_tpl->tpl_vars['smarty']->value['section']['s']['loop'];
+$_smarty_tpl->tpl_vars['smarty']->value['section']['s']['step'] = 1;
+$_smarty_tpl->tpl_vars['smarty']->value['section']['s']['start'] = $_smarty_tpl->tpl_vars['smarty']->value['section']['s']['step'] > 0 ? 0 : $_smarty_tpl->tpl_vars['smarty']->value['section']['s']['loop']-1;
+if ($_smarty_tpl->tpl_vars['smarty']->value['section']['s']['show']) {
+    $_smarty_tpl->tpl_vars['smarty']->value['section']['s']['total'] = $_smarty_tpl->tpl_vars['smarty']->value['section']['s']['loop'];
+    if ($_smarty_tpl->tpl_vars['smarty']->value['section']['s']['total'] == 0)
+        $_smarty_tpl->tpl_vars['smarty']->value['section']['s']['show'] = false;
+} else
+    $_smarty_tpl->tpl_vars['smarty']->value['section']['s']['total'] = 0;
+if ($_smarty_tpl->tpl_vars['smarty']->value['section']['s']['show']):
+
+            for ($_smarty_tpl->tpl_vars['smarty']->value['section']['s']['index'] = $_smarty_tpl->tpl_vars['smarty']->value['section']['s']['start'], $_smarty_tpl->tpl_vars['smarty']->value['section']['s']['iteration'] = 1;
+                 $_smarty_tpl->tpl_vars['smarty']->value['section']['s']['iteration'] <= $_smarty_tpl->tpl_vars['smarty']->value['section']['s']['total'];
+                 $_smarty_tpl->tpl_vars['smarty']->value['section']['s']['index'] += $_smarty_tpl->tpl_vars['smarty']->value['section']['s']['step'], $_smarty_tpl->tpl_vars['smarty']->value['section']['s']['iteration']++):
+$_smarty_tpl->tpl_vars['smarty']->value['section']['s']['rownum'] = $_smarty_tpl->tpl_vars['smarty']->value['section']['s']['iteration'];
+$_smarty_tpl->tpl_vars['smarty']->value['section']['s']['index_prev'] = $_smarty_tpl->tpl_vars['smarty']->value['section']['s']['index'] - $_smarty_tpl->tpl_vars['smarty']->value['section']['s']['step'];
+$_smarty_tpl->tpl_vars['smarty']->value['section']['s']['index_next'] = $_smarty_tpl->tpl_vars['smarty']->value['section']['s']['index'] + $_smarty_tpl->tpl_vars['smarty']->value['section']['s']['step'];
+$_smarty_tpl->tpl_vars['smarty']->value['section']['s']['first']      = ($_smarty_tpl->tpl_vars['smarty']->value['section']['s']['iteration'] == 1);
+$_smarty_tpl->tpl_vars['smarty']->value['section']['s']['last']       = ($_smarty_tpl->tpl_vars['smarty']->value['section']['s']['iteration'] == $_smarty_tpl->tpl_vars['smarty']->value['section']['s']['total']);
+?>
+                        <tr>
+                	        <td><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['cursos']->value[$_smarty_tpl->getVariable('smarty')->value['section']['s']['index']]['curso'], ENT_QUOTES, 'UTF-8');?>
+</td>
+                            <td class="table10"><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['cursos']->value[$_smarty_tpl->getVariable('smarty')->value['section']['s']['index']]['carga_horaria'], ENT_QUOTES, 'UTF-8');?>
+ horas</td>
+                            <td class="table10"><?php echo htmlspecialchars(smarty_modifier_date_format($_smarty_tpl->tpl_vars['cursos']->value[$_smarty_tpl->getVariable('smarty')->value['section']['s']['index']]['data_inicio'],"%d/%m/%Y"), ENT_QUOTES, 'UTF-8');?>
+</td>
+                            <td class="table10"><?php echo htmlspecialchars(smarty_modifier_date_format($_smarty_tpl->tpl_vars['cursos']->value[$_smarty_tpl->getVariable('smarty')->value['section']['s']['index']]['data_termino'],"%d/%m/%Y"), ENT_QUOTES, 'UTF-8');?>
+</td>
+                            <td class="table15"><?php echo htmlspecialchars(smarty_modifier_date_format($_smarty_tpl->tpl_vars['cursos']->value[$_smarty_tpl->getVariable('smarty')->value['section']['s']['index']]['hora_inicio'],"%H:%M"), ENT_QUOTES, 'UTF-8');?>
+ às <?php echo htmlspecialchars(smarty_modifier_date_format($_smarty_tpl->tpl_vars['cursos']->value[$_smarty_tpl->getVariable('smarty')->value['section']['s']['index']]['hora_termino'],"%H:%M"), ENT_QUOTES, 'UTF-8');?>
+</td>
+                            <td class="table10">Pré-Matriculado</td>
+                            <td class="table15">
+                                <a href="?certificado&c=<?php echo htmlspecialchars($_smarty_tpl->tpl_vars['cursos']->value[$_smarty_tpl->getVariable('smarty')->value['section']['s']['index']]['id'], ENT_QUOTES, 'UTF-8');?>
+&<?php echo htmlspecialchars($_smarty_tpl->tpl_vars['cursos']->value[$_smarty_tpl->getVariable('smarty')->value['section']['s']['index']]['aluno'], ENT_QUOTES, 'UTF-8');?>
+">Aguardando</a>
+                            </td>
+                        </tr>
+                    <?php endfor; endif; ?>
+                </table>
             </div>
         </div>
     </div>

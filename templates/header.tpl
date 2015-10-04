@@ -25,7 +25,7 @@
                         </div>
                         <div class="photo">
                         	<div class="photo_bg"></div>
-                    		<img src="templates/img/haseo.jpg" alt="" width="150px" height="132px" />
+                    		<img src="templates/img/{$smarty.session.avatar}" alt="Avatar" width="150px" height="132px" />
                     	</div>
                         <div class="name">
                         	<p>{$smarty.session.usuario}</p>                            
@@ -37,6 +37,7 @@
                                 <p>Início: <span>{$cca[s].data_inicio|date_format:"%d/%m/%Y"}</span></p>
                                 <p>Término: <span>{$cca[s].data_termino|date_format:"%d/%m/%Y"}</span></p>
                                 <p>Horário: <span>{$cca[s].hora_inicio|date_format:"%H:%M"} às {$cca[s].hora_termino|date_format:"%H:%M"}</span></p>
+                                <p>Local: <span>{$cca[s].local}</span></p>
                             </div>
                         {/section}
                     </div>
@@ -55,13 +56,20 @@
                 
                 <div id="col2" class="col2">
                 	<div class="bloco_dir">
-                        <ul>
+                        <ul id="bloco_dir">
                         	{if $smarty.session.nivel >= 3}
-                        		<li><p><a href="?admin">Administração</a></p></li>
+                        		<li><p><a href="#"><img src="templates/img/left.png" />Administração</a></p>
+                                    <ul>
+                                        <li><a href="?admin&c=matriculas">Matrículas</a></li>
+                                        <li><a href="?admin&c=banners">Banners</a></li>
+                                        <li><a href="?admin&c=noticias">Notícias</a></li>
+                                        <li><a href="?admin&c=notas">Notas</a></li>
+                                    </ul>
+                                </li>
                             {/if}
                             <li><p><a href="?config">Configuração</a></p></li>
                             <li><p><a href="?perfil">Meu Perfil</a></p></li>
-                            <li><p><a href="?msg">Mensagens<span>10</span></a></p></li> 
+                            <li><p><a href="?msg">Mensagens<span>0</span></a></p></li> 
                         </ul>
                     </div>
                 </div>

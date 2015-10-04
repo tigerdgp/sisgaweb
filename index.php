@@ -63,7 +63,7 @@
     $id_user = $_SESSION['id_usuario'];
     $cca = array();
     $query = sprintf("
-		SELECT c.nome, c.data_inicio, c.data_termino, c.hora_inicio, c.hora_termino
+		SELECT c.nome, c.data_inicio, c.data_termino, c.hora_inicio, c.hora_termino, c.local
 		FROM cursos c
         INNER JOIN turmas t ON c.id_curso = t.id_curso
         WHERE t.id_aluno = '".$id_user."' AND t.ativo = 1

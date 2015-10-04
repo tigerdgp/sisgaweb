@@ -10,6 +10,10 @@
 	*	Edição: 	-
 	**************************************************************************
 	*/
+
+    if(isset($_POST['submit'])){
+        header('Location: ?cursos',TRUE,307);
+	}
 	
     $id_c = $_GET['c'];
 	$curso = array();

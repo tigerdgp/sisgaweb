@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.21-dev, created on 2015-09-15 09:49:26
+<?php /* Smarty version Smarty-3.1.21-dev, created on 2015-09-20 12:38:00
          compiled from "templates\home.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:9406553fe5b1c77ee7-07465978%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'bfd3629923e3cdae20b91c1eff4309c3709d2b00' => 
     array (
       0 => 'templates\\home.tpl',
-      1 => 1432914266,
+      1 => 1442763476,
       2 => 'file',
     ),
   ),
@@ -21,11 +21,15 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   array (
     'logo' => 0,
     'news' => 0,
-    'alunos' => 0,
+    'cursos' => 0,
+    'e_alunos' => 0,
+    'e_instituicoes' => 0,
+    'e_cursos' => 0,
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_553fe5b1d57693_44508906')) {function content_553fe5b1d57693_44508906($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_date_format')) include 'includes/smarty-3.1.21/libs/plugins\\modifier.date_format.php';
+<?php if ($_valid && !is_callable('content_553fe5b1d57693_44508906')) {function content_553fe5b1d57693_44508906($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_replace')) include 'includes/smarty-3.1.21/libs/plugins\\modifier.replace.php';
+if (!is_callable('smarty_modifier_date_format')) include 'includes/smarty-3.1.21/libs/plugins\\modifier.date_format.php';
 if (!is_callable('smarty_modifier_truncate')) include 'includes/smarty-3.1.21/libs/plugins\\modifier.truncate.php';
 ?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -39,7 +43,7 @@ if (!is_callable('smarty_modifier_truncate')) include 'includes/smarty-3.1.21/li
     	<header class="cabecalho">
         	<div class="header">
             	<div class="header_t">
-                	<img src="templates/img/bemvindo.png" alt="Seja bem-vindo!" width="110px" style="padding: 7px 15px; 0 0" /> <a href="?login" class="entrarButton"></a>
+                	<img src="templates/img/bemvindo.png" alt="Seja bem-vindo!" width="110px" style="padding: 7px 15px 0 0;" /> <a href="?login" class="entrarButton"></a>
                 </div>
                 <div class="header_e">
                 	<img src="<?php echo htmlspecialchars($_smarty_tpl->tpl_vars['logo']->value, ENT_QUOTES, 'UTF-8');?>
@@ -78,7 +82,9 @@ $_smarty_tpl->tpl_vars['smarty']->value['section']['s']['first']      = ($_smart
 $_smarty_tpl->tpl_vars['smarty']->value['section']['s']['last']       = ($_smarty_tpl->tpl_vars['smarty']->value['section']['s']['iteration'] == $_smarty_tpl->tpl_vars['smarty']->value['section']['s']['total']);
 ?>
                     <div class="titulo">
-                        <h1><a href="?noticia"><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['news']->value[$_smarty_tpl->getVariable('smarty')->value['section']['s']['index']]['titulo'], ENT_QUOTES, 'UTF-8');?>
+                        <h1><a href='?noticia&i=<?php echo htmlspecialchars($_smarty_tpl->tpl_vars['news']->value[$_smarty_tpl->getVariable('smarty')->value['section']['s']['index']]['id'], ENT_QUOTES, 'UTF-8');?>
+&n=<?php echo htmlspecialchars(smarty_modifier_replace($_smarty_tpl->tpl_vars['news']->value[$_smarty_tpl->getVariable('smarty')->value['section']['s']['index']]['titulo']," ","_"), ENT_QUOTES, 'UTF-8');?>
+'><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['news']->value[$_smarty_tpl->getVariable('smarty')->value['section']['s']['index']]['titulo'], ENT_QUOTES, 'UTF-8');?>
 </a></h1>
                     </div>
                     <div class="autor">
@@ -95,11 +101,41 @@ $_smarty_tpl->tpl_vars['smarty']->value['section']['s']['last']       = ($_smart
             </section>
             <section class="listagem">
             	<p class="first">Últimos Cursos<span>Situação</span></p>
-                <p>Costura de Vestuário<span>Inscrições Abertas</span></p>
-                <p>Artesão em Bordado à Mão<span>Inscrições Encerradas</span></p>
-                <p>Manicure e Pedicure<span>Inscrições Encerradas</span></p>
-                <p>Maquiador<span>Inscrições Encerradas</span></p>
-                <p>Recepcionista<span>Inscrições Encerradas</span></p>
+                <?php if (isset($_smarty_tpl->tpl_vars['smarty']->value['section']['s'])) unset($_smarty_tpl->tpl_vars['smarty']->value['section']['s']);
+$_smarty_tpl->tpl_vars['smarty']->value['section']['s']['name'] = 's';
+$_smarty_tpl->tpl_vars['smarty']->value['section']['s']['loop'] = is_array($_loop=$_smarty_tpl->tpl_vars['cursos']->value) ? count($_loop) : max(0, (int) $_loop); unset($_loop);
+$_smarty_tpl->tpl_vars['smarty']->value['section']['s']['show'] = true;
+$_smarty_tpl->tpl_vars['smarty']->value['section']['s']['max'] = $_smarty_tpl->tpl_vars['smarty']->value['section']['s']['loop'];
+$_smarty_tpl->tpl_vars['smarty']->value['section']['s']['step'] = 1;
+$_smarty_tpl->tpl_vars['smarty']->value['section']['s']['start'] = $_smarty_tpl->tpl_vars['smarty']->value['section']['s']['step'] > 0 ? 0 : $_smarty_tpl->tpl_vars['smarty']->value['section']['s']['loop']-1;
+if ($_smarty_tpl->tpl_vars['smarty']->value['section']['s']['show']) {
+    $_smarty_tpl->tpl_vars['smarty']->value['section']['s']['total'] = $_smarty_tpl->tpl_vars['smarty']->value['section']['s']['loop'];
+    if ($_smarty_tpl->tpl_vars['smarty']->value['section']['s']['total'] == 0)
+        $_smarty_tpl->tpl_vars['smarty']->value['section']['s']['show'] = false;
+} else
+    $_smarty_tpl->tpl_vars['smarty']->value['section']['s']['total'] = 0;
+if ($_smarty_tpl->tpl_vars['smarty']->value['section']['s']['show']):
+
+            for ($_smarty_tpl->tpl_vars['smarty']->value['section']['s']['index'] = $_smarty_tpl->tpl_vars['smarty']->value['section']['s']['start'], $_smarty_tpl->tpl_vars['smarty']->value['section']['s']['iteration'] = 1;
+                 $_smarty_tpl->tpl_vars['smarty']->value['section']['s']['iteration'] <= $_smarty_tpl->tpl_vars['smarty']->value['section']['s']['total'];
+                 $_smarty_tpl->tpl_vars['smarty']->value['section']['s']['index'] += $_smarty_tpl->tpl_vars['smarty']->value['section']['s']['step'], $_smarty_tpl->tpl_vars['smarty']->value['section']['s']['iteration']++):
+$_smarty_tpl->tpl_vars['smarty']->value['section']['s']['rownum'] = $_smarty_tpl->tpl_vars['smarty']->value['section']['s']['iteration'];
+$_smarty_tpl->tpl_vars['smarty']->value['section']['s']['index_prev'] = $_smarty_tpl->tpl_vars['smarty']->value['section']['s']['index'] - $_smarty_tpl->tpl_vars['smarty']->value['section']['s']['step'];
+$_smarty_tpl->tpl_vars['smarty']->value['section']['s']['index_next'] = $_smarty_tpl->tpl_vars['smarty']->value['section']['s']['index'] + $_smarty_tpl->tpl_vars['smarty']->value['section']['s']['step'];
+$_smarty_tpl->tpl_vars['smarty']->value['section']['s']['first']      = ($_smarty_tpl->tpl_vars['smarty']->value['section']['s']['iteration'] == 1);
+$_smarty_tpl->tpl_vars['smarty']->value['section']['s']['last']       = ($_smarty_tpl->tpl_vars['smarty']->value['section']['s']['iteration'] == $_smarty_tpl->tpl_vars['smarty']->value['section']['s']['total']);
+?>                
+                    <p><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['cursos']->value[$_smarty_tpl->getVariable('smarty')->value['section']['s']['index']]['nome'], ENT_QUOTES, 'UTF-8');?>
+
+                        <span>
+                            <?php if ($_smarty_tpl->tpl_vars['cursos']->value[$_smarty_tpl->getVariable('smarty')->value['section']['s']['index']]['inscricao']=="1") {?>
+                        	    Inscrições Abertas
+                            <?php } elseif ($_smarty_tpl->tpl_vars['cursos']->value[$_smarty_tpl->getVariable('smarty')->value['section']['s']['index']]['inscricao']=="2") {?>
+                        	    Inscrições Encerradas
+                            <?php }?>                            
+                        </span>
+                    </p>
+                <?php endfor; endif; ?>
             </section>
             <div class="clear"></div>
             <section class="banner">
@@ -112,11 +148,13 @@ $_smarty_tpl->tpl_vars['smarty']->value['section']['s']['last']       = ($_smart
             <section class="listagem">
             	<p class="first">Estatísticas</p>
                 <p>Visitas<span>203162</span></p>
-                <p>Alunos Incritos<span><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['alunos']->value, ENT_QUOTES, 'UTF-8');?>
+                <p>Alunos Incritos<span><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['e_alunos']->value, ENT_QUOTES, 'UTF-8');?>
 </span></p>
-                <p>Instituições<span>2</span></p>
-                <p>Cursos Ofertados<span>368</span></p>
-                <p>Certificados Entregues<span>302</span></p>
+                <p>Instituições<span><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['e_instituicoes']->value, ENT_QUOTES, 'UTF-8');?>
+</span></p>
+                <p>Cursos Ofertados<span><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['e_cursos']->value, ENT_QUOTES, 'UTF-8');?>
+</span></p>
+                <p>Certificados Entregues<span>0</span></p>
             </section>
             <div class="clear"></div>
             <section class="parceiros">

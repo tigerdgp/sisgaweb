@@ -39,6 +39,21 @@
         $contato[] = $row;
     }
     $smarty->assign('contato', $contato);
+
+
+    $cursos = array();  
+    $q = sprintf("
+		SELECT c.id_curso AS id, c.nome AS curso, c.carga_horaria, c.data_inicio, c.data_termino, c.hora_inicio, c.hora_termino, t.id_aluno AS aluno
+		FROM cursos c
+        INNER JOIN turmas t ON c.id_curso = t.id_curso
+        WHERE t.id_aluno = '".$id_user."'
+		ORDER BY c.data_inicio ASC
+	");
+    $con = $dbh->query($q);
+    while($row = $con->fetch(PDO::FETCH_ASSOC)){
+        $cursos[] = $row;
+    }
+    $smarty->assign('cursos', $cursos);
 	
     
 	//Variável global com informações da página

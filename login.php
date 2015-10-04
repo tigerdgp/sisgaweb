@@ -29,7 +29,7 @@
 					$pass = trim($_POST['pass']);
 					
 					$query = $dbh->prepare("
-						SELECT d.cpf, u.id_usuario, u.perfil, u.nome 
+						SELECT d.cpf, u.id_usuario, u.perfil, u.nome, u.foto 
 						FROM usuarios u
 						INNER JOIN documentos d ON u.id_usuario = d.id_usuario
 						WHERE (d.cpf = :user) AND (u.senha = :pass)
@@ -41,7 +41,8 @@
 					$results = $query->fetch(PDO::FETCH_ASSOC);
 					if(count($results) > 0){
 						$_SESSION['id_usuario'] = $results['id_usuario'];
-						$_SESSION['usuario'] = $results['nome'];
+						$_SESSION['usuario']    = $results['nome'];
+                        $_SESSION['avatar']     = $results['foto'];
 						//Perfil - Opções
                         //1-Aluno | 2-Instrutor | 3-Administrador | 4-Gerente
 						$_SESSION['nivel'] = $results['perfil'];
