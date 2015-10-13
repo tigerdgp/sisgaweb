@@ -1,22 +1,20 @@
-<?php /* Smarty version Smarty-3.1.21-dev, created on 2015-10-12 01:47:29
-         compiled from "templates\matriculas.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:29297560c7bd6c161c8-73453945%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /* Smarty version Smarty-3.1.21-dev, created on 2015-10-12 01:47:34
+         compiled from "templates\matricula.tpl" */ ?>
+<?php /*%%SmartyHeaderCode:23987561b3b663bf5d9-56653116%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
-    '0e38628c3db6ec539bb187c6840238e763aea6b2' => 
+    '75c5afb12ae5ac7e76c7d697029d1c4331798feb' => 
     array (
-      0 => 'templates\\matriculas.tpl',
-      1 => 1444625247,
+      0 => 'templates\\matricula.tpl',
+      1 => 1444625110,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '29297560c7bd6c161c8-73453945',
+  'nocache_hash' => '23987561b3b663bf5d9-56653116',
   'function' => 
   array (
   ),
-  'version' => 'Smarty-3.1.21-dev',
-  'unifunc' => 'content_560c7bd6c6a091_82207104',
   'variables' => 
   array (
     'errMsg' => 0,
@@ -24,11 +22,12 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'matricula' => 0,
   ),
   'has_nocache_code' => false,
+  'version' => 'Smarty-3.1.21-dev',
+  'unifunc' => 'content_561b3b6642aca4_91943805',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_560c7bd6c6a091_82207104')) {function content_560c7bd6c6a091_82207104($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_date_format')) include 'includes/smarty-3.1.21/libs/plugins\\modifier.date_format.php';
+<?php if ($_valid && !is_callable('content_561b3b6642aca4_91943805')) {function content_561b3b6642aca4_91943805($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_date_format')) include 'includes/smarty-3.1.21/libs/plugins\\modifier.date_format.php';
 ?><?php echo $_smarty_tpl->getSubTemplate ('header.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0);?>
 
-        <h1>Administração</h1>
         <div class="p_admin">
             <div class="p_cursos">
                 <h1>Matrículas</h1>
@@ -81,7 +80,7 @@ $_smarty_tpl->tpl_vars['smarty']->value['section']['s']['last']       = ($_smart
                             <td class="table15"><?php echo htmlspecialchars(smarty_modifier_date_format($_smarty_tpl->tpl_vars['matricula']->value[$_smarty_tpl->getVariable('smarty')->value['section']['s']['index']]['hora_inicio'],"%H:%M"), ENT_QUOTES, 'UTF-8');?>
  às <?php echo htmlspecialchars(smarty_modifier_date_format($_smarty_tpl->tpl_vars['matricula']->value[$_smarty_tpl->getVariable('smarty')->value['section']['s']['index']]['hora_termino'],"%H:%M"), ENT_QUOTES, 'UTF-8');?>
 </td>
-                            <td class="table10"><a href="?admin&c=matricula&a=<?php echo htmlspecialchars($_smarty_tpl->tpl_vars['matricula']->value[$_smarty_tpl->getVariable('smarty')->value['section']['s']['index']]['id'], ENT_QUOTES, 'UTF-8');?>
+                            <td class="table10"><a href="?admin&c=matriculas&a=<?php echo htmlspecialchars($_smarty_tpl->tpl_vars['matricula']->value[$_smarty_tpl->getVariable('smarty')->value['section']['s']['index']]['id'], ENT_QUOTES, 'UTF-8');?>
 ">Ativar</a></td>
                             <td class="table10"><a href="?admin&c=matriculas&d=<?php echo htmlspecialchars($_smarty_tpl->tpl_vars['matricula']->value[$_smarty_tpl->getVariable('smarty')->value['section']['s']['index']]['id'], ENT_QUOTES, 'UTF-8');?>
 ">Desativar</a></td>
@@ -91,6 +90,4 @@ $_smarty_tpl->tpl_vars['smarty']->value['section']['s']['last']       = ($_smart
             </div>
         </div>
     </div>
-</div>
-            
-<?php }} ?>
+</div><?php }} ?>
