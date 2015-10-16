@@ -154,6 +154,11 @@
 	    case 'home':
 		    include 'home.php';
 		    break;
+
+        //Carrega a pagina padrão
+	    case 'pdf':
+		    include 'pdf.php';
+		    break;			
 			
         //Carrega a pagina padrão
 	    default:
