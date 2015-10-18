@@ -1,4 +1,29 @@
-<style>
+<?php /* Smarty version Smarty-3.1.21-dev, created on 2015-10-16 16:29:41
+         compiled from "templates\pdf.tpl" */ ?>
+<?php /*%%SmartyHeaderCode:146505620ea19134966-48724035%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+$_valid = $_smarty_tpl->decodeProperties(array (
+  'file_dependency' => 
+  array (
+    '4a9bb4ca9ec706150e8e4708c63f7d62141802b8' => 
+    array (
+      0 => 'templates\\pdf.tpl',
+      1 => 1445023777,
+      2 => 'file',
+    ),
+  ),
+  'nocache_hash' => '146505620ea19134966-48724035',
+  'function' => 
+  array (
+  ),
+  'version' => 'Smarty-3.1.21-dev',
+  'unifunc' => 'content_5620ea19246593_59457436',
+  'variables' => 
+  array (
+    'teste' => 0,
+  ),
+  'has_nocache_code' => false,
+),false); /*/%%SmartyHeaderCode%%*/?>
+<?php if ($_valid && !is_callable('content_5620ea19246593_59457436')) {function content_5620ea19246593_59457436($_smarty_tpl) {?><style>
 	body div, p, h1, h2 {
 		border: none;
 	}
@@ -98,7 +123,8 @@
     </div>                        
     <div class="pdf_line2">
         <p style="float: left; width: 120px;">Curso Escolhido: </p>
-        <h6 style="width: 545px;">{$teste}</h6>
+        <h6 style="width: 545px;"><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['teste']->value, ENT_QUOTES, 'UTF-8');?>
+</h6>
     </div>
     <div class="pdf_line3">
         <p>Horário: (<span>X</span>)Manhã <b>  </b> (<span> </span>)Tarde <b>  </b> (<span> </span>)Noite</p>
@@ -183,4 +209,4 @@
         <p style="font-weight: normal;">Tel.: (34) 3334-3400</p>
         <p style="font-weight: normal;">www.mg.senac.br</p>
     </div>
-</div>
+</div><?php }} ?>

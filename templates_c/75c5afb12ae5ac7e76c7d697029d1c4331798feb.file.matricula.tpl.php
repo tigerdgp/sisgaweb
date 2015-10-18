@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.21-dev, created on 2015-10-12 01:47:34
+<?php /* Smarty version Smarty-3.1.21-dev, created on 2015-10-16 20:19:26
          compiled from "templates\matricula.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:23987561b3b663bf5d9-56653116%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '75c5afb12ae5ac7e76c7d697029d1c4331798feb' => 
     array (
       0 => 'templates\\matricula.tpl',
-      1 => 1444625110,
+      1 => 1444973354,
       2 => 'file',
     ),
   ),
@@ -15,6 +15,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.21-dev',
+  'unifunc' => 'content_561b3b6642aca4_91943805',
   'variables' => 
   array (
     'errMsg' => 0,
@@ -22,15 +24,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'matricula' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.21-dev',
-  'unifunc' => 'content_561b3b6642aca4_91943805',
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_561b3b6642aca4_91943805')) {function content_561b3b6642aca4_91943805($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_date_format')) include 'includes/smarty-3.1.21/libs/plugins\\modifier.date_format.php';
 ?><?php echo $_smarty_tpl->getSubTemplate ('header.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0);?>
 
         <div class="p_admin">
             <div class="p_cursos">
-                <h1>Matrículas</h1>
+                <h1>Matrícula</h1>
                 <?php if ($_smarty_tpl->tpl_vars['errMsg']->value!='') {?>
                     <div class="p_cad" align="center">
                         <p style="color: <?php echo htmlspecialchars($_smarty_tpl->tpl_vars['cor']->value, ENT_QUOTES, 'UTF-8');?>

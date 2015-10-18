@@ -14,7 +14,7 @@
 	$pdf_aluno = '';
 	$pdf_ = '';
 	
-	$smarty->assign('teste', 'oieeeee');		
+	$smarty->assign('teste', 'Auxiliar Administrativo');		
 	
 	$mpdf = new mPDF('', 'A4', '', '', 17, 17, 17, 12.7, 0, 0, 'P'); 
 	$content = $smarty->fetch('pdf.tpl');
