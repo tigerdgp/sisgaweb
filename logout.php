@@ -11,9 +11,10 @@
 	**************************************************************************
 	*/
 	
-	session_destroy();
-	header("Location: ?home");
-	
+	//session_destroy();
+	//header("Location: ?home");
+	require_once "includes/classes/sair.class.php";
+	Sair::getInstance()->logout();
     
 	//Variável global com informações da página
     global $page;
