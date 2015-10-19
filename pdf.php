@@ -1,20 +1,17 @@
 <?php
 
-		//Inclusões de arquivos
-    require_once('includes/setup.php');
-	require_once('includes/classes/conexao.class.php');
-    require_once('includes/funcoes.php');
-	include("plugins/mpdf/mpdf.php");
-	
-	//Inicia a instância do framework smarty
-    $smarty = new Smarty_Setup();
-	
+	//Inclusões de arquivos
+	include("plugins/mpdf/mpdf.php");	
 	
 	//Recuperação de parametros
 	$pdf_aluno = '';
 	$pdf_ = '';
 	
-	$smarty->assign('teste', 'Auxiliar Administrativo');		
+	$smarty->assign('teste', 'Auxiliar Administrativo');
+
+    $sql = sprintf("
+    ");
+    $smarty->assign('pdf', Crud::getInstance()->select($dbh, $sql));
 	
 	$mpdf = new mPDF('', 'A4', '', '', 17, 17, 17, 12.7, 0, 0, 'P'); 
 	$content = $smarty->fetch('pdf.tpl');

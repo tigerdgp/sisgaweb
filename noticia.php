@@ -18,19 +18,14 @@
     $noticia = $_GET['n'];
     $id = $_GET['i'];
     $n = str_replace("_"," ",$noticia);
-    $news = array();
-    $query = sprintf("
+    $sql = sprintf("
 		SELECT n.id_noticia AS id, n.titulo, n.texto, n.data, u.nome 
 		FROM noticias n
 		INNER JOIN usuarios u ON n.autor = u.id_usuario
 		WHERE n.titulo = '".$n."' AND n.id_noticia = '".$id."'
 		LIMIT 1
 	");
-    $con = $dbh->query($query);
-    while($row = $con->fetch(PDO::FETCH_ASSOC)){
-        $news[] = $row;
-    }
-    $smarty->assign('news', $news);
+    $smarty->assign('news', Crud::getInstance()->select($dbh, $sql));
         
     
 	//Variável global com informações da página

@@ -17,29 +17,29 @@
         $d = $_GET['d'];
 
         if($a >= '1') {
-            $sql = $dbh->prepare("
+            $sql = sprintf("
 		        UPDATE turmas 
-                SET ativo = 1
-                WHERE id_turma = :id
+                SET ativo = '1'
+                WHERE id_turma = :param0
 	        ");
-            $sql->bindParam(':id', $a);
-            $sql->execute();
-            $r1 = $sql->fetch(PDO::FETCH_ASSOC);
-            if(count($r1) == 1){
+            $r = Crud::getInstance()->update($dbh, $sql, array($a));
+            if($r == TRUE){
 			    $errMsg .= 'Pré-matrícula efetuada com sucesso!';
 			    $cor = "GREEN";
+                $sql = sprintf("
+                ");
+                $r = Crud::getInstance()->select($dbh, $sql);
+                echo "<script language='javascript'>window.open('?pdf&', '_blank');</script>";
 		    }else{
 			    $errMsg .= 'A Pré-matrícula não foi efetuada.';
 		    }
         }elseif($d >= '1') {
-            $sql = $dbh->prepare("
+            $sql = sprintf("
 		        DELETE FROM turmas
-                WHERE id_turma = :id
+                WHERE id_turma = :param0
 	        ");
-            $sql->bindParam(':id', $d);
-            $sql->execute();
-            $r1 = $sql->fetch(PDO::FETCH_ASSOC);
-            if(count($r1) == 1){
+            $r = Crud::getInstance()->update($dbh, $sql, array($d));
+            if($r == TRUE){
 			    $errMsg .= 'Pré-matrícula removida com sucesso!';
 			    $cor = "GREEN";
 		    }else{
@@ -49,8 +49,7 @@
         $smarty->assign('errMsg', $errMsg);
 	    $smarty->assign('cor', $cor);
 
-        $matricula = array();  
-        $q = sprintf("
+        $sql = sprintf("
 		        SELECT c.nome AS curso, c.data_inicio, c.hora_inicio, c.hora_termino, u.nome AS aluno, t.id_turma AS id
 		        FROM cursos c
                 INNER JOIN turmas t ON c.id_curso = t.id_curso
@@ -58,11 +57,7 @@
                 WHERE t.ativo = 0
 		        ORDER BY u.nome ASC 
 	        ");
-        $con = $dbh->query($q);
-        while($row = $con->fetch(PDO::FETCH_ASSOC)){
-            $matricula[] = $row;
-        }
-        $smarty->assign('matricula', $matricula);
+        $smarty->assign('matricula', Crud::getInstance()->select($dbh, $sql));
     }
 	
 	

@@ -18,7 +18,7 @@
 	//Inclusões de arquivos
     require_once('includes/setup.php');
 	require_once('includes/classes/conexao.class.php');
-	//require_once('includes/classes/dao_news.class.php');
+	require_once('includes/classes/crud.class.php');
     require_once('includes/funcoes.php');
 	
 	//Inicia a instância do framework smarty
@@ -61,8 +61,7 @@
     ********* Cursos em Curso pelo Aluno *********
     ********** ********** ********** ********** */
     $id_user = $_SESSION['id_usuario'];
-    $cca = array();
-    $query = sprintf("
+    $sql = sprintf("
 		SELECT c.nome, c.data_inicio, c.data_termino, c.hora_inicio, c.hora_termino, c.local
 		FROM cursos c
         INNER JOIN turmas t ON c.id_curso = t.id_curso
@@ -70,11 +69,7 @@
 		ORDER BY c.data_inicio DESC
         LIMIT 2
 	");
-    $con = $dbh->query($query);
-    while($row = $con->fetch(PDO::FETCH_ASSOC)){
-        $cca[] = $row;
-    }
-    $smarty->assign('cca', $cca);
+    $smarty->assign('cca', Crud::getInstance()->select($dbh, $sql));
 
 
     //Recebe os parametros passados na string

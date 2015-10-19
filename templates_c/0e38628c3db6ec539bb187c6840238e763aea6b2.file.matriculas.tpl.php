@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.21-dev, created on 2015-10-16 20:19:14
+<?php /* Smarty version Smarty-3.1.21-dev, created on 2015-10-19 01:15:36
          compiled from "templates\matriculas.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:29297560c7bd6c161c8-73453945%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '0e38628c3db6ec539bb187c6840238e763aea6b2' => 
     array (
       0 => 'templates\\matriculas.tpl',
-      1 => 1444973354,
+      1 => 1445224531,
       2 => 'file',
     ),
   ),
@@ -81,7 +81,7 @@ $_smarty_tpl->tpl_vars['smarty']->value['section']['s']['last']       = ($_smart
                             <td class="table15"><?php echo htmlspecialchars(smarty_modifier_date_format($_smarty_tpl->tpl_vars['matricula']->value[$_smarty_tpl->getVariable('smarty')->value['section']['s']['index']]['hora_inicio'],"%H:%M"), ENT_QUOTES, 'UTF-8');?>
  às <?php echo htmlspecialchars(smarty_modifier_date_format($_smarty_tpl->tpl_vars['matricula']->value[$_smarty_tpl->getVariable('smarty')->value['section']['s']['index']]['hora_termino'],"%H:%M"), ENT_QUOTES, 'UTF-8');?>
 </td>
-                            <td class="table10"><a href="?admin&c=matricula&a=<?php echo htmlspecialchars($_smarty_tpl->tpl_vars['matricula']->value[$_smarty_tpl->getVariable('smarty')->value['section']['s']['index']]['id'], ENT_QUOTES, 'UTF-8');?>
+                            <td class="table10"><a href="?admin&c=matriculas&a=<?php echo htmlspecialchars($_smarty_tpl->tpl_vars['matricula']->value[$_smarty_tpl->getVariable('smarty')->value['section']['s']['index']]['id'], ENT_QUOTES, 'UTF-8');?>
 ">Ativar</a></td>
                             <td class="table10"><a href="?admin&c=matriculas&d=<?php echo htmlspecialchars($_smarty_tpl->tpl_vars['matricula']->value[$_smarty_tpl->getVariable('smarty')->value['section']['s']['index']]['id'], ENT_QUOTES, 'UTF-8');?>
 ">Desativar</a></td>

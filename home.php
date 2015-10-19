@@ -15,67 +15,48 @@
 	/* ********** ********** ********** **********
     ****************** Notícias ******************
     ********** ********** ********** ********** */
-    $news = array();
-    $query = sprintf("
+    $sql = sprintf("
 		SELECT n.id_noticia AS id, n.titulo, n.texto, n.data, u.nome 
 		FROM noticias n
 		INNER JOIN usuarios u ON n.autor = u.id_usuario
 		ORDER BY n.data DESC 
 		LIMIT 0,3
-	");
-    $con = $dbh->query($query);
-    while($row = $con->fetch(PDO::FETCH_ASSOC)){
-        $news[] = $row;
-    }
-    $smarty->assign('news', $news);
+	");    
+    $smarty->assign('news', Crud::getInstance()->select($dbh, $sql));
 
 
     /* ********** ********** ********** **********
     ************** Listagem de Cursos ************
     ********** ********** ********** ********** */
-    $cursos = array();
-    $query = sprintf("
+    $sql = sprintf("
 		SELECT c.nome, c.inscricao
 		FROM cursos c
 		ORDER BY c.nome AND c.inscricao ASC
         LIMIT 0,5
 	");
-    $con = $dbh->query($query);
-    while($row = $con->fetch(PDO::FETCH_ASSOC)){
-        $cursos[] = $row;
-    }
-    $smarty->assign('cursos', $cursos);
+    $smarty->assign('cursos', Crud::getInstance()->select($dbh, $sql));
 	
 	
 	/* ********** ********** ********** **********
     ***************** Estatística ****************
     ********** ********** ********** ********** */
-	$query = sprintf("
+	$sql = sprintf("
 		SELECT count(u.id_usuario) AS alunos
 		FROM usuarios u
 	");
-	$con = $dbh->query($query);
-	$row = $con->fetch(PDO::FETCH_ASSOC);
-	$e_alunos = $row['alunos'];
-    $smarty->assign('e_alunos', $e_alunos);
+    $smarty->assign('e_alunos', Crud::getInstance()->count($dbh, $sql, 'alunos'));
 
-    $query = sprintf("
+    $sql = sprintf("
 		SELECT count(c.id_curso) AS cursos
 		FROM cursos c
 	");
-	$con = $dbh->query($query);
-	$row = $con->fetch(PDO::FETCH_ASSOC);
-	$e_cursos = $row['cursos'];
-    $smarty->assign('e_cursos', $e_cursos);
+    $smarty->assign('e_cursos', Crud::getInstance()->count($dbh, $sql, 'cursos'));
 
-    $query = sprintf("
+    $sql = sprintf("
 		SELECT count(i.id_instituicao) AS instituicao
 		FROM instituicao i
 	");
-	$con = $dbh->query($query);
-	$row = $con->fetch(PDO::FETCH_ASSOC);
-	$e_instituicoes = $row['instituicao'];
-    $smarty->assign('e_instituicoes', $e_instituicoes);
+    $smarty->assign('e_instituicoes', Crud::getInstance()->count($dbh, $sql, 'instituicao'));
 	
     
 	//Variável global com informações da página
