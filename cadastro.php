@@ -181,7 +181,8 @@
 				try {
 					//Pega as variáveis pelo metodo POST
 					//Dados Gerais
-					$p_nome 			= $_POST['p_nome'];
+					
+					/*$p_nome 			= $_POST['p_nome'];
 					$p_mae 				= $_POST['p_mae'];
 					$p_pai 				= $_POST['p_pai'];
 					$p_nasc 			= $_POST['p_nasc'];
@@ -220,9 +221,90 @@
 					$p_fone2 			= $_POST['p_fone2'];
 					$p_fone3 			= $_POST['p_fone3'];
 					$p_email 			= $_POST['p_email'];
+					*/
+					
+					Crud::getInstance()->set('p_nome', $_POST['p_nome']);
+					Crud::getInstance()->set('p_mae', $_POST['p_mae']);
+					Crud::getInstance()->set('p_pai', $_POST['p_pai']);
+					Crud::getInstance()->set('p_nasc', $_POST['p_nasc']);
+					Crud::getInstance()->set('p_naturalidade', $_POST['p_naturalidade']);
+					Crud::getInstance()->set('p_nacionalidade', $_POST['p_nacionalidade']);
+					Crud::getInstance()->set('p_sexo', $_POST['p_sexo']);
+					Crud::getInstance()->set('p_raca', $_POST['p_raca']);
+					Crud::getInstance()->set('p_escolaridade', $_POST['p_escolaridade']);
+					Crud::getInstance()->set('p_estado_civil', $_POST['p_estado_civil']);
+					Crud::getInstance()->set('p_deficiencia', $_POST['p_deficiencia']);
+					Crud::getInstance()->set('p_perfil', $_POST['p_perfil']);
+					Crud::getInstance()->set('p_senha', md5($_POST['senha']));
+					
+					$dados1 = Array(
+						Crud::getInstance()->get('p_nome'),
+						Crud::getInstance()->get('p_mae'),
+						Crud::getInstance()->get('p_pai'),
+						Crud::getInstance()->get('p_nasc'),
+						Crud::getInstance()->get('p_naturalidade'),
+						Crud::getInstance()->get('p_nacionalidade'),
+						Crud::getInstance()->get('p_sexo'),
+						Crud::getInstance()->get('p_raca'),
+						Crud::getInstance()->get('p_escolaridade'),
+						Crud::getInstance()->get('p_estado_civil'),
+						Crud::getInstance()->get('p_deficiencia'),
+						Crud::getInstance()->get('p_perfil'),
+						Crud::getInstance()->get('p_senha')					
+					);
+					
+					$sql = sprintf ("
+						INSERT INTO usuarios (nome, mae, pai, estado_civil, raca, deficiencia, data_nasc, sexo, escolaridade, perfil, data_cadastro, naturalidade, nacionalidade, senha)
+						VALUES (:param0, :param1, :param2, :param3, :param4, :param5, :param6, :param7, :param8, :param9, now(), :param10, :param11, :param12)
+					");
+					Crud::getInstance()->insert($dbh, $sql, $dados1);
+					$id = $dbh->lastInsertId();				
 					
 					
-					$query = $dbh->prepare("
+					$dados2 = Array(
+						$id,
+						Crud::getInstance()->get($_POST['p_cpf']),
+						Crud::getInstance()->get($_POST['p_rg']),
+						Crud::getInstance()->get($_POST['p_orgao']),
+						Crud::getInstance()->get($_POST['p_emissao']),
+						Crud::getInstance()->get($_POST['p_d_uf']),
+						Crud::getInstance()->get($_POST['p_titulo']),
+						Crud::getInstance()->get($_POST['p_zona']),
+						Crud::getInstance()->get($_POST['p_sessao']),
+						Crud::getInstance()->get($_POST['p_d_cidade']),
+						Crud::getInstance()->get($_POST['p_reservista'])					
+					);
+					
+					$dados3 = Array(
+						$id,
+						Crud::getInstance()->get($_POST['p_endereco']),
+						Crud::getInstance()->get($_POST['p_numero']),
+						Crud::getInstance()->get($_POST['p_complemento']),
+						Crud::getInstance()->get($_POST['p_bairro']),
+						Crud::getInstance()->get($_POST['p_cep']),
+						Crud::getInstance()->get($_POST['p_cidade']),
+						Crud::getInstance()->get($_POST['p_c_uf']),
+						Crud::getInstance()->get($_POST['p_ref']),
+						Crud::getInstance()->get($_POST['p_fone1']),
+						Crud::getInstance()->get($_POST['p_fone2']),
+						Crud::getInstance()->get($_POST['p_fone3']),
+						Crud::getInstance()->get($_POST['p_email'])			
+					);					
+					
+					
+					$sql = sprintf ("
+						INSERT INTO documentos (id_usuario, cpf, rg_numero, rg_orgao, rg_emissao, rg_uf, titulo_numero, titulo_zona, titulo_sessao, titulo_cidade, reservista)
+						VALUES (:param0, :param1, :param2, :param3, :param4, :param5, :param6, :param7, :param8, :param9, :param10)
+					");
+					Crud::getInstance()->insert($dbh, $sql, $dados2);
+					
+					$sql = sprintf ("
+						INSERT INTO contatos (id_usuario, endereco, numero, complemento, bairro, cep, cidade, estado, referencia, telefone1, telefone2, telefone3, email)
+						VALUES (:param0, :param1, :param2, :param3, :param4, :param5, :param6, :param7, :param8, :param9, :param10, :param11, :param12)
+					");
+					Crud::getInstance()->insert($dbh, $sql, $dados3);
+					
+					/*$query = $dbh->prepare("
 						INSERT INTO usuarios (nome, mae, pai, estado_civil, raca, deficiencia, data_nasc, sexo, escolaridade, perfil, data_cadastro, naturalidade, nacionalidade, senha)
 						VALUES (:p_nome, :p_mae, :p_pai, :p_estado_civil, :p_raca, :p_deficiencia, :p_nasc, :p_sexo, :p_escolaridade, :p_perfil, now(), :p_naturalidade, :p_nacionalidade, :senha)
 					");
@@ -286,7 +368,7 @@
 						$cor = "GREEN";
 					}else{
 						$errMsg .= 'O cadastro não foi efetuado.';
-					}
+					}*/
 				}catch(Exception $e) {
 					$errMsg .= 'Ocorreu um erro.'.$e;
 				}
@@ -298,29 +380,19 @@
 	$smarty->assign('id', $id);
 	$smarty->assign('teste', $teste);
 	
-	$uf = array();
-    $query = sprintf("
+    $sql = sprintf("
 		SELECT id_estado, uf
 		FROM estados
 		ORDER BY uf ASC
 	");
-    $con = $dbh->query($query);
-    while($row = $con->fetch(PDO::FETCH_ASSOC)){
-        $uf[] = $row;
-    }
-    $smarty->assign('uf', $uf);
+    $smarty->assign('uf', Crud::getInstance()->select($dbh, $sql));
 	
-	$curso = array();
-    $query = sprintf("
+    $sql = sprintf("
 		SELECT c.programa, i.nome
 		FROM cursos c
 		INNER JOIN instituicao i ON c.id_instituicao = i.id_instituicao
 	");
-    $con = $dbh->query($query);
-    while($row = $con->fetch(PDO::FETCH_ASSOC)){
-        $curso[] = $row;
-    }
-    $smarty->assign('curso', $curso);
+    $smarty->assign('curso', Crud::getInstance()->select($dbh, $sql));
 	
 	//Variável global com informações da página
     global $page;

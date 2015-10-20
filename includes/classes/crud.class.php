@@ -36,6 +36,18 @@
 		public function set($atributo, $val){
 			$this->$atributo = $val;	
 		}
+		
+		//Função para inserir dados em um banco utilizando parâmetros
+        /*public function transaction($dbh, $sql, $param) {
+			$query = $dbh->beginTransaction();
+            $query = $dbh->prepare($sql);
+            for ($i = 0; $i < count($param); ++$i) {
+                $p = ":param". $i;
+                $query->bindParam($p, $param[$i]);
+            }            	
+			$query->execute();
+			return $query;
+        }*/
 
         //Função para inserir dados em um banco utilizando parâmetros
         public function insert($dbh, $sql, $param) {

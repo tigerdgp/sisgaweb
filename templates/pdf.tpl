@@ -86,101 +86,141 @@
 			text-align: left;
 		}
 </style>
-<div class="content">   
-    <div class="pdf_logo1">
-        <img src="templates/img/logo_senac.png" width="2cm" />
-    </div>
-    <div class="pdf_line0">
-        <h1>FICHA DE CADASTRO</h1>
-    </div>
-    <div class="pdf_line1">
-        <h2>IMPORTANTE: É imprescindível o preenchimento de todos os campos abaixo.</h2>
-    </div>                        
-    <div class="pdf_line2">
-        <p style="float: left; width: 120px;">Curso Escolhido: </p>
-        <h6 style="width: 545px;">{$teste}</h6>
-    </div>
-    <div class="pdf_line3">
-        <p>Horário: (<span>X</span>)Manhã <b>  </b> (<span> </span>)Tarde <b>  </b> (<span> </span>)Noite</p>
-    </div>
-    <div class="pdf_bloco"> 
-        <p style="float: left; width: 35px;">CPF: </p>
-        <h6 style="width: 300px;">09478753606</h6>
-        <p style="float: left; width: 50px; clear: both;">Nome: </p>
-        <h6 style="width: 615px;">Dérik Gomide Padua</h6>
-        <p style="float: left; width: 40px;">Mãe: </p>
-        <h6 style="width: 625px;">Alcione Alves Gomide de Padua</h6>
-        <p style="float: left; width: 180px;">Sexo: (<span>X</span>)Masc <b>  </b> (<span> </span>)Fem</p>
-        <p style="float: left; width: 230px; margin-top: -0px;">Data Nascimento: <span style="border-bottom: 1px solid #000;">21/09/1989</span></p> 
-        <p style="float: right; width: 240px; margin-top: -0px;">Estado Civil: (<span>X</span>)Solteiro <b>  </b> (<span> </span>)Casado</p>
-        <p style="float: left; width: 100px; margin-top: 1px;">Naturalidade: </p>
-        <h6 style="width: 455px; margin-top: -1px;">Sacramento</h6>
-        <p style="float: left; width: 55px; margin-top: 1px; padding-left: 5px;">Estado: </p>
-        <h6 style="width: 50px; text-align: center; margin-top: -1px;">MG</h6>        
-        <p style="margin-top: 4px; margin-bottom: 4px;">Cor / Raça: (<span> </span>)Amarela <b>  </b> (<span>X</span>)Branca <b>  </b> (<span> </span>)Indígena <b>  </b> (<span> </span>)Negra <b>  </b> (<span> </span>)Parda</p>
-        <p style="margin-top: 4px; margin-bottom: 4px;">Possui Deficiência: (<span> </span>)Auditiva <b>  </b> (<span> </span>)Física/Motora <b>  </b> (<span> </span>)Mental <b>  </b> (<span> </span>)Múltiplas <b>  </b> (<span> </span>)Visual <b>  </b> (<span>X</span>)Nenhuma</p>
-        <p style="margin-top: 4px; margin-bottom: 4px;">Cursou ou cursa Programa de Aprendizagem Comercial ou outro programa gratuito oferecido pelo Senac? (<span>X</span>)Sim <b>  </b> (<span> </span>)Não</p>
-        <p style="margin-top: 4px;">Faz ou já fez curso no Senac Minas? (<span>X</span>)Sim <b>  </b> (<span> </span>)Não</p>
-    </div>
-    <div class="pdf_bloco">
-    	<p style="float: left; width: 75px;">Endereço: </p>
-        <h6 style="width: 485px;">Rua Vereador Jose Torquato</h6>
-        <p style="float: left; width: 30px; padding-left: 5px; margin-top: -0px;">Nº: </p>
-        <h6 style="width: 70px; text-align: center;">53</h6>
-        <p style="float: left; width: 105px;">Complemento: </p>
-        <h6 style="width: 100px;">   </h6>
-        <p style="float: left; width: 50px; padding-left: 5px; margin-top: -0px;">Bairro: </p>
-        <h6 style="width: 300px;">Euripedes Barsanulfo</h6>
-        <p style="float: left; width: 35px; padding-left: 5px; margin-top: -0px;">CEP: </p>
-        <h6 style="width: 65px;">38190000</h6>
-        <p style="float: left; width: 55px;">Cidade: </p>
-        <h6 style="width: 250px;">Sacramento</h6>
-        <p style="float: left; width: 145px; padding-left: 5px; margin-top: -0px;">Ponto de referência: </p>
-        <h6 style="width: 210px;">    </h6>
-        <p style="float: left; width: 120px;">Fone residencial: </p>
-        <h6 style="width: 210px;">34 3351-2472</h6>
-        <p style="float: left; width: 110px; padding-left: 5px; margin-top: -0px;">Fone comercial: </p>
-        <h6 style="width: 220px;">34 3351-4695</h6>
-        <p style="float: left; width: 55px;">Celular: </p>
-        <h6 style="width: 275px;">34 9164-1120</h6>
-        <p style="float: left; width: 55px; padding-left: 5px; margin-top: -0px;">Outros: </p>
-        <h6 style="width: 275px;">    </h6>
-        <p style="float: left; width: 50px;">E-mail: </p>
-        <h6 style="width: 615px;">tiger.dgp@hotmail.com</h6>
-        <p style="float: left; width: 210px;">Documento de Identidade: Nº </p>
-        <h6 style="width: 300px;">16172746</h6>
-        <p style="float: left; width: 110px; padding-left: 5px; margin-top: -0px;">Órgão emissor: </p>
-        <h6 style="width: 40px; text-align: center;">PC</h6>
-        <p style="float: left; width: 120px;">Data de Emissão: </p>
-        <h6 style="width: 285px; border: none;"><span style="border-bottom: 1px solid #000;">01/01/2010</span></h6>
-        <p style="float: left; width: 120px; padding-left: 5px; margin-top: -0px;">UF de Expedição: </p>
-        <h6 style="width: 40px; text-align: center;">MG</h6>
-        <p style="float: left; width: 140px;">Título de Eleitor: Nº </p>
-        <h6 style="width: 240px;">123456789123</h6>
-        <p style="float: left; width: 95px; padding-left: 5px; margin-top: -0px;">Zona / Seção: </p>
-        <h6 style="width: 185px;">    </h6>
-        <p style="float: left; width: 225px;">UF e Cidade do Título de Eleitor: </p>
-        <h6 style="width: 440px;">Sacramento - MG</h6>
-        <p style="float: left; width: 160px;">Data da última eleição: </p>
-        <h6 style="width: 150px; border: none;"><span style="border-bottom: 1px solid #000;">18/08/2000</span></h6>
-        <p style="float: left; width: 180px; padding-left: 5px; margin-top: -0px;">Certificado de Reservista: </p>
-        <h6 style="width: 170px;">12645823123356</h6>
-        <p style="float: left; width: 95px;">Escolaridade: </p>
-        <h6 style="width: 375px;">Ensino Superior</h6>
-        <p style="width: 190px; float: left; padding-left: 5px; margin-top: -0px;">(<span> </span>)Completo <b>  </b> (<span>X</span>)Incompleto</p>        
-        <p style="float: left; width: 410px;">Você estudou mais tempo em escola Pública ou Particular? </p>
-        <h6 style="width: 255px;">Pública</h6>        
-    </div>
-    <div class="pdf_logo2">
-        <img src="templates/img/iso_senac.jpg" width="1.4cm" />
-    </div>
-    <div class="pdf_footer1">
-    	<p>Serviço Nacional de Aprendizagem Comercial</p>
-    </div>
-    <div class="pdf_footer2">
-    	<p>Superintendência Comercial Senac Minas - Regional Triângulo</p>
-        <p>SENAC Uberaba</p>
-        <p style="font-weight: normal;">Tel.: (34) 3334-3400</p>
-        <p style="font-weight: normal;">www.mg.senac.br</p>
-    </div>
+<div class="content">
+	{if $prog == 1}
+        <div id="senac_pronatec">
+        	
+                <div class="pdf_logo1">
+                    <img src="templates/img/logo_senac.png" width="2cm" />
+                </div>
+                <div class="pdf_line0">
+                    <h1>FICHA DE CADASTRO</h1>
+                </div>
+                <div class="pdf_line1">
+                    <h2>IMPORTANTE: É imprescindível o preenchimento de todos os campos abaixo.</h2>
+                </div>
+            {section name=s loop=$curso}                       
+                <div class="pdf_line2">
+                    <p style="float: left; width: 120px;">Curso Escolhido: </p>
+                    <h6 style="width: 545px;">{$curso[s].nome}</h6>
+                </div>
+                <div class="pdf_line3">
+                    <p>Horário: 
+                    {if $curso[s].hora_inicio|date_format:"%H" < 12}(<span>X</span>)Manhã <b>  </b> (<span> </span>)Tarde <b>  </b> (<span> </span>)Noite</p>
+                    {elseif ($curso[s].hora_inicio|date_format:"%H" >= 12) AND ($curso[s].hora_inicio|date_format:"%H" < 19)}(<span> </span>)Manhã <b>  </b> (<span>X</span>)Tarde <b>  </b> (<span> </span>)Noite</p>
+                    {else}(<span> </span>)Manhã <b>  </b> (<span> </span>)Tarde <b>  </b> (<span>X</span>)Noite</p>
+                    {/if}
+                </div>
+            {/section}
+            {section name=s loop=$pdf}
+                <div class="pdf_bloco"> 
+                    <p style="float: left; width: 35px;">CPF: </p>
+                    <h6 style="width: 300px;">{$pdf[s].cpf}</h6>
+                    <p style="float: left; width: 50px; clear: both;">Nome: </p>
+                    <h6 style="width: 615px;">{$pdf[s].nome}</h6>
+                    <p style="float: left; width: 40px;">Mãe: </p>
+                    <h6 style="width: 625px;">{$pdf[s].mae}</h6>
+                    <p style="float: left; width: 180px;">Sexo: 
+                    {if $pdf[s].sexo == 1}(<span> </span>)Masc <b>  </b> (<span>X</span>)Fem</p>
+                    {else} (<span>X</span>)Masc <b>  </b> (<span> </span>)Fem</p>
+                    {/if}
+                    <p style="float: left; width: 230px; margin-top: -0px;">Data Nascimento: <span style="border-bottom: 1px solid #000;">{$pdf[s].data_nasc|date_format:"%d/%m/%Y"}</span></p> 
+                    <p style="float: right; width: 240px; margin-top: -0px;">Estado Civil:
+                    {if $pdf[s].estado_civil == 2} (<span> </span>)Solteiro <b>  </b> (<span>X</span>)Casado</p>
+                    {else} (<span>X</span>)Solteiro <b>  </b> (<span> </span>)Casado</p>
+                    {/if}
+                    <p style="float: left; width: 100px; margin-top: 1px;">Naturalidade: </p>
+                    <h6 style="width: 455px; margin-top: -1px;">{$pdf[s].naturalidade}</h6>
+                    <p style="float: left; width: 55px; margin-top: 1px; padding-left: 5px;">Estado: </p>
+                    <h6 style="width: 50px; text-align: center; margin-top: -1px;">{$pdf[s].estado}</h6>        
+                    <p style="margin-top: 4px; margin-bottom: 4px;">Cor / Raça: 
+                    {if $pdf[s].raca == 1}(<span>X</span>)Amarela <b>  </b> (<span> </span>)Branca <b>  </b> (<span> </span>)Indígena <b>  </b> (<span> </span>)Negra <b>  </b> (<span> </span>)Parda</p>
+                    {elseif $pdf[s].raca == 2}(<span> </span>)Amarela <b>  </b> (<span>X</span>)Branca <b>  </b> (<span> </span>)Indígena <b>  </b> (<span> </span>)Negra <b>  </b> (<span> </span>)Parda</p>
+                    {elseif $pdf[s].raca == 3}(<span> </span>)Amarela <b>  </b> (<span> </span>)Branca <b>  </b> (<span>X</span>)Indígena <b>  </b> (<span> </span>)Negra <b>  </b> (<span> </span>)Parda</p>
+                    {elseif $pdf[s].raca == 4}(<span> </span>)Amarela <b>  </b> (<span> </span>)Branca <b>  </b> (<span> </span>)Indígena <b>  </b> (<span>X</span>)Negra <b>  </b> (<span> </span>)Parda</p>
+                    {elseif $pdf[s].raca == 5}(<span> </span>)Amarela <b>  </b> (<span> </span>)Branca <b>  </b> (<span> </span>)Indígena <b>  </b> (<span> </span>)Negra <b>  </b> (<span>X</span>)Parda</p>
+                    {/if}
+                    <p style="margin-top: 4px; margin-bottom: 4px;">Possui Deficiência: 
+                    {if $pdf[s].deficiencia == 1}(<span>X</span>)Auditiva <b>  </b> (<span> </span>)Física/Motora <b>  </b> (<span> </span>)Mental <b>  </b> (<span> </span>)Múltiplas <b>  </b> (<span> </span>)Visual <b>  </b> (<span> </span>)Nenhuma</p>
+                    {elseif $pdf[s].deficiencia == 2}(<span> </span>)Auditiva <b>  </b> (<span>X</span>)Física/Motora <b>  </b> (<span> </span>)Mental <b>  </b> (<span> </span>)Múltiplas <b>  </b> (<span> </span>)Visual <b>  </b> (<span> </span>)Nenhuma</p>
+                    {elseif $pdf[s].deficiencia == 3}(<span> </span>)Auditiva <b>  </b> (<span> </span>)Física/Motora <b>  </b> (<span>X</span>)Mental <b>  </b> (<span> </span>)Múltiplas <b>  </b> (<span> </span>)Visual <b>  </b> (<span> </span>)Nenhuma</p>
+                    {elseif $pdf[s].deficiencia == 4}(<span> </span>)Auditiva <b>  </b> (<span> </span>)Física/Motora <b>  </b> (<span> </span>)Mental <b>  </b> (<span>X</span>)Múltiplas <b>  </b> (<span> </span>)Visual <b>  </b> (<span> </span>)Nenhuma</p>
+                    {elseif $pdf[s].deficiencia == 5}(<span> </span>)Auditiva <b>  </b> (<span> </span>)Física/Motora <b>  </b> (<span> </span>)Mental <b>  </b> (<span> </span>)Múltiplas <b>  </b> (<span>X</span>)Visual <b>  </b> (<span> </span>)Nenhuma</p>
+                    {elseif $pdf[s].deficiencia == 6}(<span> </span>)Auditiva <b>  </b> (<span> </span>)Física/Motora <b>  </b> (<span> </span>)Mental <b>  </b> (<span> </span>)Múltiplas <b>  </b> (<span> </span>)Visual <b>  </b> (<span>X</span>)Nenhuma</p>
+                    {/if}
+                    <p style="margin-top: 4px; margin-bottom: 4px;">Cursou ou cursa Programa de Aprendizagem Comercial ou outro programa gratuito oferecido pelo Senac? (<span>X</span>)Sim <b>  </b> (<span> </span>)Não</p>
+                    <p style="margin-top: 4px;">Faz ou já fez curso no Senac Minas? (<span>X</span>)Sim <b>  </b> (<span> </span>)Não</p>
+                </div>
+                <div class="pdf_bloco">
+                    <p style="float: left; width: 75px;">Endereço: </p>
+                    <h6 style="width: 485px;">{$pdf[s].endereco}</h6>
+                    <p style="float: left; width: 30px; padding-left: 5px; margin-top: -0px;">Nº: </p>
+                    <h6 style="width: 70px; text-align: center;">{$pdf[s].numero}</h6>
+                    <p style="float: left; width: 105px;">Complemento: </p>
+                    <h6 style="width: 100px;">{$pdf[s].complemento}</h6>
+                    <p style="float: left; width: 50px; padding-left: 5px; margin-top: -0px;">Bairro: </p>
+                    <h6 style="width: 300px;">{$pdf[s].bairro}</h6>
+                    <p style="float: left; width: 35px; padding-left: 5px; margin-top: -0px;">CEP: </p>
+                    <h6 style="width: 65px;">{$pdf[s].cep}</h6>
+                    <p style="float: left; width: 55px;">Cidade: </p>
+                    <h6 style="width: 250px;">{$pdf[s].cidade}</h6>
+                    <p style="float: left; width: 145px; padding-left: 5px; margin-top: -0px;">Ponto de referência: </p>
+                    <h6 style="width: 210px;">{$pdf[s].referencia}</h6>
+                    <p style="float: left; width: 120px;">Fone residencial: </p>
+                    <h6 style="width: 210px;">{$pdf[s].telefone1|phone_format}</h6>
+                    <p style="float: left; width: 110px; padding-left: 5px; margin-top: -0px;">Fone comercial: </p>
+                    <h6 style="width: 220px;"> </h6>
+                    <p style="float: left; width: 55px;">Celular: </p>
+                    <h6 style="width: 275px;">{$pdf[s].telefone2|phone_format}</h6>
+                    <p style="float: left; width: 55px; padding-left: 5px; margin-top: -0px;">Outros: </p>
+                    <h6 style="width: 275px;">{$pdf[s].telefone3|phone_format}</h6>
+                    <p style="float: left; width: 50px;">E-mail: </p>
+                    <h6 style="width: 615px;">{$pdf[s].email}</h6>
+                    <p style="float: left; width: 210px;">Documento de Identidade: Nº </p>
+                    <h6 style="width: 300px;">{$pdf[s].rg_numero}</h6>
+                    <p style="float: left; width: 110px; padding-left: 5px; margin-top: -0px;">Órgão emissor: </p>
+                    <h6 style="width: 40px; text-align: center;">{$pdf[s].rg_orgao}</h6>
+                    <p style="float: left; width: 120px;">Data de Emissão: </p>
+                    <h6 style="width: 285px; border: none;"><span style="border-bottom: 1px solid #000;">{$pdf[s].rg_emissao|date_format:"%d/%m/%Y"}</span></h6>
+                    <p style="float: left; width: 120px; padding-left: 5px; margin-top: -0px;">UF de Expedição: </p>
+                    <h6 style="width: 40px; text-align: center;">{$pdf[s].rg_uf}</h6>
+                    <p style="float: left; width: 140px;">Título de Eleitor: Nº </p>
+                    <h6 style="width: 240px;">{$pdf[s].titulo_numero}</h6>
+                    <p style="float: left; width: 95px; padding-left: 5px; margin-top: -0px;">Zona / Seção: </p>
+                    <h6 style="width: 185px;">{$pdf[s].titulo_zona} / {$pdf[s].titulo_sessao}</h6>
+                    <p style="float: left; width: 225px;">UF e Cidade do Título de Eleitor: </p>
+                    <h6 style="width: 440px;">{$pdf[s].titulo_cidade}</h6>
+                    <p style="float: left; width: 160px;">Data da última eleição: </p>
+                    <h6 style="width: 150px; border: none;"><span style="border-bottom: 1px solid #000;"> </span></h6>
+                    <p style="float: left; width: 180px; padding-left: 5px; margin-top: -0px;">Certificado de Reservista: </p>
+                    <h6 style="width: 170px;">{$pdf[s].reservista}</h6>
+                    <p style="float: left; width: 95px;">Escolaridade: </p>
+                    <h6 style="width: 375px;">{$pdf[s].escolaridade}</h6>
+                    <p style="width: 190px; float: left; padding-left: 5px; margin-top: -0px;">(<span> </span>)Completo <b>  </b> (<span>X</span>)Incompleto</p>        
+                    <p style="float: left; width: 410px;">Você estudou mais tempo em escola Pública ou Particular? </p>
+                    <h6 style="width: 255px;"></h6>        
+                </div>
+                <div class="pdf_logo2">
+                    <img src="templates/img/iso_senac.jpg" width="1.4cm" />
+                </div>
+                <div class="pdf_footer1">
+                    <p>Serviço Nacional de Aprendizagem Comercial</p>
+                </div>
+                <div class="pdf_footer2">
+                    <p>Superintendência Comercial Senac Minas - Regional Triângulo</p>
+                    <p>SENAC Uberaba</p>
+                    <p style="font-weight: normal;">Tel.: (34) 3334-3400</p>
+                    <p style="font-weight: normal;">www.mg.senac.br</p>
+                </div>
+            {/section}
+        </div>
+    {elseif $prog == 2}
+        <div id="senac_psg">
+        senac - psg
+        </div>
+    {elseif $prog == 3}
+        <div id="senai_pronatec">
+        senai - pronatec
+        </div>
+    {/if}
 </div>
