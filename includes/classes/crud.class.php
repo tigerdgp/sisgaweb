@@ -14,6 +14,7 @@
     class Crud {
 		
 		public static $instance;
+		//public $var1, $var2, $var3;
 		
 		// Método construtor da classe
         private function __construct() { }
@@ -30,14 +31,18 @@
 		 * Retornar o valor de um atributo
 		 * - Key -> nome do atributo
 		 */
-		public function get($key){
-			return $this->$key;
+		public function __get($key){
+			if (property_exists($this, $key)) {
+                return $this->$key;
+            }
 		}
-		public function set($atributo, $val){
-			$this->$atributo = $val;	
+		public function __set($key, $val){
+			if (property_exists($this, $key)) {
+				$this->$key = $val;
+			}	
 		}
 		
-		//Função para inserir dados em um banco utilizando parâmetros
+		//Função para inserir dados em um banco utilizando transaction
         /*public function transaction($dbh, $sql, $param) {
 			$query = $dbh->beginTransaction();
             $query = $dbh->prepare($sql);
