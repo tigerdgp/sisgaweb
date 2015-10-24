@@ -12,6 +12,7 @@
 	*/
 	
 	$id_user = $_SESSION['id_usuario'];
+	$smarty->assign('edit_user', $id_user);
 	
 	$user = array();
 	$contato = array();
@@ -54,6 +55,33 @@
         $cursos[] = $row;
     }
     $smarty->assign('cursos', $cursos);
+	
+	
+	/* Edição
+	*/
+	//Exibir os dados gerais
+	$sql = sprintf("
+		SELECT u.*, (SELECT nome FROM cidades WHERE id_cidade = u.naturalidade) AS cidade, (SELECT uf FROM estados WHERE id_estado = u.n_uf) AS estado
+		FROM usuarios u
+		WHERE id_usuario = '".$id_user."'
+	");
+    $smarty->assign('edit', Crud::getInstance()->select($dbh, $sql));
+	
+	//Exibir os estados no formulario
+    $sql = sprintf("
+		SELECT id_estado, uf
+		FROM estados
+		ORDER BY uf ASC
+	");
+    $smarty->assign('uf', Crud::getInstance()->select($dbh, $sql));
+	
+	//Exibir as cidades no formulario
+	$sql = sprintf("
+		SELECT *
+		FROM cidades
+		ORDER BY uf ASC
+	");
+    $smarty->assign('city', Crud::getInstance()->select($dbh, $sql));
 	
     
 	//Variável global com informações da página

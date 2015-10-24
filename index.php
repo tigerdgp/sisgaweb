@@ -119,6 +119,11 @@
 	    case 'perfil':
 		    include 'perfil.php';
 		    break;
+		
+		//Carrega a página de perfil do usuario
+	    case 'editar_perfil':
+		    include 'editar.php';
+		    break;
 			
 		//Carrega a tela de login
 	    case 'login':
