@@ -8,28 +8,31 @@
                 	<p>Nome: </p>
                     <p>Mãe: </p>
                     <p>Pai: </p>
+                    <p>Naturalidade: </p>
                 </div>
                 <div class="blocoCampo t_500">
                 	<input type="text" name="p_nome" size="60" maxlength="100" />
                     <input type="text" name="p_mae" size="60" maxlength="100" />
                     <input type="text" name="p_pai" size="60" maxlength="100" />
+                    <select name="p_naturalidade">
+                        {section name=s loop=$city}
+                            <option value="{$city[s].id_cidade}">{$city[s].nome}</option>
+                        {/section}
+                    </select>
+                    <select name="p_n_uf">
+                        {section name=s loop=$uf}
+                            <option value="{$uf[s].id_estado}">{$uf[s].uf}</option>
+                        {/section}
+                    </select>
                 </div> 
-                <div class="blocoText t_150">
-                	<p>Data Nascimento: </p>
-                    <p>Naturalidade: </p>
-                    <p>Nacionalidade: </p>
-                </div>
-                <div class="blocoCampo t_200">
-                    <input type="date" name="p_nasc" class="input" />                    
-                    <input type="text" name="p_naturalidade" />
-                    <input type="text" name="p_nacionalidade" />
-                </div>
                 <div class="clear"></div>
-                <div class="blocoText t_120">
+                <div class="blocoText t_150">
+                	<p>Data Nascimento: </p> 
                 	<p>Sexo: </p>
                     <p>Raça / Cor: </p>
                 </div>
                 <div class="blocoCampo t_150">
+                	<input type="date" name="p_nasc" class="input" />
                     <select name="p_sexo">
                         <option value="1">Feminino</option>
                         <option value="2">Masculino</option>
@@ -44,10 +47,12 @@
                     </select>
                 </div>
                 <div class="blocoText t_120">
+                	<p>Nacionalidade: </p>
                 	<p>Escolaridade: </p>
                     <p>Estado Civil: </p>
                 </div>
                 <div class="blocoCampo t_200">
+                	<input type="text" name="p_nacionalidade" />
                 	<input type="text" name="p_escolaridade" />
                     <select name="p_estado_civil">
                         <option value="1">Solteiro</option>
@@ -64,8 +69,12 @@
                 </div>
                 <div class="blocoCampo t_150">
                 	<select name="p_deficiencia">
-                        <option value="1">Sim</option>
-                        <option value="2">Não</option>
+                        <option value="1">Auditiva</option>
+                        <option value="2">Física</option>
+                        <option value="3">Mental</option>
+                        <option value="4">Múltiplas</option>
+                        <option value="5">Visual</option>
+                        <option selected="selected" value="6">Nenhuma</option>
                     </select><br />
                     <select name="p_perfil">
                         <option value="1">Aluno</option>
@@ -82,7 +91,7 @@
                 	<p>CPF: </p>
                 </div>
                 <div class="blocoCampo t_200">
-                	<input type="text" name="p_cpf" maxlength="11" />
+                	<input type="number" name="p_cpf" maxlength="11" />
                 </div>
                 <div class="clear"></div>
                 <div class="blocoText t_100">
@@ -124,19 +133,28 @@
                     <p>Zona: </p>
                 </div>
                 <div class="blocoCampo t_100">
-                    <input type="text" name="p_zona" size="10" />
+                    <input type="text" name="p_zona" size="5" />
                 </div>
                 <div class="blocoText t_100">
                     <p>Sessão: </p>
                 </div>
                 <div class="blocoCampo t_100">
-                    <input type="text" name="p_sessao" size="10" />
+                    <input type="text" name="p_sessao" size="5" />
                 </div>
                 <div class="blocoText t_100">
                     <p>Cidade: </p>
                 </div>
                 <div class="blocoCampo t_100">
-                    <input type="text" name="p_d_cidade" />
+                    <select name="p_d_cidade">
+                        {section name=s loop=$city}
+                            <option value="{$city[s].id_cidade}">{$city[s].nome}</option>
+                        {/section}
+                    </select>
+                    <select name="p_dt_uf">
+                        {section name=s loop=$uf}
+                            <option value="{$uf[s].id_estado}">{$uf[s].uf}</option>
+                        {/section}
+                    </select>
                 </div>
                 <div class="clear"></div>
                 <div class="blocoText t_100">
@@ -178,13 +196,17 @@
                     <p>CEP: </p>
                 </div>
                 <div class="blocoCampo t_100">
-                    <input type="text" name="p_cep" size="7" />
+                    <input type="number" name="p_cep" size="7" />
                 </div>
                 <div class="blocoText t_100">
                     <p>Cidade: </p>
                 </div>
                 <div class="blocoCampo t_100">
-                    <input type="text" name="p_cidade" size="15" />
+                    <select name="p_cidade">
+                        {section name=s loop=$city}
+                            <option value="{$city[s].id_cidade}">{$city[s].nome}</option>
+                        {/section}
+                    </select>
                 </div>
                 <div class="blocoText t_100">
                     <p>Estado: </p>
@@ -195,14 +217,14 @@
                             <option value="{$uf[s].id_estado}">{$uf[s].uf}</option>
                         {/section}
                     </select>
-                </div>
+                </div>                
+                <div class="clear"></div>
                 <div class="blocoText t_100">
                     <p>Referência: </p>
                 </div>
                 <div class="blocoCampo t_100">
                     <input type="text" name="p_ref" size="15" />
                 </div>
-                <div class="clear"></div>
                 <div class="blocoText t_120">
                     <p>Telefone Fixo: </p>
                 </div>
@@ -214,14 +236,14 @@
                 </div>
                 <div class="blocoCampo t_100">
                     <input type="tel" name="p_fone2" />
-                </div>
+                </div>                
+                <div class="clear"></div>
                 <div class="blocoText t_100">
                     <p>Celular: </p>
                 </div>
                 <div class="blocoCampo t_100">
                     <input type="tel" name="p_fone3" />
                 </div>
-                <div class="clear"></div>
                 <div class="blocoText t_100">
                     <p>E-mail: </p>
                 </div>

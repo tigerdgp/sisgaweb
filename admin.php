@@ -15,6 +15,9 @@
 
         $a = $_GET['a'];
         $d = $_GET['d'];
+		$u = $_GET['u'];
+		$p = $_GET['p'];
+		$x = $_GET['x'];
 
         if($a >= '1') {
             $sql = sprintf("
@@ -26,10 +29,9 @@
             if($r == TRUE){
 			    $errMsg .= 'Pré-matrícula efetuada com sucesso!';
 			    $cor = "GREEN";
-                $sql = sprintf("
-                ");
-                $r = Crud::getInstance()->select($dbh, $sql);
-                echo "<script language='javascript'>window.open('?pdf&', '_blank');</script>";
+                //$sql = sprintf("SELECT id_aluno, id_curso, id_form FROM turmas WHERE id_turma = '".$a);
+                //$r = Crud::getInstance()->select($dbh, $sql);
+                echo "<script language='javascript'>window.open('?pdf&t=".$a."&u=".$u."&p=".$p."&c=".$x."', '_blank');</script>";
 		    }else{
 			    $errMsg .= 'A Pré-matrícula não foi efetuada.';
 		    }
@@ -50,7 +52,7 @@
 	    $smarty->assign('cor', $cor);
 
         $sql = sprintf("
-		        SELECT c.nome AS curso, c.data_inicio, c.hora_inicio, c.hora_termino, u.nome AS aluno, t.id_turma AS id
+		        SELECT c.nome AS curso, c.data_inicio, c.hora_inicio, c.hora_termino, u.nome AS aluno, t.id_turma AS id, t.id_curso, t.id_form, u.id_usuario
 		        FROM cursos c
                 INNER JOIN turmas t ON c.id_curso = t.id_curso
                 INNER JOIN usuarios u ON u.id_usuario = t.id_aluno

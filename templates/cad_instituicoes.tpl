@@ -18,25 +18,15 @@
             <div class="p_cad">            	 	
             	<h1>Programas</h1>
                 <div class="blocoText t_150">
-                    <p>Gerar Formulários</p>
-                </div>
-                <div class="blocoCampo t_100">
-                	<select name="i_uf">
-                        <option value="1">Sim</option>
-                        <option value="2">Não</option>
-                    </select>
-                </div> 
-                <div class="clear"></div>
-                <div class="blocoText t_150">
-                	<p><input type="checkbox" name="i_pronatec" value="PRONATEC" /> PRONATEC</p>
-                    <p><input type="checkbox" name="i_psg" /> PSG</p>
+                	<p><input type="checkbox" name="cb[]" value="pronatec" /> PRONATEC</p>
+                    <p><input type="checkbox" name="cb[]" value="psg" /> PSG</p>
                 </div>
                 <div class="blocoText t_150">
-                    <p><input type="checkbox" name="i_movel" /> Escola Móvel</p>
-                    <p><input type="checkbox" name="i_planteq" /> PLANTEQ</p>
+                    <p><input type="checkbox" name="cb[]" value="escola_movel" /> Escola Móvel</p>
+                    <p><input type="checkbox" name="cb[]" value="planteq" /> PLANTEQ</p>
                 </div>
                 <div class="blocoText t_150">
-                    <p><input type="checkbox" name="i_pnq" /> PNQ</p>
+                    <p><input type="checkbox" name="cb[]" value="pnq" /> PNQ</p>
                 </div>
                 <div class="clear"></div>
         	</div>
@@ -71,13 +61,17 @@
                     <p>CEP: </p>
                 </div>
                 <div class="blocoCampo t_100">
-                    <input type="text" name="i_cep" size="7" />
+                    <input type="number" name="i_cep" size="7" />
                 </div>
                 <div class="blocoText t_100">
                     <p>Cidade: </p>
                 </div>
                 <div class="blocoCampo t_100">
-                    <input type="text" name="i_cidade" size="15" />
+                    <select name="i_cidade">
+                        {section name=s loop=$city}
+                            <option value="{$city[s].id_cidade}">{$city[s].nome}</option>
+                        {/section}
+                    </select>
                 </div>
                 <div class="blocoText t_100">
                     <p>Estado: </p>
@@ -88,14 +82,14 @@
                             <option value="{$uf[s].id_estado}">{$uf[s].uf}</option>
                         {/section}
                     </select>
-                </div>
+                </div>                
+                <div class="clear"></div>
                 <div class="blocoText t_100">
                     <p>Referência: </p>
                 </div>
                 <div class="blocoCampo t_100">
                     <input type="text" name="i_ref" size="15" />
                 </div>
-                <div class="clear"></div>
                 <div class="blocoText t_120">
                     <p>Telefone Fixo: </p>
                 </div>
@@ -107,14 +101,14 @@
                 </div>
                 <div class="blocoCampo t_100">
                     <input type="tel" name="i_fone2" />
-                </div>
+                </div>                
+                <div class="clear"></div>
                 <div class="blocoText t_100">
                     <p>Celular: </p>
                 </div>
                 <div class="blocoCampo t_100">
                     <input type="tel" name="i_fone3" />
                 </div>
-                <div class="clear"></div>
                 <div class="blocoText t_100">
                     <p>E-mail: </p>
                 </div>
@@ -129,7 +123,7 @@
                 </div>
             {/if}
             <div class="p_cad" align="center">
-            	<input type="submit" name="submit" value="Cadastrar" class="botao" /> {$teste}
+            	<input type="submit" name="submit" value="Cadastrar" class="botao" />
             </div>            
         </form>
     </div>
