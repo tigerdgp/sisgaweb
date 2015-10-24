@@ -681,3 +681,41 @@ ul#menu span, ul#sub_navTop span {
 	.p_cad .blocoCampo .input {
 		padding: 1px 0 1px 0;
 	}
+	
+/* Edição*/
+.edit {
+	float: right;
+	text-align: center;
+	vertical-align: middle;
+	background-color: #C60;
+	border-radius: 5px;
+	padding: 5px;
+	margin-top: -30px;
+	margin-right: 5px;
+}
+	.edit:hover {
+		background: #F30;
+		-moz-box-shadow: inset 0 0 5px #888;
+		-webkit-box-shadow: inset 0 0 5px #888;
+		box-shadow: inset 0 0 5px #888;
+	}
+	.edit a {
+		font-size: 15px;
+		text-decoration: none;
+		color: #fff;
+	}
+	.edit a:hover {
+		text-shadow: none;
+	}
+	
+.edit_bloco {
+	float: left; 
+	width: 485px;
+}
+	.edit_bloco p {
+		border-bottom: 1px solid #000;
+		height: 20px;
+	}
+	.edit_bloco h1 {
+		text-align: center;
+	}
