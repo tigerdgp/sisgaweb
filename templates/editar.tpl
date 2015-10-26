@@ -5,7 +5,7 @@
                     <h1>Editar - Informações Gerais</h1>
                     <form action="" method="post">
                         <input type="hidden" value="1" name="cod" />
-                        <div class="edit_bloco" style="background-color:#66C">
+                        <div class="edit_bloco">
                         {section name=s loop=$edit}
                             <h1>Original</h1>
                             <p><span>Nome: </span>{$edit[s].nome}</p>
@@ -59,7 +59,7 @@
                             {/if}
                         {/section}
                         </div>
-                        <div class="edit_bloco" style="background-color:#9C0">
+                        <div class="edit_bloco">
                             {section name=s loop=$edit}
                                 <h1>Novo</h1>
                                 <p><input type="text" name="p_nome" size="60" maxlength="100" value="{$edit[s].nome}" /></p>
@@ -261,10 +261,15 @@
                                     </p>
                                 {/if}
                             {/section}
-                        </div>
+                        </div>                        
                         <div class="clear"></div>
+                        {if $errMsg != ''}
+                            <div class="p_cad" align="center">
+                                <p style="color: {$cor}">{$errMsg}</p>
+                            </div>
+                        {/if}
                         <div class="p_cad" align="center">                        	
-                            <input type="submit" name="submit" value="Cancelar" class="botao" />
+                            <input type="submit" name="cancelar" value="Cancelar" class="botao" />
                             <input type="submit" name="submit" value="Avançar" class="botao" />
                         </div>            
                     </form>
@@ -274,8 +279,9 @@
                     <h1>Editar - Informações de Contato</h1>
                     <form action="" method="post">
                         <input type="hidden" value="2" name="cod" />                        
-                        <div class="edit_bloco" style="background-color:#9C0">
+                        <div class="edit_bloco">
                         	{section name=s loop=$edit_c}
+                            	<h1>Original</h1>
                                 <p><span>Endereço: </span>{$edit_c[s].endereco}</p>
                                 <p><span>Nº: </span>{$edit_c[s].numero}</p> 
                                 <p><span>Complemento: </span>{$edit_c[s].complemento}</p>
@@ -290,8 +296,9 @@
                                 <p><span>E-mail: </span>{$edit_c[s].email}</p>
                             {/section}
                         </div>
-                        <div class="edit_bloco" style="background-color:#C99">
+                        <div class="edit_bloco">
                         	{section name=s loop=$edit_c}
+                            	<h1>Novo</h1>
                                 <p><input type="text" name="p_endereco" size="50" value="{$edit_c[s].endereco}" /></p>
                                 <p><input type="text" name="p_numero" size="5" value="{$edit_c[s].numero}" /></p>
                                 <p><input type="text" name="p_complemento" size="30" value="{$edit_c[s].complemento}" /></p>
@@ -326,7 +333,7 @@
                         </div>                        
                         <div class="clear"></div>
                         <div class="p_cad" align="center">
-                            <input type="submit" name="submit" value="Cancelar" class="botao" />
+                            <input type="submit" name="cancelar" value="Cancelar" class="botao" />
                             <input type="submit" name="submit" value="Avançar" class="botao" />
                         </div>            
                     </form>
@@ -336,9 +343,132 @@
                     <h1>Editar - Informações Extras</h1>
                     <form action="" method="post">
                         <input type="hidden" value="3" name="cod" />
+                        <div class="edit_bloco" style="width: 630px;">
+                        	{section name=s loop=$edit_i}
+                            	<h1>Original</h1>
+                                <p><span>Profissão: </span>{$edit_i[s].profissao}</p>
+                                <p><span>Renda: </span>R$ {$edit_i[s].renda|number_format:2:",":"."}</p> 
+                                <p><span>Situação de Trabalho: </span>
+                                	{if $edit_i[s].trabalho == 1}Desempregado
+                                    {elseif $edit_i[s].trabalho == 2}Empregado
+                                    {elseif $edit_i[s].trabalho == 3}Candidato ao primeiro emprego
+                                    {/if}
+                                </p>
+                                <p><span>Estudou mais tempo em escola Pública ou Particular? </span>
+                                	{if $edit_i[s].tipo_escola == 1}Pública
+                                    {elseif $edit_i[s].tipo_escola == 2}Particular
+                                    {/if}
+                                </p>
+                                <p><span>É o principal responsável pelo domicílio? </span>
+                                	{if $edit_i[s].arrimo == 1}Sim
+                                    {elseif $edit_i[s].arrimo == 1}Não
+                                    {/if}
+                                </p>                          
+                                <p><span>Já fez algum curso do Senac? </span>
+                                	{if $edit_i[s].cursou_senac == 1}Sim
+                                    {elseif $edit_i[s].cursou_senac == 1}Não
+                                    {/if}
+                                </p>
+                                <p></p>                            
+                                <p><span>Pessoas que moram com você </span></p>
+                                <p><span>Nome 1: </span>{$edit_i[s].p_nome1}</p>
+                                <p><span>Renda 1: </span>R$ {$edit_i[s].p_renda1|number_format:2:",":"."}</p>
+                                <p><span>Parentesco 1: </span>{$edit_i[s].p_parentesco1}</p>
+                                <p><span>Profissão 1: </span>{$edit_i[s].profissao1}</p>
+                                <p></p>                            
+                                <p><span>Nome 2: </span>{$edit_i[s].p_nome2}</p>
+                                <p><span>Renda 2: </span>R$ {$edit_i[s].p_renda2|number_format:2:",":"."}</p>
+                                <p><span>Parentesco 2: </span>{$edit_i[s].p_parentesco2}</p>
+                                <p><span>Profissão 2: </span>{$edit_i[s].profissao2}</p>
+                                <p></p>                            
+                                <p><span>Nome 3: </span>{$edit_i[s].p_nome3}</p>
+                                <p><span>Renda 3: </span>R$ {$edit_i[s].p_renda3|number_format:2:",":"."}</p>
+                                <p><span>Parentesco 3: </span>{$edit_i[s].p_parentesco3}</p>
+                                <p><span>Profissão 3: </span>{$edit_i[s].profissao3}</p>
+                                <p></p>                            
+                                <p><span>Nome 4: </span>{$edit_i[s].p_nome4}</p>
+                                <p><span>Renda 4: </span>R$ {$edit_i[s].p_renda4|number_format:2:",":"."}</p>
+                                <p><span>Parentesco 4: </span>{$edit_i[s].p_parentesco4}</p>
+                                <p><span>Profissão 4: </span>{$edit_i[s].profissao4}</p>
+                            {/section}
+                        </div>
+                        <div class="edit_bloco" style="width: 340px;">
+                        	{section name=s loop=$edit_i}
+                            	<h1>Novo</h1>
+                                <p><input type="text" name="i_profissao" size="30" value="{$edit_i[s].profissao}" /></p>
+                                <p>R$ <input type="text" name="i_renda" size="5" value="{$edit_i[s].renda}" /></p>
+                                <p><select name="i_trabalho">
+                                        {if $edit_i[s].trabalho == 1}
+                                        <option value="1" selected="selected">Desempregado</option>
+                                        <option value="2">Empregado</option>
+                                        <option value="3">Candidato ao primeiro emprego</option>
+                                        {elseif $edit_i[s].trabalho == 2}
+                                        <option value="1">Desempregado</option>
+                                        <option value="2" selected="selected">Empregado</option>
+                                        <option value="3">Candidato ao primeiro emprego</option>
+                                        {elseif $edit_i[s].trabalho == 3}
+                                        <option value="1">Desempregado</option>
+                                        <option value="2">Empregado</option>
+                                        <option value="3" selected="selected">Candidato ao primeiro emprego</option>
+                                        {/if}
+                                    </select>
+                                </p>
+                                <p><select name="i_tipo_escola">
+                                        {if $edit_i[s].tipo_escola == 1}
+                                            <option value="1" selected="selected">Pública</option>
+                                            <option value="2">Particular</option>
+                                        {elseif $edit_i[s].tipo_escola == 2}
+                                            <option value="1">Pública</option>
+                                            <option value="2" selected="selected">Particular</option>
+                                        {/if}
+                                    </select>
+                                </p>
+                                <p><select name="i_arrimo">
+                                        {if $edit_i[s].arrimo == 1}
+                                        <option value="1" selected="selected">Sim</option>
+                                        <option value="2">Não</option>
+                                        {elseif $edit_i[s].arrimo == 2}
+                                        <option value="1">Sim</option>
+                                        <option value="2" selected="selected">Não</option>
+                                        {/if}
+                                    </select>
+                                </p>
+                                <p><select name="i_cursou_senac">
+                                        {if $edit_i[s].cursou_senac == 1}
+                                        <option value="1" selected="selected">Sim</option>
+                                        <option value="2">Não</option>
+                                        {elseif $edit_i[s].cursou_senac == 2}
+                                        <option value="1">Sim</option>
+                                        <option value="2" selected="selected">Não</option>
+                                        {/if}
+                                    </select>
+                                <p></p>
+                                <p></p>
+                                <p><input type="text" name="i_p_nome1" size="40" value="{$edit_i[s].p_nome1}" /></p>
+                                <p>R$ <input type="text" name="i_p_renda1" size="5" value="{$edit_i[s].p_renda1}" /></p>
+                                <p><input type="text" name="i_p_parentesco1" value="{$edit_i[s].p_parentesco1}" /></p>
+                                <p><input type="text" name="i_p_profissao1" size="30" value="{$edit_i[s].p_profissao1}" /></p>
+                                <p></p>
+                                <p><input type="text" name="i_p_nome2" size="40" value="{$edit_i[s].p_nome2}" /></p>
+                                <p>R$ <input type="text" name="i_p_renda2" size="5" value="{$edit_i[s].p_renda2}" /></p>
+                                <p><input type="text" name="i_p_parentesco2" value="{$edit_i[s].p_parentesco2}" /></p>
+                                <p><input type="text" name="i_p_profissao2" size="30" size="7" value="{$edit_i[s].p_profissao2}" /></p>
+                                <p></p>
+                                <p><input type="text" name="i_p_nome3" size="40" value="{$edit_i[s].p_nome3}" /></p>
+                                <p>R$ <input type="text" name="i_p_renda3" size="5" value="{$edit_i[s].p_renda3}" /></p>
+                                <p><input type="text" name="i_p_parentesco3" value="{$edit_i[s].p_parentesco3}" /></p>
+                                <p><input type="text" name="i_p_profissao3" size="30" value="{$edit_i[s].p_profissao3}" /></p>
+                                <p></p>
+                                <p><input type="text" name="i_p_nome4" size="40" value="{$edit_i[s].p_nome4}" /></p>
+                                <p>R$ <input type="text" name="i_p_renda4" size="5" value="{$edit_i[s].p_renda4}" /></p>
+                                <p><input type="text" name="i_p_parentesco4" value="{$edit_i[s].p_parentesco4}" /></p>
+                                <p><input type="text" name="i_p_profissao4" size="30" value="{$edit_i[s].p_profissao4}" /></p>
+                            {/section}
+                        </div>                        
+                        <div class="clear"></div>
                         <div class="p_cad" align="center">
-                            <input type="submit" name="submit" value="Cancelar" class="botao" />
-                            <input type="submit" name="submit" value="Avançar" class="botao" />
+                            <input type="submit" name="cancelar" value="Cancelar" class="botao" />
+                            <input type="submit" name="submit" value="Concluir" class="botao" />
                         </div>            
                     </form>
                 </div>
