@@ -75,7 +75,7 @@
         }
 
         //Função para contar quantidade de registros
-        public function count($dbh, $sql, $param) {
+        public function contar($dbh, $sql, $param) {
 			$query = $dbh->query($sql);
             $row = $query->fetch(PDO::FETCH_ASSOC);
 	        $var = $row[$param];
