@@ -41,32 +41,37 @@
     ***************** Estatística ****************
     ********** ********** ********** ********** */
 	$sql = sprintf("
+		SELECT SUM(uniques) AS visita FROM visitas
+	");
+	$smarty->assign('e_visitas', Crud::getInstance()->contar($dbh, $sql, 'visita'));
+	
+	$sql = sprintf("
 		SELECT count(u.id_usuario) AS alunos
 		FROM usuarios u
 	");
-    $smarty->assign('e_alunos', Crud::getInstance()->count($dbh, $sql, 'alunos'));
+    $smarty->assign('e_alunos', Crud::getInstance()->contar($dbh, $sql, 'alunos'));
 
     $sql = sprintf("
 		SELECT count(c.id_curso) AS cursos
 		FROM cursos c
 	");
-    $smarty->assign('e_cursos', Crud::getInstance()->count($dbh, $sql, 'cursos'));
+    $smarty->assign('e_cursos', Crud::getInstance()->contar($dbh, $sql, 'cursos'));
 
     $sql = sprintf("
 		SELECT count(i.id_instituicao) AS instituicao
 		FROM instituicao i
 	");
-    $smarty->assign('e_instituicoes', Crud::getInstance()->count($dbh, $sql, 'instituicao'));
+    $smarty->assign('e_instituicoes', Crud::getInstance()->contar($dbh, $sql, 'instituicao'));
 	
     
 	//Variável global com informações da página
     global $page;
     $page = array(
 	    'arquivo' 	=> 'home',
-	    'title'  	=> 'Início',
+	    'title'  	=> '',
 	    'tab'    	=> 0,
 	    'path'   	=> '[]',
-		'nivel'		=> 0
+		'nivel'		=> 0	//1-Aluno | 2-Instrutor | 3-Administrador | 4-Gerente
     );
 	
 	//Assina a variável global ao smarty

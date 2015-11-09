@@ -21,8 +21,8 @@
 			$aluno 			= $_POST['aluno'];            					
 					
 			$query          = $dbh->prepare("
-				INSERT INTO turmas (id_curso, id_aluno)
-				VALUES (:curso, :aluno)
+				INSERT INTO turmas (id_curso, id_aluno, id_form)
+				VALUES (:curso, :aluno, '2')
 			");
 			$query->bindParam(':curso', $curso);
 			$query->bindParam(':aluno', $aluno);
@@ -96,7 +96,7 @@
 	    'title'  	=> 'Cursos',
 	    'tab'    	=> 0,
 	    'path'   	=> '[]',
-		'nivel'		=> 1
+		'nivel'		=> 1	//1-Aluno | 2-Instrutor | 3-Administrador | 4-Gerente
     );
 	
 	if($_SESSION['nivel'] < $page['nivel']) {

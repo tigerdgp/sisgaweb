@@ -91,7 +91,7 @@
 	    'title'  	=> 'Login',
 	    'tab'    	=> 0,
 	    'path'   	=> '[]',
-		'nivel'		=> 0
+		'nivel'		=> 0	//1-Aluno | 2-Instrutor | 3-Administrador | 4-Gerente
     );
 	
 	//Assina a variável global ao smarty

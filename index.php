@@ -14,6 +14,7 @@
 	//Verifica se a sessão foi iniciada, caso não tenha sido, a inicia
 	if (!isset($_SESSION)) session_start();
 	
+	
 
 	//Inclusões de arquivos
     require_once('includes/setup.php');
@@ -21,8 +22,33 @@
 	require_once('includes/classes/crud.class.php');
     require_once('includes/funcoes.php');
 	
+	
+	
 	//Inicia a instância do framework smarty
-    $smarty = new Smarty_Setup();	
+    $smarty = new Smarty_Setup();
+	
+	
+	
+	//Inicia contador de visitas
+	$sql = sprintf("SELECT COUNT(*) FROM visitas WHERE data = CURDATE()");
+	$resultado = Crud::getInstance()->contar($dbh, $sql, 'visitas');
+	//Verifica se é uma visita (do visitante)
+	$nova = (!isset($_SESSION['ContadorVisitas'])) ? true : false;
+	//Verifica se já existe registro para o dia
+	if ($resultado[0] == 0) {
+		$sql = sprintf("INSERT INTO visitas VALUES (NULL, CURDATE(), 1, 1)");
+	} else {
+		if ($nova == true) {
+			$sql = sprintf("UPDATE visitas SET uniques = (uniques + 1), pageviews = (pageviews + 1) WHERE data = CURDATE()");
+		} else {
+			$sql = sprintf("UPDATE visitas SET pageviews = (pageviews + 1) WHERE data = CURDATE()");
+		}
+	}
+	// Registra a visita
+	Crud::getInstance()->insert($dbh, $sql);
+	// Cria uma variavel na sessão
+	$_SESSION['ContadorVisitas'] = md5(time());
+	
 	
 
 	//Criando o menu
@@ -30,9 +56,9 @@
      
 	$sql = "";      
 	if($_SESSION['nivel'] >= 3) {
-    	$sql = "SELECT * FROM menu ORDER BY ordem ASC";
+    	$sql = "SELECT * FROM menu WHERE ativo = 1 ORDER BY ordem ASC";
 	}else {
-    	$sql = "SELECT * FROM menu WHERE perfil = '1' ORDER BY ordem ASC";
+    	$sql = "SELECT * FROM menu WHERE perfil = '1' AND ativo = 1 ORDER BY ordem ASC";
 	}
 	$query = $dbh->query($sql);
     while($row = $query->fetch(PDO::FETCH_OBJ))
@@ -50,11 +76,14 @@
 	    'title' 	=> 'Index',
 	    'tab'    	=> 0,
 	    'path'   	=> '[]',
-		'nivel'		=> 0
+		'nivel'		=> 0	//1-Aluno | 2-Instrutor | 3-Administrador | 4-Gerente
     );
 
 
+
+	//Cálculo do prazo para apresentação da documentação de pré-matrícula
     $smarty->assign('amanha', strtotime('+1 day'));
+
 
 
     /* ********** ********** ********** **********
@@ -70,6 +99,7 @@
         LIMIT 2
 	");
     $smarty->assign('cca', Crud::getInstance()->select($dbh, $sql));
+
 
 
     //Recebe os parametros passados na string
@@ -145,7 +175,7 @@
 		    include 'logout.php';
 		    break;
 
-        //Carrega a pagina padrão
+        //Carrega a pagina de exibição de noticias
 	    case 'noticia':
 		    include 'noticia.php';
 		    break;			
@@ -155,9 +185,14 @@
 		    include 'home.php';
 		    break;
 
-        //Carrega a pagina padrão
+        //Carrega a pagina de geração de pdf
 	    case 'pdf':
 		    include 'pdf.php';
+		    break;			
+			
+        //Carrega a pagina de pesquisa
+	    case 'pesquisa':
+		    include 'search.php';
 		    break;			
 			
         //Carrega a pagina padrão

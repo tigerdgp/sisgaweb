@@ -272,7 +272,7 @@
 		'title' 	=> '',
 	    'tab'    	=> 0,
 	    'path'   	=> '[]',
-		'nivel'		=> 3
+		'nivel'		=> 3	//1-Aluno | 2-Instrutor | 3-Administrador | 4-Gerente
     );
 	
 	if($_SESSION['nivel'] < $page['nivel']) {

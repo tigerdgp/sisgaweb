@@ -19,7 +19,7 @@
 	    'title'  	=> 'Painel',
 	    'tab'    	=> 0,
 	    'path'   	=> '[]',
-		'nivel'		=> 1
+		'nivel'		=> 1	//1-Aluno | 2-Instrutor | 3-Administrador | 4-Gerente
     );
 	
 	if($_SESSION['nivel'] < $page['nivel']) {

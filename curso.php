@@ -16,19 +16,14 @@
 	}
 	
     $id_c = $_GET['c'];
-	$curso = array();
-    $query = sprintf("
+    $sql = sprintf("
 		SELECT c.id_curso AS id, c.nome AS curso, c.carga_horaria, c.data_inicio, c.data_termino, c.hora_inicio, c.hora_termino, c.inscricao, c.valor, c.escolaridade, c.idade, c.programa, c.vagas, i.nome AS instituicao
 		FROM cursos c
         INNER JOIN instituicao i ON c.id_instituicao = i.id_instituicao
         WHERE id_curso = '".$id_c."'
 		LIMIT 1 
 	");
-    $con = $dbh->query($query);
-    while($row = $con->fetch(PDO::FETCH_ASSOC)){
-        $curso[] = $row;
-    }
-    $smarty->assign('curso', $curso);
+    $smarty->assign('curso', Crud::getInstance()->select($dbh, $sql));
     
 	//Variável global com informações da página
     global $page;
@@ -37,7 +32,7 @@
 	    'title'  	=> 'Curso',
 	    'tab'    	=> 0,
 	    'path'   	=> '[]',
-		'nivel'		=> 1
+		'nivel'		=> 1	//1-Aluno | 2-Instrutor | 3-Administrador | 4-Gerente
     );
 	
 	if($_SESSION['nivel'] < $page['nivel']) {
