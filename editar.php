@@ -26,7 +26,7 @@
 	
 	//Exibir os dados de contatos
 	$sql = sprintf("
-		SELECT c.*, (SELECT nome FROM cidades WHERE id_cidade = c.cidade) AS cidade, (SELECT uf FROM estados WHERE id_estado = c.estado) AS estado
+		SELECT c.*, (SELECT nome FROM cidades WHERE id_cidade = c.cidade) AS n_cidade, (SELECT uf FROM estados WHERE id_estado = c.estado) AS n_estado
 		FROM contatos c
 		WHERE id_usuario = '".$id_user."'
 	");
@@ -50,7 +50,7 @@
 	
 	//Exibir as cidades no formulario
 	$sql = sprintf("
-		SELECT *
+		SELECT id_cidade, nome
 		FROM cidades
 		ORDER BY uf ASC
 	");
@@ -59,20 +59,37 @@
 	
 	if (isset($_POST['submit'])) {
 		$errMsg		= "";
-		$cor		= "";
+		$cor		= "RED";
 		
 		$codigo		= $_POST['cod'];
 		switch($codigo) {
 			case '1': //Atualização das informações gerais
 				if(empty($_POST['p_nome'])) {
 					$errMsg = 'Campo "Nome" não pode ficar em branco.';
+				}elseif(empty($_POST['p_mae'])) {
+					$errMsg = 'Campo "Mãe" não pode ficar em branco.';
+				}elseif(empty($_POST['p_pai'])) {
+					$errMsg = 'Campo "Pai" não pode ficar em branco.';
+				}elseif(empty($_POST['p_nasc'])) {
+					$errMsg = 'Campo "Data Nascimento" não pode ficar em branco.';
+				}elseif(empty($_POST['p_escolaridade'])) {
+					$errMsg = 'Campo "Escolaridade" não pode ficar em branco.';
+				}elseif(empty($_POST['p_nacionalidade'])) {
+					$errMsg = 'Campo "Nacionalidade" não pode ficar em branco.';
 				}
 				else {
 					try {
+						//Verifica se houve atualização no perfil						
+						if(empty($_POST['p_perfil'])) {
+							$perfil = $_SESSION['perfil'];
+						}else {
+							$perfil	= $_POST['p_perfil'];
+						}
+						
 						//Recupera os dados pelo método POST e armazena em um array
 						$dados 		= array(
 							$_POST['p_nome'], $_POST['p_mae'], $_POST['p_pai'], $_POST['p_nasc'], $_POST['p_escolaridade'], $_POST['p_nacionalidade'], $_POST['p_naturalidade'],
-							$_POST['p_n_uf'], $_POST['p_sexo'], $_POST['p_raca'], $_POST['p_estado_civil'], $_POST['p_deficiencia'], $_POST['p_perfil']
+							$_POST['p_n_uf'], $_POST['p_sexo'], $_POST['p_raca'], $_POST['p_estado_civil'], $_POST['p_deficiencia'], $perfil
 						);
 						
 						//Faz o update no banco de dados
@@ -85,35 +102,12 @@
 						
 						//Mensagem
 						if($r == true){
-							$errMsg .= 'Informações atualizadas com sucesso!';
+							$errMsg .= 'Informações gerais atualizadas com sucesso!';
 							$cor = "GREEN";
-							
-							/*$sql = sprintf("
-								SELECT perfil, nome, foto 
-								FROM usuarios
-								WHERE id_usuario = '".$id_user."'
-								LIMIT 1
-							");
-							$results	= Crud::getInstance()->select($dbh, $sql);
-							$_SESSION['usuario']    = $results['nome'];
-							$_SESSION['avatar']     = $results['foto'];
-							//Perfil - Opções
-							//1-Aluno | 2-Instrutor | 3-Administrador | 4-Gerente
-							$_SESSION['nivel'] = $results['perfil'];
-							if($results['perfil'] == 1) {
-								$_SESSION['perfil'] = "Aluno";
-							}elseif($results['perfil'] == 2) {
-								$_SESSION['perfil'] = "Instrutor";
-							}elseif($results['perfil'] == 3) {
-								$_SESSION['perfil'] = "Administrador";
-							}elseif($results['perfil'] == 4) {
-								$_SESSION['perfil'] = "Gerente";
-							}*/
-							
+							phpAlert("Informações gerais atualizadas com sucesso!");
 							Redirect("?editar_perfil&u=".$id_user."&etapa=2");
 						}else{
 							$errMsg .= 'As informações não foram atualizadas.';
-							$cor = "RED";
 						}
 					}catch(Exception $e) {
 						$errMsg .= 'Ocorreu um erro.'.$e;
@@ -122,27 +116,41 @@
 				break;
 				
 			case '2': //Atualização dos dados de contato
-				if(empty($_POST['p_nome'])) {
+				if(empty($_POST['p_endereco'])) {
+					$errMsg = 'Campo "Endereço" não pode ficar em branco.';
+				}elseif(empty($_POST['p_numero'])) {
+					$errMsg = 'Campo "Nº" não pode ficar em branco.';
+				}elseif(empty($_POST['p_bairro'])) {
+					$errMsg = 'Campo "Bairro" não pode ficar em branco.';
+				}elseif(empty($_POST['p_cep'])) {
+					$errMsg = 'Campo "CEP" não pode ficar em branco.';
+				}elseif(empty($_POST['p_fone2'])) {
+					$errMsg = 'Campo "Telefone Celular" não pode ficar em branco.';
 				}
 				else {
 					try {
 						//Recupera os dados pelo método POST e armazena em um array
 						$dados 		= array(
-							
+							 $_POST['p_endereco'], $_POST['p_numero'], $_POST['p_complemento'], $_POST['p_bairro'], $_POST['p_cep'], $_POST['p_cidade'],
+							 $_POST['p_c_uf'], $_POST['p_ref'], $_POST['p_fone1'], $_POST['p_fone2'], $_POST['p_fone3'], $_POST['p_email']
 						);
 						
 						//Faz o update no banco de dados
 						$sql 		= sprintf("
+							UPDATE contatos
+							SET endereco = :param0, numero = :param1, complemento = :param2, bairro = :param3, cep = :param4, cidade = :param5, estado = :param6, referencia = :param7, telefone1 = :param8, telefone2 = :param9, telefone3 = :param10, email = :param11
+							WHERE id_usuario = '".$id_user."'
 						");
 						$r 		= Crud::getInstance()->update($dbh, $sql, $dados);
 						
 						//Mensagem
 						if($r == true){
-							$errMsg .= 'Cadastro efetuado com sucesso!';
+							$errMsg .= 'Informações de contato atualizadas com sucesso!';
 							$cor = "GREEN";
+							phpAlert("Informações de contato atualizadas com sucesso!");
+							Redirect("?editar_perfil&u=".$id_user."&etapa=3");
 						}else{
-							$errMsg .= 'O cadastro não foi efetuado.';
-							$cor = "RED";
+							$errMsg .= 'As informações não foram atualizadas.';
 						}
 					}catch(Exception $e) {
 						$errMsg .= 'Ocorreu um erro.'.$e;
@@ -151,27 +159,35 @@
 				break;
 				
 			case '3': //Atualização das informações extras
-				if(empty($_POST['p_nome'])) {
+				if(empty($_POST['i_profissao'])) {
+					$errMsg = 'Campo "Profissão" não pode ficar em branco.';
 				}
 				else {
 					try {
 						//Recupera os dados pelo método POST e armazena em um array
 						$dados 		= array(
-							
+							$_POST['i_profissao'], $_POST['i_renda'], $_POST['i_trabalho'], $_POST['i_tipo_escola'], $_POST['i_arrimo'], $_POST['i_cursou_senac'],
+							$_POST['i_p_nome1'], $_POST['i_p_renda1'], $_POST['i_p_parentesco1'], $_POST['i_p_profissao1'], $_POST['i_p_nome2'], $_POST['i_p_renda2'],
+							$_POST['i_p_parentesco2'], $_POST['i_p_profissao2'], $_POST['i_p_nome3'], $_POST['i_p_renda3'], $_POST['i_p_parentesco3'],
+							$_POST['i_p_profissao3'], $_POST['i_p_nome4'], $_POST['i_p_renda4'], $_POST['i_p_parentesco4'], $_POST['i_p_profissao4']
 						);
 						
 						//Faz o update no banco de dados
 						$sql 		= sprintf("
+							UPDATE info_extra
+							SET profissao = :param0, renda = :param1, trabalho = :param2, tipo_escola = :param3, arrimo = :param4, cursou_senac = :param5, p_nome1 = :param6, p_renda1 = :param7, p_parentesco1 = :param8, p_profissao1 = :param9, p_nome2 = :param10, p_renda2 = :param11, p_parentesco2 = :param12, p_profissao2 = :param13, p_nome3 = :param14, p_renda3 = :param15, p_parentesco3 = :param16, p_profissao3 = :param17, p_nome4 = :param18, p_renda4 = :param19, p_parentesco4 = :param20, p_profissao4 = :param21
+							WHERE id_usuario = '".$id_user."'
 						");
 						$r 		= Crud::getInstance()->update($dbh, $sql, $dados);
 						
 						//Mensagem
 						if($r == true){
-							$errMsg .= 'Cadastro efetuado com sucesso!';
+							$errMsg .= 'Informações extras atualizadas com sucesso!';
 							$cor = "GREEN";
+							phpAlert("Informações extras atualizadas com sucesso!");
+							Redirect("?painel");
 						}else{
-							$errMsg .= 'O cadastro não foi efetuado.';
-							$cor = "RED";
+							$errMsg .= 'As informações não foram atualizadas.';
 						}
 					}catch(Exception $e) {
 						$errMsg .= 'Ocorreu um erro.'.$e;
@@ -194,7 +210,7 @@
 	    'title'  	=> 'Meu Perfil',
 	    'tab'    	=> 0,
 	    'path'   	=> '[]',
-		'nivel'		=> 1
+		'nivel'		=> 1	//1-Aluno | 2-Instrutor | 3-Administrador | 4-Gerente
     );
 	
 	if($_SESSION['nivel'] < $page['nivel']) {
