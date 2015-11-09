@@ -2,7 +2,7 @@
         <h1>Administração</h1>
         <div class="p_admin">
             <div class="p_cursos">
-                <h1>Matrículas</h1>
+                <h1>Pré-Matrículas Pendentes</h1>
                 {if $errMsg != ''}
                     <div class="p_cad" align="center">
                         <p style="color: {$cor}">{$errMsg}</p>

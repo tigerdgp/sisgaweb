@@ -287,8 +287,8 @@
                                 <p><span>Complemento: </span>{$edit_c[s].complemento}</p>
                                 <p><span>Bairro: </span>{$edit_c[s].bairro}</p>
                                 <p><span>CEP: </span>{$edit_c[s].cep}</p>                          
-                                <p><span>Cidade: </span>{$edit_c[s].cidade}</p>
-                                <p><span>Estado: </span>{$edit_c[s].estado}</p>                            
+                                <p><span>Cidade: </span>{$edit_c[s].n_cidade}</p>
+                                <p><span>Estado: </span>{$edit_c[s].n_estado}</p>                            
                                 <p><span>Referência: </span>{$edit_c[s].ref}</p>
                                 <p><span>Telefone Fixo: </span>{$edit_c[s].telefone1|phone_format}</p>
                                 <p><span>Telefone Celular: </span>{$edit_c[s].telefone2|phone_format}</p>
@@ -307,7 +307,7 @@
                             {/section}
                             <p><select name="p_cidade">
                             		{section name=s loop=$edit_c}
-                                        <option value="{$edit_c[s].naturalidade}" selected="selected">{$edit_c[s].cidade}</option>
+                                        <option value="{$edit_c[s].cidade}" selected="selected">{$edit_c[s].n_cidade}</option>
                                     {/section}
                                     {section name=s loop=$city}
                                         <option value="{$city[s].id_cidade}">{$city[s].nome}</option>
@@ -316,7 +316,7 @@
                             </p>
                             <p><select name="p_c_uf">
                             		{section name=s loop=$edit_c}
-                                        <option value="{$edit_c[s].n_uf}" selected="selected">{$edit_c[s].estado}</option>
+                                        <option value="{$edit_c[s].estado}" selected="selected">{$edit_c[s].n_estado}</option>
                                     {/section}
                                     {section name=s loop=$uf}
                                         <option value="{$uf[s].id_estado}">{$uf[s].uf}</option>
@@ -324,7 +324,7 @@
                                 </select>
                             </p>
                             {section name=s loop=$edit_c}
-                                <p><input type="text" name="p_ref" size="15" value="{$edit_c[s].ref}" /></p>
+                                <p><input type="text" name="p_ref" size="30" value="{$edit_c[s].ref}" /></p>
                                 <p><input type="tel" name="p_fone1" value="{$edit_c[s].telefone1}" /></p>
                                 <p><input type="tel" name="p_fone2" value="{$edit_c[s].telefone2}" /></p>
                                 <p><input type="tel" name="p_fone3" value="{$edit_c[s].telefone3}" /></p>
@@ -332,6 +332,11 @@
                             {/section}
                         </div>                        
                         <div class="clear"></div>
+                        {if $errMsg != ''}
+                            <div class="p_cad" align="center">
+                                <p style="color: {$cor}">{$errMsg}</p>
+                            </div>
+                        {/if}
                         <div class="p_cad" align="center">
                             <input type="submit" name="cancelar" value="Cancelar" class="botao" />
                             <input type="submit" name="submit" value="Avançar" class="botao" />
@@ -466,6 +471,11 @@
                             {/section}
                         </div>                        
                         <div class="clear"></div>
+                        {if $errMsg != ''}
+                            <div class="p_cad" align="center">
+                                <p style="color: {$cor}">{$errMsg}</p>
+                            </div>
+                        {/if}
                         <div class="p_cad" align="center">
                             <input type="submit" name="cancelar" value="Cancelar" class="botao" />
                             <input type="submit" name="submit" value="Concluir" class="botao" />

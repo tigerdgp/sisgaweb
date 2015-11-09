@@ -5,8 +5,8 @@
         	<div class="p_cad">            	 	
             	<h1>Dados Gerais</h1>
                 <div class="blocoText t_100">
-                	<p>Nome: </p>
-                    <p>Representante: </p>
+                	<p>* Nome: </p>
+                    <p>* Representante: </p>
                 </div>
                 <div class="blocoCampo t_500">
                 	<input type="text" name="i_nome" size="60" maxlength="100" />
@@ -33,13 +33,13 @@
             <div class="p_cad">        	
             	<h1>Contato</h1>
                 <div class="blocoText t_100">
-                    <p>Endereço: </p>
+                    <p>* Endereço: </p>
                 </div>
                 <div class="blocoCampo t_100">
                     <input type="text" name="i_endereco" size="50" />
                 </div>
                 <div class="blocoText t_100">
-                    <p>Nº: </p>
+                    <p>* Nº: </p>
                 </div>
                 <div class="blocoCampo t_100">
                     <input type="text" name="i_numero" size="5" />
@@ -48,20 +48,20 @@
                     <p>Complemento: </p>
                 </div>
                 <div class="blocoCampo t_100">
-                    <input type="text" name="i_complemento" size="30" />
+                    <input type="text" name="i_complemento" size="25" />
                 </div>
                 <div class="clear"></div>
                 <div class="blocoText t_100">
-                    <p>Bairro: </p>
+                    <p>* Bairro: </p>
                 </div>
                 <div class="blocoCampo t_100">
-                    <input type="text" name="i_bairro" />
+                    <input type="text" name="i_bairro" size="15" />
                 </div>
                 <div class="blocoText t_100">
-                    <p>CEP: </p>
+                    <p>* CEP: </p>
                 </div>
                 <div class="blocoCampo t_100">
-                    <input type="number" name="i_cep" size="7" />
+                    <input type="number" name="i_cep" />
                 </div>
                 <div class="blocoText t_100">
                     <p>Cidade: </p>
@@ -91,7 +91,7 @@
                     <input type="text" name="i_ref" size="15" />
                 </div>
                 <div class="blocoText t_120">
-                    <p>Telefone Fixo: </p>
+                    <p>* Telefone Fixo: </p>
                 </div>
                 <div class="blocoCampo t_100">
                 	<input type="tel" name="i_fone1" />

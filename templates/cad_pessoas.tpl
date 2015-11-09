@@ -5,10 +5,10 @@
         	<div class="p_cad">            	 	
             	<h1>Dados Gerais</h1>
                 <div class="blocoText t_100">
-                	<p>Nome: </p>
-                    <p>Mãe: </p>
-                    <p>Pai: </p>
-                    <p>Naturalidade: </p>
+                	<p>* Nome: </p>
+                    <p>* Mãe: </p>
+                    <p>* Pai: </p>
+                    <p>* Naturalidade: </p>
                 </div>
                 <div class="blocoCampo t_500">
                 	<input type="text" name="p_nome" size="60" maxlength="100" />
@@ -27,7 +27,7 @@
                 </div> 
                 <div class="clear"></div>
                 <div class="blocoText t_150">
-                	<p>Data Nascimento: </p> 
+                	<p>* Data Nascimento: </p> 
                 	<p>Sexo: </p>
                     <p>Raça / Cor: </p>
                 </div>
@@ -47,8 +47,8 @@
                     </select>
                 </div>
                 <div class="blocoText t_120">
-                	<p>Nacionalidade: </p>
-                	<p>Escolaridade: </p>
+                	<p>* Nacionalidade: </p>
+                	<p>* Escolaridade: </p>
                     <p>Estado Civil: </p>
                 </div>
                 <div class="blocoCampo t_200">
@@ -88,26 +88,26 @@
             <div class="p_cad">        	
             	<h1>Documentos</h1>
                 <div class="blocoText t_100">
-                	<p>CPF: </p>
+                	<p>* CPF: </p>
                 </div>
                 <div class="blocoCampo t_200">
                 	<input type="number" name="p_cpf" maxlength="11" />
                 </div>
                 <div class="clear"></div>
                 <div class="blocoText t_100">
-                	<p>Identidade: </p>
+                	<p>* Identidade: </p>
                 </div>
                 <div class="blocoCampo t_200">
                 	<input type="text" name="p_rg" maxlength="20" />
                 </div>
-                <div class="blocoText t_120">
-                    <p>Orgão Emissor: </p>
+                <div class="blocoText t_130">
+                    <p>* Orgão Emissor: </p>
                 </div>
                 <div class="blocoCampo t_100">                    
                     <input type="text" name="p_orgao" maxlength="5" size="5" />
                 </div>
-                <div class="blocoText t_120">
-                    <p>Data de Emissão: </p>
+                <div class="blocoText t_140">
+                    <p>* Data de Emissão: </p>
                 </div>
                 <div class="blocoCampo t_150">
                 	<input type="date" name="p_emissao" class="input" />
@@ -168,13 +168,13 @@
             <div class="p_cad">        	
             	<h1>Contato</h1>
                 <div class="blocoText t_100">
-                    <p>Endereço: </p>
+                    <p>* Endereço: </p>
                 </div>
                 <div class="blocoCampo t_100">
                     <input type="text" name="p_endereco" size="50" />
                 </div>
                 <div class="blocoText t_100">
-                    <p>Nº: </p>
+                    <p>* Nº: </p>
                 </div>
                 <div class="blocoCampo t_100">
                     <input type="text" name="p_numero" size="5" />
@@ -183,17 +183,17 @@
                     <p>Complemento: </p>
                 </div>
                 <div class="blocoCampo t_100">
-                    <input type="text" name="p_complemento" size="30" />
+                    <input type="text" name="p_complemento" size="20" />
                 </div>
                 <div class="clear"></div>
                 <div class="blocoText t_100">
-                    <p>Bairro: </p>
+                    <p>* Bairro: </p>
                 </div>
                 <div class="blocoCampo t_100">
                     <input type="text" name="p_bairro" />
                 </div>
                 <div class="blocoText t_100">
-                    <p>CEP: </p>
+                    <p>* CEP: </p>
                 </div>
                 <div class="blocoCampo t_100">
                     <input type="number" name="p_cep" size="7" />
@@ -232,7 +232,7 @@
                 	<input type="tel" name="p_fone1" />
                 </div>
                 <div class="blocoText t_100">
-                    <p>Celular: </p>
+                    <p>* Celular: </p>
                 </div>
                 <div class="blocoCampo t_100">
                     <input type="tel" name="p_fone2" />

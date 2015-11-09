@@ -61,15 +61,15 @@
                         		<li><p><a href="#"><img src="templates/img/left.png" />Administração</a></p>
                                     <ul>
                                         <li><a href="?admin&c=matriculas">Matrículas</a></li>
-                                        <li><a href="?admin&c=banners">Banners</a></li>
-                                        <li><a href="?admin&c=noticias">Notícias</a></li>
-                                        <li><a href="?admin&c=notas">Notas</a></li>
+                                        <li hidden="hidden"><a href="#">Banners</a></li>
+                                        <li hidden="hidden"><a href="#">Notícias</a></li>
+                                        <li hidden="hidden"><a href="#">Notas</a></li>
                                     </ul>
                                 </li>
                             {/if}
-                            <li><p><a href="?config">Configuração</a></p></li>
+                            <li hidden="hidden"><p><a href="#">Configuração</a></p></li>
                             <li><p><a href="?perfil">Meu Perfil</a></p></li>
-                            <li><p><a href="?msg">Mensagens<span>0</span></a></p></li> 
+                            <li><p><a href="#">Mensagens<span>0</span></a></p></li> 
                         </ul>
                     </div>
                 </div>

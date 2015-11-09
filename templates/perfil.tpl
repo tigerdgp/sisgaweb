@@ -38,7 +38,7 @@
                         {/if}
                     </div>
                     <div class="p_perfil_dados2">
-                        <p><span>Naturalidade:</span> {$user[u].naturalidade}</p>
+                        <p><span>Naturalidade:</span> {$user[u].cidade} - {$user[u].estado}</p>
                         <p><span>Nacionalidade:</span> {$user[u].nacionalidade}</p>
                         <!-- 
                             Estado Civil - Opções
@@ -127,7 +127,7 @@
                             <td class="table15">{$cursos[s].hora_inicio|date_format:"%H:%M"} às {$cursos[s].hora_termino|date_format:"%H:%M"}</td>
                             <td class="table10">Pré-Matriculado</td>
                             <td class="table15">
-                                <a href="?certificado&c={$cursos[s].id}&{$cursos[s].aluno}">Aguardando</a>
+                                Aguardando
                             </td>
                         </tr>
                     {/section}

@@ -59,7 +59,7 @@
             </section>
             <section class="listagem">
             	<p class="first">Estatísticas</p>
-                <p>Visitas<span>203162</span></p>
+                <p>Visitas<span>{$e_visitas}</span></p>
                 <p>Alunos Incritos<span>{$e_alunos}</span></p>
                 <p>Instituições<span>{$e_instituicoes}</span></p>
                 <p>Cursos Ofertados<span>{$e_cursos}</span></p>

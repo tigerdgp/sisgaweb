@@ -531,6 +531,10 @@ ul#menu span, ul#sub_navTop span {
 		width: 15%;
 		text-align: center;
 	}
+	.p_cursos .table20, .p_perfil_b .table20 {
+		width: 20%;
+		text-align: center;
+	}
 	.p_cursos a, .p_perfil_b a {
 		text-decoration: none;
 		color: #030;
@@ -653,6 +657,12 @@ ul#menu span, ul#sub_navTop span {
 }
 .p_cad .t_120 {
 	width: 120px;
+}
+.p_cad .t_130 {
+	width: 130px;
+}
+.p_cad .t_140 {
+	width: 140px;
 }
 .p_cad .t_150 {
 	width: 150px;
